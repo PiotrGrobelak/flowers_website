@@ -13,6 +13,8 @@ const GlobalStyle = createGlobalStyle`
   body {
     position: relative;
     margin: 0;
+    height: 200vh;
+    ${'' /* overflow: hidden; */}
     font-family: 'Montserrat';
   }
   button {
