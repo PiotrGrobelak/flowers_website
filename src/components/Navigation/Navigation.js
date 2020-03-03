@@ -1,20 +1,22 @@
 import React, { useState, useRef } from 'react'
 import { Link } from 'gatsby';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
-import { useHandleOutside } from '../../helpers/useHandleOutside'
+import { useHandleOutside } from '../../helpers/useHandleOutside';
+import { useWindowSize } from '../../helpers/useWindowSize';
 import LogoImage from "../../assets/images/logo.png";
 import Burger from "../Burger/Burger";
 import { NavigationContainer, ContactLink, NavigationWrapper, NavigationList, NavigationItem, NavigationLink, Logo, ContactIcon, ContactNumber } from "./Navigation.styled"
+import { theme } from '../../assets/styles/Theme';
 
 
 const Navigation = () => {
     const [open, setOpen] = useState(false);
-
+    const wiondwSize = useWindowSize();
     const navList = useRef();
     const navContainer = useRef();
     const toggleNavigation = () => {
         setOpen(!open)
-        if (!open) {
+        if (!open && (wiondwSize.width < +theme.responsive.desktop.slice(0, 4))) {
             disableBodyScroll(navList);
         } else {
             enableBodyScroll(navList);
@@ -24,6 +26,7 @@ const Navigation = () => {
 
     return (
         <NavigationContainer ref={navContainer} >
+            {console.log(wiondwSize)}
             <ContactLink
                 href="tel:093-393-920">
                 <ContactIcon />

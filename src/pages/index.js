@@ -5,6 +5,8 @@ import styled from "styled-components"
 
 const Main = styled.main`
 /* height:1000px; */
+margin: 0 auto;
+max-width: 1200px;
 `;
 
 

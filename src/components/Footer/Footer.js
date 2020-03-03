@@ -1,5 +1,5 @@
 import React from "react"
-import { FooterContainer, FooterList, FooterItem, FooterSocialLink, FooterIcon, FooterWrapper } from "./Footer.styled";
+import { FooterContainer, FooterList, FooterItem, FooterSocialLink, FooterWrapper } from "./Footer.styled";
 import { AiFillFacebook, AiOutlineInstagram, } from "react-icons/ai";
 
 const Footer = () => (
