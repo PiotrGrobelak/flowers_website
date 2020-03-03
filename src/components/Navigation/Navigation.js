@@ -1,19 +1,29 @@
-import React, { useState } from 'react'
-// import { bool } from 'prop-types';
+import React, { useState, useRef } from 'react'
 import { Link } from 'gatsby';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import { useHandleOutside } from '../../helpers/useHandleOutside'
 import LogoImage from "../../assets/images/logo.png";
 import Burger from "../Burger/Burger";
 import { NavigationContainer, ContactLink, NavigationWrapper, NavigationList, NavigationItem, NavigationLink, Logo, ContactIcon, ContactNumber } from "./Navigation.styled"
 
 
-
-
 const Navigation = () => {
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
 
+    const navList = useRef();
+    const navContainer = useRef();
+    const toggleNavigation = () => {
+        setOpen(!open)
+        if (!open) {
+            disableBodyScroll(navList);
+        } else {
+            enableBodyScroll(navList);
+        }
+    }
+    useHandleOutside(open, navContainer, () => toggleNavigation())
 
     return (
-        <NavigationContainer>
+        <NavigationContainer ref={navContainer} >
             <ContactLink
                 href="tel:093-393-920">
                 <ContactIcon />
@@ -21,11 +31,11 @@ const Navigation = () => {
                     093-393-920
                 </ContactNumber>
             </ContactLink>
-            <Burger open={open} setOpen={setOpen} />
-            <NavigationWrapper open={open}>
+            <Burger open={open} toggleNavigation={toggleNavigation} />
+            <NavigationWrapper open={open} ref={navList}>
                 <Link
                     to="/"
-                    onClick={() => setOpen(!open)}
+                    onClick={() => toggleNavigation()}
                 >
                     <Logo src={LogoImage} />
                 </Link>
@@ -33,28 +43,28 @@ const Navigation = () => {
                     <NavigationItem>
                         <NavigationLink
                             to="/about"
-                            onClick={() => setOpen(!open)}
+                            onClick={() => toggleNavigation()}
                         >About
                     </NavigationLink>
                     </NavigationItem>
                     <NavigationItem>
                         <NavigationLink
                             to="/gallery"
-                            onClick={() => setOpen(!open)}
+                            onClick={() => toggleNavigation()}
                         >Gallery
-                     </NavigationLink>
+                        </NavigationLink>
                     </NavigationItem>
                     <NavigationItem>
                         <NavigationLink
                             to="/offer"
-                            onClick={() => setOpen(!open)}
+                            onClick={() => toggleNavigation()}
                         >Offer
                     </NavigationLink>
                     </NavigationItem>
                     <NavigationItem>
                         <NavigationLink
                             to="/contact"
-                            onClick={() => setOpen(!open)}
+                            onClick={() => toggleNavigation()}
                         >Contact
                     </NavigationLink>
                     </NavigationItem>
@@ -66,8 +76,5 @@ const Navigation = () => {
     )
 }
 
-// Navigation.propTypes = {
-//     open: bool.isRequired,
-// }
 
 export default Navigation;

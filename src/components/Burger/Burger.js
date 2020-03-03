@@ -2,10 +2,10 @@ import React from 'react';
 import { NavigationBurgerWrapper, NavigationBurger } from './Burger.styled';
 import { bool, func } from 'prop-types';
 
-const Burger = ({ open, setOpen }) => {
+const Burger = ({ open, toggleNavigation }) => {
     return (
         <NavigationBurgerWrapper>
-            <NavigationBurger open={open} onClick={() => setOpen(!open)}>
+            <NavigationBurger open={open} onClick={() => toggleNavigation()}>
                 <div />
                 <div />
                 <div />
@@ -16,7 +16,6 @@ const Burger = ({ open, setOpen }) => {
 
 Burger.propTypes = {
     open: bool.isRequired,
-    setOpen: func.isRequired,
 };
 
 export default Burger;

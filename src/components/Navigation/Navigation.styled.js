@@ -39,7 +39,7 @@ position: fixed;
 top: 9%;
 left: 0;
 width: 100%;
-height: 80vh;
+/* height: 80%; */
 background-color: #fff;
 border-top: 1px solid #9875B4;
 border-bottom: 1px solid #9875B4;
