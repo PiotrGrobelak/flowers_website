@@ -4,6 +4,7 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
+
   }
   *,
   *::before,
@@ -12,10 +13,11 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     position: relative;
+    overflow-x: hidden;
     margin: 0;
-    height: 200vh;
-    ${'' /* overflow: hidden; */}
     font-family: 'Montserrat';
+    ${'' /* height: 200vh; */}
+
   }
   button {
     padding: 0;
@@ -28,6 +30,10 @@ const GlobalStyle = createGlobalStyle`
   ul {
     padding: 0;
     margin: 0;
+  }
+  a{
+    text-decoration: none;
+    color: inherit;
   }
 `;
 
