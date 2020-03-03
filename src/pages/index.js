@@ -4,7 +4,7 @@ import SEO from "../components/seo";
 import styled from "styled-components"
 
 const Main = styled.main`
-height:1000px;
+/* height:1000px; */
 `;
 
 

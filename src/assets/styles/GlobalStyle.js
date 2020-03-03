@@ -1,5 +1,8 @@
 
 import { createGlobalStyle } from 'styled-components';
+import backgroundImage from '../../assets/images/layout_image_1.png'
+
+
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -13,11 +16,13 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     position: relative;
-    overflow-x: hidden;
     margin: 0;
     font-family: 'Montserrat';
-    ${'' /* height: 200vh; */}
-
+    background-image: url(${backgroundImage});
+    background-repeat: no-repeat;
+    background-position: top left ;
+    background-size: 35%;
+    z-index: 999;
   }
   button {
     padding: 0;
@@ -26,6 +31,9 @@ const GlobalStyle = createGlobalStyle`
   }
   p {
     font-size: 16px;
+  }
+  h1{
+    margin: 0;
   }
   ul {
     padding: 0;

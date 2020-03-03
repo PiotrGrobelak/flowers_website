@@ -12,7 +12,7 @@ const MainWrapper = styled.main`
 margin: 1rem;
 margin-top: 4rem;
 height: 100vh;
-background-color: lightgrey;
+/* background-color: lightgrey; */
 `;
 
 

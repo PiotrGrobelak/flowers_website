@@ -16,6 +16,7 @@ const Burger = ({ open, toggleNavigation }) => {
 
 Burger.propTypes = {
     open: bool.isRequired,
+    toggleNavigation: func.isRequired
 };
 
 export default Burger;

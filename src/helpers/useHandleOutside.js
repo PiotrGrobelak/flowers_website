@@ -3,8 +3,7 @@ import { useEffect } from 'react';
 export const useHandleOutside = (open, ref, handler) => {
     useEffect(() => {
         const listener = event => {
-            console.log(ref)
-            if (ref.current && !open || ref.current.contains(event.target)) {
+            if ((ref.current && !open) || ref.current.contains(event.target)) {
                 return;
             }
             handler(event);
@@ -14,6 +13,6 @@ export const useHandleOutside = (open, ref, handler) => {
             document.removeEventListener('mousedown', listener);
         };
     },
-        [ref, handler],
+        [open, ref, handler],
     );
 };
