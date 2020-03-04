@@ -11,6 +11,8 @@ border-bottom: 2px solid  ${({ theme }) => theme.colors.primaryViolet};
 border-top: 2px solid  ${({ theme }) => theme.colors.primaryViolet};
 border-top-left-radius: 15px;
 border-bottom-left-radius: 15px;
+box-shadow: 0px 3px 10px -1px rgba(0, 0, 0, 0.25);
+background: ${({ theme }) => theme.colors.secondaryWhite};
 z-index: 10;
 @media (min-width: ${({ theme }) => theme.responsive.desktop}) {
     display: none;

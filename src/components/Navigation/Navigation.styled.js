@@ -1,20 +1,16 @@
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { MdPhoneInTalk } from 'react-icons/md'
-import backgroundImage from '../../assets/images/layout_image_1.png'
 
 export const NavigationContainer = styled.nav`
 position: relative;
 display: flex;
 flex-direction: column;
 width: 100%;
-/* background-image: url(${backgroundImage}); */
 background-repeat: no-repeat;
 background-position: center left ;
 background-size: 50%;
-/* height: 200px; */
-/* z-index: 999; */
-
+z-index: 999;
 `;
 
 
@@ -89,7 +85,7 @@ export const ContactLink = styled.a`
 align-self: flex-end;
 display: flex;
 margin: 0.5rem;
-padding: 0.4rem 1rem;
+padding: 0.3rem 0.8rem;
 background-color:  #9875B4;
 border-radius: 25px;
 box-shadow: 0px 2px 15px -1px rgba(0, 0, 0, 0.25);
@@ -99,12 +95,12 @@ color: #fff;
 `;
 
 export const ContactNumber = styled.span`
-font-size: 0.9rem;
+font-size: 0.8rem;
 `;
 
 export const ContactIcon = styled(MdPhoneInTalk)`
 margin-right: 1rem;
-font-size: 1.2rem;
+font-size: 1rem;
 `;
 
 

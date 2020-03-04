@@ -10,9 +10,10 @@ import backgroundImage from '../assets/images/layout_image_1.png'
 
 
 const MainWrapper = styled.main`
+/* position: relative; */
 margin: 1rem;
 margin-top: 4rem;
-height: 100vh;
+height: 100%;
 `;
 
 const BodyImage = styled.div`
