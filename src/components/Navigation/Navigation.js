@@ -5,7 +5,7 @@ import { useHandleOutside } from '../../helpers/useHandleOutside';
 import { useWindowSize } from '../../helpers/useWindowSize';
 import LogoImage from "../../assets/images/logo.png";
 import Burger from "../Burger/Burger";
-import { NavigationContainer, ContactLink, NavigationWrapper, NavigationList, NavigationItem, NavigationLink, Logo, ContactIcon, ContactNumber } from "./Navigation.styled"
+import { NavigationContainer, ContactLink, NavigationWrapper, NavigationList, NavigationItem, NavigationLink, Logo, LogoMobile, ContactIcon, ContactNumber } from "./Navigation.styled"
 import { theme } from '../../assets/styles/Theme';
 
 
@@ -26,7 +26,11 @@ const Navigation = () => {
 
     return (
         <NavigationContainer ref={navContainer} >
-            {console.log(wiondwSize)}
+            <Link
+                to="/"
+            >
+                <LogoMobile src={LogoImage} />
+            </Link>
             <ContactLink
                 href="tel:093-393-920">
                 <ContactIcon />
@@ -73,8 +77,6 @@ const Navigation = () => {
                     </NavigationItem>
                 </NavigationList>
             </NavigationWrapper>
-
-
         </NavigationContainer>
     )
 }

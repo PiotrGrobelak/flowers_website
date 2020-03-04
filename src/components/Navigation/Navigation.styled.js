@@ -115,3 +115,13 @@ height: 80px;
     margin-top: 0;
     }
 `;
+
+export const LogoMobile = styled.img`
+position: absolute;
+top: 10%;
+left: 25%;
+height: 50px;
+@media (min-width: ${({ theme }) => theme.responsive.desktop}) {
+    display: none;
+    }
+`;
