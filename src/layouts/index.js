@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 import GlobalStyle from "../assets/styles/GlobalStyle";
 import Navigation from "../components/Navigation/Navigation";
 import Footer from "../components/Footer/Footer";
@@ -28,9 +29,10 @@ height: 500px;
 width: 100%;
 transform: rotate(9deg);
 @media (min-width: ${({ theme }) => theme.responsive.desktop}) {
-    left: -5%;
+    top: 2%;
+    left: -2%;
     background-position: top left ;
-    background-size: 25%;
+    background-size: 20%;
 }
 `;
 
@@ -50,5 +52,11 @@ const MainLayout = ({ children }) => (
         </ThemeProvider>
     </>
 )
+
+MainLayout.propTypes = {
+    children: PropTypes.node.isRequired,
+    // theme: PropTypes.object.isRequired
+};
+
 
 export default MainLayout;
