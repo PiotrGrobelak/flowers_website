@@ -11,12 +11,12 @@ import { theme } from '../../assets/styles/Theme';
 
 const Navigation = () => {
     const [open, setOpen] = useState(false);
-    const wiondwSize = useWindowSize();
+    const windowSize = useWindowSize();
     const navList = useRef();
     const navContainer = useRef();
     const toggleNavigation = () => {
         setOpen(!open)
-        if (!open && (wiondwSize.width < +theme.responsive.desktop.slice(0, 4))) {
+        if (!open && (windowSize.width < +theme.responsive.desktop.slice(0, 4))) {
             disableBodyScroll(navList);
         } else {
             enableBodyScroll(navList);
@@ -80,6 +80,5 @@ const Navigation = () => {
         </NavigationContainer>
     )
 }
-
 
 export default Navigation;
