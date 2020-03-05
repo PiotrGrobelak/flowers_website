@@ -3,64 +3,65 @@ import { Link, graphql } from "gatsby"
 import SEO from "../components/seo";
 import styled from "styled-components"
 import Image from "gatsby-image";
+import { StyledLink, FlexColumn, BoxShadowPink } from '../assets/styles/Mixins';
 import backgroundImage from "../assets/images/layout_image_1.png"
 
 
 const Main = styled.main`
-height:100%;
 margin: 0 auto;
 margin-bottom: 8rem;
-max-width: 1200px;
-font-weight: 600;
+max-width: 1400px;
 `;
 
 const Header = styled.header`
-  margin: 1rem;
+  ${FlexColumn}
   margin-top: 7rem;
-  max-width: 85%;
+  max-width: 90%;
   color: ${({ theme }) => theme.colors.thirdaryViolet};
   text-align: right;
+  @media (min-width: ${({ theme }) => theme.responsive.desktop}) {
+  width: 70%;
+}
 `;
 
 const Title = styled.h1`
   font-family: 'Princess Sofia';
   font-style: italic;
-  font-stretch: expanded;
   font-size: 2.6rem;
   letter-spacing: 10px;
+  @media (min-width: ${({ theme }) => theme.responsive.desktop}) {
+  font-size: 4rem;
+}
 `;
 
 const Heading = styled.p`
 margin-left: 2rem;
 font-size: 1.2rem;
+font-weight: 600;
+@media (min-width: ${({ theme }) => theme.responsive.desktop}) {
+  font-size: 1.4rem;
+}
 `;
 
-const ParapgraphWrapper = styled.div`
-margin: 4rem 0;
-/* background-color: ${({ theme }) => theme.colors.secondaryWhite}; */
-/* box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.25); */
-color: ${({ theme }) => theme.colors.thirdaryViolet};
+const Paragraph = styled.p`
+margin: 2rem -1rem 2rem 1rem;
 font-weight: 600;
 letter-spacing: 1px;
-
-`;
-const Paragraph = styled.p`
-padding: 1rem`;
-
-const MainButton = styled(Link)`
-  /* margin: 2rem; */
-  height: 200px;
-  padding: 0.4rem 1rem;
-  border-radius: 15px;
-  background-color: ${({ theme }) => theme.colors.secondaryViolet};
-  box-shadow: 0px 2px 15px -1px rgba(0, 0, 0, 0.25);
-  color: ${({ theme }) => theme.colors.primaryWhite};
+text-align: center;
+@media (min-width: ${({ theme }) => theme.responsive.desktop}) {
+  width: 90%;
+  font-size: 1.2rem;
+  text-align: right;
+}
 `;
 
-const Wrapper = styled.div`
-width: 100%;
-height: 100%;
-margin: 5rem;
+const GalleryLink = styled(Link)`
+  ${StyledLink}
+  align-self: flex-end;
+  margin-top: 2rem;
+  @media (min-width: ${({ theme }) => theme.responsive.desktop}) {
+  margin-right: 2rem;
+}
 `;
 
 const HeroImage = styled(Image)`
@@ -72,9 +73,16 @@ height: 50%;
 object-fit: cover;
 opacity: 0.2;
 z-index: -1;
+@media (min-width: ${({ theme }) => theme.responsive.desktop}) {
+  right: -20%;
+  width: 60%;
+  opacity: 1;
+  height: 100%;
+  object-fit: cover;
+}
 `;
 
-const LayoutImage = styled.div`
+const AdditionalImage = styled.div`
 position: absolute;
 bottom: 5%;
 right: -6%;
@@ -84,46 +92,88 @@ transform: rotate(-120deg);
 background-image: url(${backgroundImage});
 background-repeat: no-repeat;
 background-size: 100%;
+@media (min-width: ${({ theme }) => theme.responsive.desktop}) {
+  left: -2%;
+  bottom: 3%;
+  height: 240px;
+  width: 240px;
+  transform: rotate(-20deg);
+}
 `;
 
-const ProposeWrapper = styled.div`
-margin-top: 4rem;
-margin-bottom: 2rem;
-padding: 0.4rem 0;
-/* border: 1px solid ${({ theme }) => theme.colors.secondaryViolet}; */
-border-radius: 25px;
-/* background-color: ${({ theme }) => theme.colors.primaryWhite}; */
-box-shadow: 0px 3px 10px -5px ${({ theme }) => theme.colors.primaryPink};
+const ProposeWrapper = styled.ul`
+${FlexColumn}
 color: ${({ theme }) => theme.colors.secondaryViolet};
 letter-spacing: 1px;
+@media (min-width: ${({ theme }) => theme.responsive.desktop}) {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 500px);
+  grid-template-rows:  repeat(auto-fill, minmax(200px, 700px));
+  grid-gap: 4rem;
+  margin-top: 6rem;
+}
+li{
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  padding: 0.4rem 0;
+  border-radius: 25px;
+  ${BoxShadowPink}
+  :nth-child(2){
+    margin-top: 2rem;
+  }
+  @media (min-width: ${({ theme }) => theme.responsive.desktop}) {
+  margin: 1rem;
+  margin-top:-2rem;
+  :nth-child(1){
+    margin-bottom: 12rem;
+  }
+  :nth-child(2){
+      margin-top: 10rem;
+    }
+  }
+}
 h2{
-  padding-left: 0.6rem;
+  padding-left: 1rem;
   font-size: 1.6rem;
+  @media (min-width: ${({ theme }) => theme.responsive.desktop}) {
+  font-size: 1.8rem;
+  }
 }
 p{
-  padding: 0.6rem;
+  margin: 0;
+  padding: 0.8rem;
+  font-weight: 600;
+  @media (min-width: ${({ theme }) => theme.responsive.desktop}) {
+  padding: 1rem;
+  font-size: 1.2rem;
+  }
 }
 `;
 
 const ProposeImage = styled(Image)`
 margin: 0.4rem auto;
+border-top: 1px solid ${({ theme }) => theme.colors.primaryPink};
+border-bottom: 1px solid ${({ theme }) => theme.colors.primaryPink};
+@media (min-width: ${({ theme }) => theme.responsive.desktop}) {
+  height: 60%;
+}
 `;
 
-const ContactButton = styled.button`
-margin: 1rem 0 0 2rem;
-padding: 0.4rem 1rem;
-border-radius: 15px;
-background-color: ${({ theme }) => theme.colors.secondaryViolet};
-box-shadow: 0px 2px 15px -1px rgba(0, 0, 0, 0.25);
-font-size: 1rem;
-color: ${({ theme }) => theme.colors.primaryWhite};
-font-weight: 600;
-letter-spacing: 1px;
+const ContactLink = styled(Link)`
+${StyledLink}
+align-self: center;
+margin-top: 1rem;
+margin-bottom: -2rem;
+@media (min-width: ${({ theme }) => theme.responsive.desktop}) {
+  position: absolute;
+  left: 15%;
+  bottom: 15%;
+}
 `;
 
 const IndexPage = ({ data }) => {
   const { allDatoCmsMainpage: { nodes } } = data;
-
   return (
     <>
       <Main>
@@ -141,33 +191,33 @@ const IndexPage = ({ data }) => {
                 <Header>
                   <Title>{maintitle}</Title>
                   <Heading>{mainheading}</Heading>
-                </Header>
-                <ParapgraphWrapper>
                   <Paragraph>{mainparagraph}</Paragraph>
-                </ParapgraphWrapper>
-                <Wrapper>
-                  <MainButton to="/gallery">Check our Gallery</MainButton>
-                </Wrapper>
+                  <GalleryLink to="/gallery">Check our Gallery</GalleryLink>
+                </Header>
+                <ProposeWrapper>
+                  {
+                    mainpropose.map(({
+                      heading,
+                      description,
+                      proposeimage
+                    }, index) => {
+                      return (
+                        <li key={index}>
+                          <h2>{heading}</h2>
+                          <ProposeImage fluid={proposeimage.fluid} alt={proposeimage.alt} />
+                          <p>{description}</p>
+                        </li>
+                      )
+                    })
+                  }
+                  <ContactLink to="/contact">Cantact Us</ContactLink>
+                </ProposeWrapper>
                 <HeroImage fluid={mainimage.fluid} alt={mainimage.alt} />
-                {mainpropose.map(({
-                  heading,
-                  description,
-                  proposeimage
-                }, index) => {
-                  return (
-                    <ProposeWrapper key={index}>
-                      <h2>{heading}</h2>
-                      <ProposeImage fluid={proposeimage.fluid} alt={proposeimage.alt} />
-                      <p>{description}</p>
-                    </ProposeWrapper>
-                  )
-                })}
-                <ContactButton to="/contact">Cantact Us</ContactButton>
               </div>
             )
           })
         }
-        <LayoutImage />
+        <AdditionalImage />
       </Main>
     </>
   )
@@ -186,7 +236,7 @@ export const query = graphql`
       mainimage {
         title
         alt
-        fluid(maxHeight: 200, maxWidth: 200) {
+        fluid(maxHeight: 800, maxWidth: 800) {
           ...GatsbyDatoCmsFluid_tracedSVG
         }
       }

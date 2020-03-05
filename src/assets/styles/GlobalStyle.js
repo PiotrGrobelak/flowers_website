@@ -34,6 +34,7 @@ const GlobalStyle = createGlobalStyle`
   ul {
     padding: 0;
     margin: 0;
+    list-style: none;
   }
   a{
     text-decoration: none;
