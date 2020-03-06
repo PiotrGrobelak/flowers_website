@@ -5,7 +5,6 @@ import backgroundImage from '../assets/images/layout_image_1.png'
 export const MainWrapper = styled.main`
 margin: 1rem;
 margin-top: 4rem;
-height: 100%;
 `;
 
 export const BodyImage = styled.div`
