@@ -31,3 +31,7 @@ flex-direction: row;
 export const BoxShadowPink = css`
 box-shadow: 0px 3px 11px -6px ${({ theme }) => theme.colors.primaryPink};
 `;
+
+export const BoxShadow = css`
+box-shadow: 0px 3px 10px 3px rgba(0, 0, 0, 0.25);
+`;
