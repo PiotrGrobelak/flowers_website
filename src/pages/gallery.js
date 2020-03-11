@@ -1,6 +1,8 @@
-import React from "react"
+import React, { useState, useCallback } from "react"
 import styled from 'styled-components';
 import Image from 'gatsby-image'
+import Carousel, { Modal, ModalGateway } from 'react-images';
+
 
 const Main = styled.main`
 margin: 0 auto;
@@ -15,7 +17,6 @@ align-items: center;
 const GalleryList = styled.ul`
 display: grid;
 grid-template-columns: repeat(3, 300px);
-/* grid-template-rows: repeat(300px); */
 grid-gap: 1rem;
 li{
     transition: .5s ease-in-out;
@@ -36,7 +37,23 @@ object-fit: contain;
 
 
 const GalleryPage = ({ data }) => {
+    const [modalIsOpen, setModalIsOpen] = useState(false)
+    const [selectedImageIndex, setSelectedImageIndex] = useState(0)
+    const [selectedGalleryIndex, setSelectefGalleryIndex] = useState(0);
     const { content, gallery: { nodes } } = data;
+    const { galleryassets } = nodes[selectedGalleryIndex];
+
+    const handleToggleModal = useCallback((imageIndex, galleryIndex) => {
+        setModalIsOpen(true)
+        setSelectedImageIndex(imageIndex)
+        setSelectefGalleryIndex(galleryIndex)
+    }, [])
+
+    const closeLightbox = () => {
+        setModalIsOpen(false)
+        setSelectedImageIndex(0)
+    }
+
     return (
         <>
             <Main>
@@ -45,15 +62,24 @@ const GalleryPage = ({ data }) => {
                     <p>{content.description}</p>
                 </header>
                 <div>
-                    {nodes.map(({ title, galleryassets }) => {
+                    {nodes.map(({ title, galleryassets }, galleryIndex) => {
                         return (
                             <div key={title}>
                                 <h3>{title}</h3>
                                 <GalleryList >
-                                    {galleryassets.map((item, index) => {
+                                    {galleryassets.map(({ alt, fluid, url }, imageIndex) => {
                                         return (
-                                            <li key={index}>
-                                                <GalleryImage alt={item.alt} fluid={item.fluid} />
+                                            <li key={imageIndex}>
+
+                                                <a
+                                                    href={url}
+                                                    onClick={e => {
+                                                        e.preventDefault();
+                                                        handleToggleModal(imageIndex, galleryIndex)
+                                                    }}
+                                                >
+                                                    <GalleryImage alt={alt} fluid={fluid} />
+                                                </a>
                                             </li>
                                         )
                                     })}
@@ -61,6 +87,21 @@ const GalleryPage = ({ data }) => {
                             </div>
                         )
                     })}
+                    <ModalGateway >
+                        {modalIsOpen ? (
+                            <Modal onClose={closeLightbox}>
+                                <Carousel
+                                    currentIndex={selectedImageIndex}
+                                    views={
+                                        galleryassets.map(images => ({
+                                            ...images,
+                                            source: images.url,
+                                            caption: images.basename
+                                        }))}
+                                />
+                            </Modal>
+                        ) : null}
+                    </ModalGateway>
                 </div>
             </Main>
         </>
@@ -84,7 +125,9 @@ export const query = graphql`
           title
           galleryassets {
             alt
-            fluid(maxWidth: 200, maxHeight: 100) {
+            url
+            basename
+            fluid(maxWidth: 400, maxHeight: 300, imgixParams: {q: 100} ) {
                 ...GatsbyDatoCmsFluid_tracedSVG
             }
           }
