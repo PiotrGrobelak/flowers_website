@@ -176,11 +176,6 @@ margin-bottom: -2rem;
 }
 `;
 
-
-
-
-
-
 const IndexPage = ({ data }) => {
   const { allDatoCmsMainpage: { nodes } } = data;
   return (
@@ -260,7 +255,7 @@ IndexPage.propTypes = {
   }),
 }
 
-
+export default IndexPage
 
 export const query = graphql`
 {
@@ -292,4 +287,3 @@ export const query = graphql`
 }
 `;
 
-export default IndexPage

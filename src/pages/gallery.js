@@ -2,6 +2,7 @@ import React, { useState, useCallback } from "react"
 import styled from 'styled-components';
 import Image from 'gatsby-image'
 import Carousel, { Modal, ModalGateway } from 'react-images';
+import PropTypes from 'prop-types'
 
 
 const Main = styled.main`
@@ -18,14 +19,13 @@ const GalleryList = styled.ul`
 display: grid;
 grid-template-columns: repeat(3, 300px);
 grid-gap: 1rem;
-li{
-    transition: .5s ease-in-out;
-    :hover{
-    z-index: 10;
-    transform: scale(1.1)
+    li{
+        transition: .5s ease-in-out;
+        :hover{
+        z-index: 10;
+        transform: scale(1.1)
+    }
 }
-}
-
 `;
 
 const GalleryImage = styled(Image)`
@@ -53,7 +53,7 @@ const GalleryPage = ({ data }) => {
         setModalIsOpen(false)
         setSelectedImageIndex(0)
     }
-
+    console.log(nodes)
     return (
         <>
             <Main>
@@ -70,7 +70,6 @@ const GalleryPage = ({ data }) => {
                                     {galleryassets.map(({ alt, fluid, url }, imageIndex) => {
                                         return (
                                             <li key={imageIndex}>
-
                                                 <a
                                                     href={url}
                                                     onClick={e => {
@@ -91,6 +90,7 @@ const GalleryPage = ({ data }) => {
                         {modalIsOpen ? (
                             <Modal onClose={closeLightbox}>
                                 <Carousel
+                                    // styles={customStyles}
                                     currentIndex={selectedImageIndex}
                                     views={
                                         galleryassets.map(images => ({
@@ -105,9 +105,27 @@ const GalleryPage = ({ data }) => {
                 </div>
             </Main>
         </>
-
-
     )
+}
+
+GalleryPage.propTypes = {
+    data: PropTypes.shape({
+        content: PropTypes.shape({
+            title: PropTypes.string.isRequired,
+            description: PropTypes.string.isRequired
+        }),
+        gallery: PropTypes.shape({
+            nodes: PropTypes.arrayOf(PropTypes.shape({
+                title: PropTypes.string.isRequired,
+                galleryassets: PropTypes.arrayOf(PropTypes.shape({
+                    alt: PropTypes.string.isRequired,
+                    url: PropTypes.string.isRequired,
+                    basename: PropTypes.string.isRequired,
+                    fluid: PropTypes.object.isRequired
+                }))
+            }))
+        })
+    })
 }
 
 
@@ -127,7 +145,7 @@ export const query = graphql`
             alt
             url
             basename
-            fluid(maxWidth: 400, maxHeight: 300, imgixParams: {q: 100} ) {
+            fluid(maxWidth: 600, maxHeight: 500, imgixParams: {q: 100} ) {
                 ...GatsbyDatoCmsFluid_tracedSVG
             }
           }

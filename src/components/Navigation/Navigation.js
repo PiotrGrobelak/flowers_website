@@ -49,6 +49,13 @@ const Navigation = () => {
                 <NavigationList >
                     <NavigationItem>
                         <NavigationLink
+                            to="/"
+                            onClick={() => toggleNavigation()}
+                        >Home
+                    </NavigationLink>
+                    </NavigationItem>
+                    <NavigationItem>
+                        <NavigationLink
                             to="/about"
                             onClick={() => toggleNavigation()}
                         >About
