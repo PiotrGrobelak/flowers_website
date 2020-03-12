@@ -122,10 +122,10 @@ background-image: url(${backgroundImage});
 background-repeat: no-repeat;
 background-size: 100%;
 @media (min-width: ${({ theme }) => theme.responsive.desktop}) {
-  left: -2%;
-  bottom: 2%;
-  height: 240px;
-  width: 240px;
+    left: -2%;
+    bottom: 2%;
+    height: 240px;
+    width: 240px;
 }
 `;
 
@@ -196,7 +196,7 @@ const GalleryPage = ({ data }) => {
                         ) : null}
                     </ModalGateway>
                 </GalleryWrapper>
-                <ContactLink>Contact Us</ContactLink>
+                <ContactLink to="/contact">Contact Us</ContactLink>
             </Main>
             <AdditionalImage />
         </>
