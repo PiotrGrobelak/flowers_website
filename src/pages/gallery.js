@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from "react"
 import { Link } from "gatsby";
 import styled from 'styled-components';
-import { FlexColumn, BoxShadow, StyledLink } from "../assets/styles/Mixins";
+import { FlexColumn, StyledLink, BoxProperty } from "../assets/styles/Mixins";
 import Image from 'gatsby-image'
 import Carousel, { Modal, ModalGateway } from 'react-images';
 import PropTypes from 'prop-types'
@@ -84,9 +84,7 @@ margin-bottom: 4rem;
 }
     li{
         height: 250px;
-        border: 3px solid ${({ theme }) => theme.colors.primaryViolet};
-        border-radius: 25px;
-        ${BoxShadow};
+        ${BoxProperty}
         overflow: hidden;
     }
 `;
