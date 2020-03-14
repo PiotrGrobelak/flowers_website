@@ -28,8 +28,8 @@ display: flex;
 flex-direction: row;
 `;
 
-export const BoxShadowPink = css`
-box-shadow: 0px 3px 11px -6px ${({ theme }) => theme.colors.primaryPink};
+export const SecondaryBoxShadow = css`
+box-shadow: 2px 1px 15px -2px ${({ theme }) => theme.colors.secondaryViolet};
 `;
 
 export const BoxShadow = css`
