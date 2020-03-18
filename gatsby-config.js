@@ -11,6 +11,40 @@ module.exports = {
     `gatsby-plugin-layout`,
     `gatsby-plugin-styled-components`,
     {
+      resolve: `gatsby-plugin-modal-routing`,
+      options: {
+        appElement: '#___gatsby',
+        modalProps: {
+          closeTimeoutMS: 500,
+          style: {
+            overlay: {
+              position: `fixed`,
+              padding: 200,
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: `rgba(0, 0, 0, 0.35)`,
+            },
+            content: {
+              margin: 100,
+              // position: `absolute`,
+              // border: `none`,
+              // background: `none`,
+              // padding: 200,
+              // top: 0,
+              // bottom: 0,
+              // right: 0,
+              // left: 0,
+              overflow: `auto`,
+              // WebkitOverflowScrolling: `touch`,
+            },
+          },
+          // contentLabel: `Modal`
+        }
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
