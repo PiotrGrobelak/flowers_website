@@ -20,8 +20,8 @@ const Main = styled.main`
 const ProductList = styled.div`
 ${FlexRow};
 justify-content: space-around;
-height: 500px;
-width: 500px;
+/* height: 500px; */
+/* width: 500px; */
 `;
 
 const Product = styled.li`
@@ -33,6 +33,14 @@ align-items: center;
 const StyledImage = styled(Image)`
 height: 100%;
 width: 150px;
+`;
+
+const StyledButton = styled(Link)`
+height: 50px;
+width: 100%;
+line-height: 2rem;
+text-align: center;
+background-color: gray;
 `;
 
 const OfferPage = ({ data, location }) => {
@@ -54,7 +62,7 @@ const OfferPage = ({ data, location }) => {
                                 fluid={productimage.fluid}
                             />
                             <p>{productprice}</p>
-                            <Link
+                            <StyledButton
                                 to={`/offer/${slugifiedTitle}`}
                                 state={{
                                     modal: true,
@@ -62,7 +70,7 @@ const OfferPage = ({ data, location }) => {
                                 }}
                             >
                                 More
-                                        </Link>
+                                        </StyledButton>
                         </Product>
                     )
                 })}
