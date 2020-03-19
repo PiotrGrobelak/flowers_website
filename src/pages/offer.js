@@ -6,7 +6,6 @@ import slugify from 'slugify';
 import { FlexRow, FlexColumn } from "../assets/styles/Mixins"
 import "../assets/styles/modal.css";
 
-
 const Main = styled.main`
 	margin: 0 auto;
 	margin-bottom: 8rem;
@@ -43,10 +42,9 @@ text-align: center;
 background-color: gray;
 `;
 
-const OfferPage = ({ data, location }) => {
+const OfferPage = ({ data }) => {
     const { allDatoCmsProduct: { nodes } } = data;
     return (
-
         <Main>
             <h1>Welcome to OfferPage</h1>
             <p>Work in progress</p>
@@ -66,11 +64,10 @@ const OfferPage = ({ data, location }) => {
                                 to={`/offer/${slugifiedTitle}`}
                                 state={{
                                     modal: true,
-                                    noScroll: true
                                 }}
                             >
                                 More
-                                        </StyledButton>
+                            </StyledButton>
                         </Product>
                     )
                 })}

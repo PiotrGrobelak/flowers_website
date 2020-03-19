@@ -31,14 +31,9 @@ height: 100%;
 width: 150px;
 `;
 
-const Product = ({ data, location }) => {
-    // console.log(data)
-    // const dataProducts = useStaticQuery(queryProducts)
-    // console.log(data)
-    // console.log(location)
-    // console.log(products)
+const Product = ({ data }) => {
     const products = data.allDatoCmsProduct.nodes;
-    console.log(products)
+
     const findCurrentIndex = () => {
         let index;
         index = products.findIndex(product => {
@@ -46,25 +41,21 @@ const Product = ({ data, location }) => {
         })
         return index
     }
-    // const some = findCurrentIndex()
-    // console.log(some)
-    // console.log(products.length)
+
     const nextProduct = (e) => {
         if (e) {
             e.stopPropagation()
         }
         const currentIndex = findCurrentIndex()
         if (currentIndex || currentIndex === 0) {
-            let nextPost
-            // Wrap around if at end.
+            let nextProduct
             if (currentIndex + 1 === products.length) {
-                nextPost = products[0]
+                nextProduct = products[0]
             } else {
-                nextPost = products[currentIndex + 1]
+                nextProduct = products[currentIndex + 1]
             }
-            const slugifiedTitle = slugify(nextPost.productname, { lower: true });
-            navigate(`/offer/${slugifiedTitle}/`, { state: { modal: true } })
-            console.log(slugifiedTitle)
+            const slugifiedPath = slugify(nextProduct.productname, { lower: true });
+            navigate(`/offer/${slugifiedPath}/`, { state: { modal: true } })
         }
     }
 
@@ -74,21 +65,16 @@ const Product = ({ data, location }) => {
         }
         const currentIndex = findCurrentIndex()
         if (currentIndex || currentIndex === 0) {
-            let previousPost
-            // Wrap around if at start.
+            let previousProduct
             if (currentIndex === 0) {
-                previousPost = products.slice(-1)[0]
+                previousProduct = products.slice(-1)[0]
             } else {
-                previousPost = products[currentIndex - 1]
+                previousProduct = products[currentIndex - 1]
             }
-            const slugifiedTitle = slugify(previousPost.productname, { lower: true });
-            navigate(`/offer/${slugifiedTitle}/`, { state: { modal: true } })
+            const slugifiedPath = slugify(previousProduct.productname, { lower: true });
+            navigate(`/offer/${slugifiedPath}/`, { state: { modal: true } })
         }
     }
-
-
-
-
     const {
         productname,
         productimage,

@@ -37,10 +37,10 @@ module.exports = {
               // right: 0,
               // left: 0,
               overflow: `auto`,
-              // WebkitOverflowScrolling: `touch`,
+              WebkitOverflowScrolling: `touch`,
             },
           },
-          // contentLabel: `Modal`
+          contentLabel: `Modal`
         }
       }
     },
