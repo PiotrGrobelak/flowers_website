@@ -5,6 +5,7 @@ import Image from 'gatsby-image'
 import slugify from 'slugify';
 import { FlexRow, FlexColumn } from "../assets/styles/Mixins"
 import "../assets/styles/modal.css";
+import { Button } from "../assets/styles/Mixins";
 
 const Main = styled.main`
 	margin: 0 auto;
@@ -35,15 +36,18 @@ width: 150px;
 `;
 
 const StyledButton = styled(Link)`
-height: 50px;
+${Button}
+/* height: 50px;
 width: 100%;
 line-height: 2rem;
 text-align: center;
-background-color: gray;
+background-color: gray; */
 `;
 
-const OfferPage = ({ data }) => {
+const OfferPage = ({ data, location }) => {
     const { allDatoCmsProduct: { nodes } } = data;
+    console.log(location)
+
     return (
         <Main>
             <h1>Welcome to OfferPage</h1>

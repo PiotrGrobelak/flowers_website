@@ -1,6 +1,6 @@
 import { css } from 'styled-components'
 
-export const StyledLink = css`
+export const Button = css`
 padding: 0.5rem 1rem;
 border-radius: 15px;
 background-color: ${({ theme }) => theme.colors.secondaryViolet};
@@ -30,4 +30,10 @@ flex-direction: row;
 
 export const BoxShadowPink = css`
 box-shadow: 0px 3px 11px -6px ${({ theme }) => theme.colors.primaryPink};
+`;
+
+export const secondaryFont = css`
+font-family: ${({ theme }) => theme.fonts.secondaryFont};
+font-style: italic;
+letter-spacing: 2px;
 `;

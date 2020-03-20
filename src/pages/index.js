@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import SEO from "../components/seo";
 import styled from "styled-components"
 import { Link } from 'gatsby'
-import { StyledLink, FlexColumn, BoxShadowPink } from '../assets/styles/Mixins';
+import { Button, FlexColumn, BoxShadowPink, secondaryFont } from '../assets/styles/Mixins';
 import backgroundImage from "../assets/images/layout_image_1.png"
 import Image from "gatsby-image";
 
@@ -29,9 +29,8 @@ const Header = styled.header`
 `;
 
 const Title = styled.h1`
-  font-family: 'Princess Sofia';
-  font-style: italic;
   font-size: 2.6rem;
+  ${secondaryFont};
   letter-spacing: 10px;
   @media (min-width: ${({ theme }) => theme.responsive.desktop}) {
   font-size: 4rem;
@@ -60,7 +59,7 @@ text-align: center;
 `;
 
 const GalleryLink = styled(Link)`
-  ${StyledLink}
+  ${Button}
   align-self: flex-end;
   margin-top: 2rem;
   @media (min-width: ${({ theme }) => theme.responsive.desktop}) {
@@ -165,7 +164,7 @@ border-bottom: 1px solid ${({ theme }) => theme.colors.primaryPink};
 `;
 
 const ContactLink = styled(Link)`
-${StyledLink}
+${Button}
 align-self: center;
 margin-top: 1rem;
 margin-bottom: -2rem;
