@@ -4,13 +4,12 @@ import { graphql, Link } from 'gatsby';
 import Image from 'gatsby-image'
 import slugify from 'slugify';
 import { FlexRow, FlexColumn } from "../assets/styles/Mixins"
-import "../assets/styles/modal.css";
 import { Button } from "../assets/styles/Mixins";
 
 const Main = styled.main`
 	margin: 0 auto;
 	margin-bottom: 8rem;
-	max-width: 1400px;
+	max-width: 1200px;
     height: 100vh;
     ${FlexColumn};
     /* align-items: center; */
@@ -33,6 +32,9 @@ align-items: center;
 const StyledImage = styled(Image)`
 height: 100%;
 width: 150px;
+@media (min-width: ${({ theme }) => theme.responsive.lg}) {
+width: 120px;
+}
 `;
 
 const StyledButton = styled(Link)`
@@ -46,7 +48,6 @@ background-color: gray; */
 
 const OfferPage = ({ data, location }) => {
     const { allDatoCmsProduct: { nodes } } = data;
-    console.log(location)
 
     return (
         <Main>

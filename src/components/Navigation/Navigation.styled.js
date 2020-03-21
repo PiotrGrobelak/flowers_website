@@ -31,7 +31,7 @@ border-top-left-radius:10px;
 box-shadow: 0px 3px 10px 3px rgba(0, 0, 0, 0.25);
 transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
 transition: transform 0.3s ease-in-out;
-@media (min-width: ${({ theme }) => theme.responsive.desktop}) {
+@media (min-width: ${({ theme }) => theme.responsive.lg}) {
     flex-direction: row;
     justify-content: space-around;
     position: relative;
@@ -49,18 +49,16 @@ display: flex;
 flex-direction: column;
 list-style: none;
 align-items:center;
-@media (min-width: ${({ theme }) => theme.responsive.desktop}) {
+@media (min-width: ${({ theme }) => theme.responsive.lg}) {
     flex-direction: row;
     }
 `;
 
 export const NavigationItem = styled.li`
-font-weight: 600;
-font-size: 1rem;
 padding: 1rem;
 :nth-last-child(1){
     margin-bottom: 1rem;
-    @media (min-width: ${({ theme }) => theme.responsive.desktop}) {
+    @media (min-width: ${({ theme }) => theme.responsive.lg}) {
     margin-bottom: 0;
     }
 }
@@ -71,7 +69,7 @@ padding: 0.2rem;
 border-top: 2px solid transparent;
 border-bottom: 2px solid transparent;
 transition:  0.3s ease-in-out;
-font-weight: 700;
+font-weight: 600;
 letter-spacing: 1px;
 color: ${({ theme }) => theme.colors.secondaryViolet};
 :hover{
@@ -90,8 +88,7 @@ background-color:  #9875B4;
 border-radius: 25px;
 box-shadow: 0px 2px 15px -1px rgba(0, 0, 0, 0.25);
 font-weight: 600;
-color: #fff;
-/* z-index: 999; */
+color: ${({ theme }) => theme.colors.primaryWhite};
 `;
 
 export const ContactNumber = styled.span`
@@ -106,10 +103,13 @@ font-size: 1rem;
 
 export const Logo = styled.img`
 margin-top: 3rem;
-height: 80px;
-@media (min-width: ${({ theme }) => theme.responsive.desktop}) {
+height: 60px;
+@media (min-width: ${({ theme }) => theme.responsive.lg}) {
     margin-top: 0;
     }
+@media (min-width: ${({ theme }) => theme.responsive.xl}) {
+    height: 80;
+}
 `;
 
 export const LogoMobile = styled.img`
@@ -117,7 +117,7 @@ position: absolute;
 top: 10%;
 left: 25%;
 height: 50px;
-@media (min-width: ${({ theme }) => theme.responsive.desktop}) {
+@media (min-width: ${({ theme }) => theme.responsive.lg}) {
     display: none;
     }
 `;

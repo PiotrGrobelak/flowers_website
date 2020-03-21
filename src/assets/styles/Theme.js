@@ -12,7 +12,11 @@ export const theme = {
     },
     responsive: {
         mobile: '576px',
-        desktop: `1200px`
+        xs: '480px',
+        sm: '768px',
+        md: '992px',
+        lg: '1200px',
+        xl: `1400px`
     },
     primaryHover: '#343078',
 

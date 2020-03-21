@@ -2,7 +2,8 @@ import React, { useState, useCallback } from "react"
 import styled from 'styled-components';
 import Image from 'gatsby-image'
 import Carousel, { Modal, ModalGateway } from 'react-images';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
 
 
 const Main = styled.main`

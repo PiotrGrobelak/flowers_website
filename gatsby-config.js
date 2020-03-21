@@ -14,6 +14,7 @@ module.exports = {
       resolve: `gatsby-plugin-modal-routing`,
       options: {
         modalProps: {
+          closeTimeoutMS: 500,
           style: {
             overlay: {
               position: `fixed`,

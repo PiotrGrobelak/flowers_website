@@ -14,7 +14,7 @@ import Image from "gatsby-image";
 const Main = styled.main`
 margin: 0 auto;
 margin-bottom: 8rem;
-max-width: 1400px;
+max-width: 1200px;
 `;
 
 const Header = styled.header`
@@ -23,7 +23,7 @@ const Header = styled.header`
   max-width: 90%;
   color: ${({ theme }) => theme.colors.thirdaryViolet};
   text-align: right;
-  @media (min-width: ${({ theme }) => theme.responsive.desktop}) {
+  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   width: 70%;
 }
 `;
@@ -32,7 +32,7 @@ const Title = styled.h1`
   font-size: 2.6rem;
   ${secondaryFont};
   letter-spacing: 10px;
-  @media (min-width: ${({ theme }) => theme.responsive.desktop}) {
+  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   font-size: 4rem;
 }
 `;
@@ -41,20 +41,22 @@ const Heading = styled.p`
 margin-left: 2rem;
 font-size: 1.2rem;
 font-weight: 600;
-@media (min-width: ${({ theme }) => theme.responsive.desktop}) {
+@media (min-width: ${({ theme }) => theme.responsive.lg}) {
   font-size: 1.4rem;
 }
 `;
 
 const Paragraph = styled.p`
 margin: 2rem -1rem 2rem 1rem;
-font-weight: 600;
 letter-spacing: 1px;
 text-align: center;
-@media (min-width: ${({ theme }) => theme.responsive.desktop}) {
+@media (min-width: ${({ theme }) => theme.responsive.lg}) {
   width: 90%;
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-align: right;
+}
+@media (min-width: ${({ theme }) => theme.responsive.xl}) {
+font-size:1.4rem;
 }
 `;
 
@@ -62,7 +64,7 @@ const GalleryLink = styled(Link)`
   ${Button}
   align-self: flex-end;
   margin-top: 2rem;
-  @media (min-width: ${({ theme }) => theme.responsive.desktop}) {
+  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   margin-right: 2rem;
 }
 `;
@@ -76,12 +78,16 @@ height: 50%;
 object-fit: cover;
 opacity: 0.2;
 z-index: -1;
-@media (min-width: ${({ theme }) => theme.responsive.desktop}) {
-  right: -20%;
-  width: 60%;
+@media (min-width: ${({ theme }) => theme.responsive.lg}) {
+  right: -55%;
+  width: 100%;
   opacity: 0.7;
   height: 100%;
   object-fit: cover;
+}
+@media (min-width: ${({ theme }) => theme.responsive.xl}) {
+  right: -20%;
+  width: 60%;
 }
 `;
 
@@ -95,7 +101,7 @@ transform: rotate(-120deg);
 background-image: url(${backgroundImage});
 background-repeat: no-repeat;
 background-size: 100%;
-@media (min-width: ${({ theme }) => theme.responsive.desktop}) {
+@media (min-width: ${({ theme }) => theme.responsive.lg}) {
   left: -2%;
   bottom: 3%;
   height: 240px;
@@ -108,10 +114,10 @@ const ProposeWrapper = styled.ul`
 ${FlexColumn}
 color: ${({ theme }) => theme.colors.secondaryViolet};
 letter-spacing: 1px;
-@media (min-width: ${({ theme }) => theme.responsive.desktop}) {
+@media (min-width: ${({ theme }) => theme.responsive.lg}) {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(2, 500px);
+  grid-template-columns: repeat(2, 400px);
   grid-template-rows:  1fr;
   grid-gap: 4rem;
   margin-top: 6rem;
@@ -125,9 +131,8 @@ li{
   :nth-child(2){
     margin-top: 2rem;
   }
-  @media (min-width: ${({ theme }) => theme.responsive.desktop}) {
+  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   margin: 1rem;
-  /* margin-top:-2rem; */
   :nth-child(1){
     margin-bottom: 10rem;
   }
@@ -139,17 +144,19 @@ li{
 h2{
   padding-left: 1rem;
   font-size: 1.6rem;
-  @media (min-width: ${({ theme }) => theme.responsive.desktop}) {
-  font-size: 1.8rem;
+  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+  font-size: 1.4rem;
   }
 }
 p{
   margin: 0;
   padding: 0.8rem;
-  font-weight: 600;
-  @media (min-width: ${({ theme }) => theme.responsive.desktop}) {
+  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   padding: 1rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  }
+  @media (min-width: ${({ theme }) => theme.responsive.xl}) {
+  font-size: 1.3rem;
   }
 }
 `;
@@ -158,7 +165,7 @@ const ProposeImage = styled(Image)`
 margin: 0.4rem auto;
 border-top: 1px solid ${({ theme }) => theme.colors.primaryPink};
 border-bottom: 1px solid ${({ theme }) => theme.colors.primaryPink};
-@media (min-width: ${({ theme }) => theme.responsive.desktop}) {
+@media (min-width: ${({ theme }) => theme.responsive.lg}) {
   max-height: 60%;
 }
 `;
@@ -168,7 +175,7 @@ ${Button}
 align-self: center;
 margin-top: 1rem;
 margin-bottom: -2rem;
-@media (min-width: ${({ theme }) => theme.responsive.desktop}) {
+@media (min-width: ${({ theme }) => theme.responsive.lg}) {
   position: absolute;
   left: 15%;
   bottom: 15%;
@@ -188,9 +195,9 @@ const IndexPage = ({ data }) => {
             mainheading,
             mainparagraph,
             mainimage,
-            mainpropose }) => {
+            mainpropose }, index) => {
             return (
-              <div key={id}>
+              <div key={index}>
                 <Header>
                   <Title>{maintitle}</Title>
                   <Heading>{mainheading}</Heading>

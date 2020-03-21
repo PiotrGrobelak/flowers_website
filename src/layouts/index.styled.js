@@ -18,10 +18,13 @@ z-index: -1;
 height: 500px;
 width: 100%;
 transform: rotate(9deg);
-@media (min-width: ${({ theme }) => theme.responsive.desktop}) {
+@media (min-width: ${({ theme }) => theme.responsive.lg}) {
     top: 2%;
     left: -2%;
     background-position: top left ;
+    background-size: 18%;
+}
+@media (min-width: ${({ theme }) => theme.responsive.xl}) {
     background-size: 20%;
 }
 `;
