@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby'
 import Image from 'gatsby-image';
-import { FlexColumn, FlexRow, Button, BoxShadowPink, secondaryFont } from '../../assets/styles/Mixins';
+import { FlexColumn, FlexRow, Button, BoxShadowPink, SecondaryFont } from '../../assets/styles/Mixins';
 import { graphql, navigate } from 'gatsby';
 import slugify from "slugify";
 import { MdClose } from "react-icons/md"
@@ -72,9 +72,8 @@ position: absolute;
 top: 0;
 left: 5%;
 margin: 0;
-${secondaryFont};
+${SecondaryFont};
 font-size: 1.4rem;
-color: ${({ theme }) => theme.colors.secondaryViolet};
 @media (min-width: ${({ theme }) => theme.responsive.lg}) {
     font-size: 1.6rem;
 }
@@ -127,21 +126,18 @@ justify-content: space-around;
     grid-column: 3/ 5;
     grid-row: 2/ 2;
     align-self: flex-end;
-    /* padding-bottom: 1rem; */
 }
 `;
 
 const StyledButton = styled.button`
 ${Button}
 margin: 0.2rem;
-width: 100%;
 font-size: 0.8rem;
 `;
 
 
 const StyledParagraph = styled.p`
 margin: 0;
-letter-spacing: 1px;
 min-height: 320px;
 color: ${({ theme }) => theme.colors.thirdaryViolet};
 letter-spacing: 1px;

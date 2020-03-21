@@ -3,33 +3,59 @@ import styled from 'styled-components';
 import { graphql, Link } from 'gatsby';
 import Image from 'gatsby-image'
 import slugify from 'slugify';
-import { FlexRow, FlexColumn } from "../assets/styles/Mixins"
-import { Button } from "../assets/styles/Mixins";
+import { FlexRow, FlexColumn, BoxShadowPink, SecondaryFont, Button, Price } from "../assets/styles/Mixins"
 
 const Main = styled.main`
-	margin: 0 auto;
-	margin-bottom: 8rem;
+	margin: 0 auto 8rem;
 	max-width: 1200px;
-    height: 100vh;
-    ${FlexColumn};
-    /* align-items: center; */
-    justify-content: center;
+`;
+
+const StyledHeader = styled.header`
+    margin-top: 5rem;
+    padding: 1rem;
+    text-align: right;
+    color: ${({ theme }) => theme.colors.secondaryViolet};
+h1{
+    font-size: 2.6rem;
+    margin-bottom: 3rem;
+}
+p{
+    font-size: 1.2rem;
+}
 `;
 
 const ProductList = styled.div`
-${FlexRow};
-justify-content: space-around;
-/* height: 500px; */
-/* width: 500px; */
+${FlexColumn};
 `;
 
 const Product = styled.li`
-${FlexColumn}
+position: relative;
+${FlexColumn};
 align-items: center;
+margin: 1rem;
+padding:  1rem;
+border-radius: 25px;
+${BoxShadowPink}
+background-color: ${({ theme }) => theme.colors.primaryWhite};
+h3{
+    position:absolute;
+    top: 0;
+    left: 10%;
+    ${SecondaryFont};
+    font-size: 1.6rem;
+}
+span{
+    position:absolute;
+    top: 10%;
+    right: 10%;
+    ${Price};
+}
 `;
 
-
 const StyledImage = styled(Image)`
+position:absolute;
+bottom: 0;
+left: 0;
 height: 100%;
 width: 150px;
 @media (min-width: ${({ theme }) => theme.responsive.lg}) {
@@ -38,21 +64,21 @@ width: 120px;
 `;
 
 const StyledButton = styled(Link)`
-${Button}
-/* height: 50px;
-width: 100%;
-line-height: 2rem;
-text-align: center;
-background-color: gray; */
+position:absolute;
+bottom: 5%;
+left: calc(100 / 25);
+${Button};
 `;
 
-const OfferPage = ({ data, location }) => {
+const OfferPage = ({ data }) => {
     const { allDatoCmsProduct: { nodes } } = data;
 
     return (
         <Main>
-            <h1>Welcome to OfferPage</h1>
-            <p>Work in progress</p>
+            <StyledHeader>
+                <h1>Our Offer</h1>
+                <p>Perfect bouquets for every occasion created by best florists in Your city.</p>
+            </StyledHeader>
             <ProductList>
                 {nodes.map(({ id, productname, productimage, productprice }) => {
                     const slugifiedTitle = slugify(productname, { lower: true });
@@ -60,11 +86,11 @@ const OfferPage = ({ data, location }) => {
                         <Product
                             key={id}
                         >
-                            <h3>{productname}</h3>
                             <StyledImage
                                 fluid={productimage.fluid}
                             />
-                            <p>{productprice}</p>
+                            <h3>{productname}</h3>
+                            <span>{productprice}</span>
                             <StyledButton
                                 to={`/offer/${slugifiedTitle}`}
                                 state={{
@@ -73,6 +99,7 @@ const OfferPage = ({ data, location }) => {
                             >
                                 More
                             </StyledButton>
+
                         </Product>
                     )
                 })}
