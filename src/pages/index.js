@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import SEO from "../components/seo";
 import styled from "styled-components"
 import { Link } from 'gatsby'
-import { Button, FlexColumn, BoxShadowPink, secondaryFont } from '../assets/styles/Mixins';
+import { Button, FlexColumn, BoxShadow, SecondaryFont } from '../assets/styles/Mixins';
 import backgroundImage from "../assets/images/layout_image_1.png"
 import Image from "gatsby-image";
 
@@ -30,7 +30,7 @@ const Header = styled.header`
 
 const Title = styled.h1`
   font-size: 2.6rem;
-  ${secondaryFont};
+  ${SecondaryFont};
   letter-spacing: 10px;
   @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   font-size: 4rem;
@@ -127,7 +127,7 @@ li{
   margin-bottom: 2rem;
   padding: 0.4rem 0;
   border-radius: 25px;
-  ${BoxShadowPink}
+  ${BoxShadow}
   :nth-child(2){
     margin-top: 2rem;
   }

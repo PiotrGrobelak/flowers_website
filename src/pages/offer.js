@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { graphql, Link } from 'gatsby';
 import Image from 'gatsby-image'
 import slugify from 'slugify';
-import { FlexRow, FlexColumn, BoxShadowPink, SecondaryFont, Button, Price } from "../assets/styles/Mixins"
+import { FlexColumn, BoxShadow, SecondaryBoxShadow, SecondaryFont, Button, Price } from "../assets/styles/Mixins"
 
 const Main = styled.main`
 	margin: 0 auto 8rem;
@@ -26,9 +26,13 @@ p{
 
 const ProductList = styled.div`
 ${FlexColumn};
+justify-content: center;
 @media (min-width: ${({ theme }) => theme.responsive.lg}) {
 display: grid;
-grid-template-columns: repeat(3, 300px);
+grid-template-columns: repeat(4, 250px);
+grid-gap: 2rem;
+margin: 3rem 0;
+padding: 4rem 0;
 }
 `;
 
@@ -39,13 +43,22 @@ align-items: center;
 margin: 1rem;
 padding:  1rem;
 border-radius: 25px;
-${BoxShadowPink}
+${BoxShadow};
+
 background-color: ${({ theme }) => theme.colors.primaryWhite};
 @media (min-width: ${({ theme }) => theme.responsive.lg}) {
-    transition: transform .5s ease-in-out;
+    margin: 0;
+    ${BoxShadow};
+    width: 100%;
+    border: 1px solid transparent;
+    transition: all .5s ease-in-out;
     :hover{
+    border: 1px solid ${({ theme }) => theme.colors.secondaryViolet};
+    ${SecondaryBoxShadow};
+    z-index: 10;
     transform: scale(1.1);
     }
+
 }
 h3{
     position:absolute;
@@ -79,6 +92,7 @@ bottom: 5%;
 left: calc(100 / 25);
 ${Button};
 `;
+
 
 const OfferPage = ({ data }) => {
     const { allDatoCmsProduct: { nodes } } = data;

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby'
 import Image from 'gatsby-image';
-import { FlexColumn, FlexRow, Button, BoxShadowPink, SecondaryFont } from '../../assets/styles/Mixins';
+import { FlexColumn, FlexRow, Button, BoxShadow, SecondaryFont } from '../../assets/styles/Mixins';
 import { graphql, navigate } from 'gatsby';
 import slugify from "slugify";
 import { MdClose } from "react-icons/md"
@@ -23,7 +23,7 @@ right: 6%;
 bottom: 5%;
 padding: 1rem;
 border-radius: 25px;
-${BoxShadowPink}
+${BoxShadow}
 background-color: ${({ theme }) => theme.colors.primaryWhite};
 overflow-y: scroll;
 @media (min-width: ${({ theme }) => theme.responsive.lg}) {
