@@ -149,10 +149,6 @@ letter-spacing: 1px;
 }
 `;
 
-
-
-
-
 const Product = ({ data }) => {
     const products = data.allDatoCmsProduct.nodes;
 

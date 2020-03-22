@@ -26,6 +26,10 @@ p{
 
 const ProductList = styled.div`
 ${FlexColumn};
+@media (min-width: ${({ theme }) => theme.responsive.lg}) {
+display: grid;
+grid-template-columns: repeat(3, 300px);
+}
 `;
 
 const Product = styled.li`
@@ -37,6 +41,12 @@ padding:  1rem;
 border-radius: 25px;
 ${BoxShadowPink}
 background-color: ${({ theme }) => theme.colors.primaryWhite};
+@media (min-width: ${({ theme }) => theme.responsive.lg}) {
+    transition: transform .5s ease-in-out;
+    :hover{
+    transform: scale(1.1);
+    }
+}
 h3{
     position:absolute;
     top: 0;
