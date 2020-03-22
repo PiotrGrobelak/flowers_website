@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import SEO from "../components/seo";
 import styled from "styled-components"
 import { Link } from 'gatsby'
-import { StyledLink, FlexColumn, BoxShadowPink } from '../assets/styles/Mixins';
+import { StyledLink, FlexColumn, BoxShadow } from '../assets/styles/Mixins';
 import backgroundImage from "../assets/images/layout_image_1.png"
 import Image from "gatsby-image";
 
@@ -122,7 +122,7 @@ li{
   margin-bottom: 2rem;
   padding: 0.4rem 0;
   border-radius: 25px;
-  ${BoxShadowPink}
+  ${BoxShadow}
   :nth-child(2){
     margin-top: 2rem;
   }
@@ -175,11 +175,6 @@ margin-bottom: -2rem;
   bottom: 15%;
 }
 `;
-
-
-
-
-
 
 const IndexPage = ({ data }) => {
   const { allDatoCmsMainpage: { nodes } } = data;
@@ -260,7 +255,7 @@ IndexPage.propTypes = {
   }),
 }
 
-
+export default IndexPage
 
 export const query = graphql`
 {
@@ -292,4 +287,3 @@ export const query = graphql`
 }
 `;
 
-export default IndexPage
