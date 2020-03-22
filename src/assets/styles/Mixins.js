@@ -1,7 +1,7 @@
 import { css } from 'styled-components'
 
 export const StyledLink = css`
-padding: 0.5rem 1rem;
+padding: 0.5rem 1.2rem;
 border-radius: 15px;
 background-color: ${({ theme }) => theme.colors.secondaryViolet};
 box-shadow: 0px 2px 15px -1px rgba(0, 0, 0, 0.25);
@@ -28,6 +28,16 @@ display: flex;
 flex-direction: row;
 `;
 
-export const BoxShadowPink = css`
-box-shadow: 0px 3px 11px -6px ${({ theme }) => theme.colors.primaryPink};
+export const SecondaryBoxShadow = css`
+box-shadow: 2px 1px 15px -2px ${({ theme }) => theme.colors.secondaryViolet};
+`;
+
+export const BoxShadow = css`
+box-shadow: 0px 3px 10px 3px rgba(0, 0, 0, 0.30);
+`;
+
+export const BoxProperty = css`
+border: 3px solid ${({ theme }) => theme.colors.primaryViolet};
+border-radius: 25px;
+box-shadow: 0px 3px 10px 3px rgba(0, 0, 0, 0.25);
 `;
