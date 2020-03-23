@@ -11,7 +11,7 @@ import secondLayoutImage from "../assets/images/layout_image_3.png";
 const Main = styled.main`
 margin: 0 auto;
 margin-bottom: 8rem;
-max-width: 1400px;
+max-width: 1200px;
 ${FlexColumn}
 align-items: center;
 color: ${({ theme }) => theme.colors.thirdaryViolet};

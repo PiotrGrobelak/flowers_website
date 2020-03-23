@@ -1,6 +1,6 @@
 
 import styled from "styled-components";
-import backgroundImage from '../assets/images/layout_image_1.png'
+import backgroundImage from '../assets/images/layout_image_1.png';
 
 export const MainWrapper = styled.main`
 margin: 1rem;
@@ -28,3 +28,5 @@ transform: rotate(9deg);
     background-size: 20%;
 }
 `;
+
+

@@ -5,9 +5,11 @@ import Image from 'gatsby-image'
 import slugify from 'slugify';
 import { FlexColumn, BoxShadow, SecondaryBoxShadow, SecondaryFont, Button, Price } from "../assets/styles/Mixins"
 
+
 const Main = styled.main`
-	margin: 0 auto 8rem;
+	margin: 0 auto ;
 	max-width: 1200px;
+    /* height: 100%; */
 `;
 
 const StyledHeader = styled.header`
@@ -30,7 +32,7 @@ justify-content: center;
 @media (min-width: ${({ theme }) => theme.responsive.lg}) {
 display: grid;
 grid-template-columns: repeat(4, 250px);
-grid-gap: 2rem;
+grid-gap: 0.2rem;
 margin: 3rem 0;
 padding: 4rem 0;
 }
@@ -48,15 +50,14 @@ ${BoxShadow};
 background-color: ${({ theme }) => theme.colors.primaryWhite};
 @media (min-width: ${({ theme }) => theme.responsive.lg}) {
     margin: 0;
-    ${BoxShadow};
+    /* ${BoxShadow}; */
+    box-shadow: none;
     width: 100%;
     border: 1px solid transparent;
-    transition: all .5s ease-in-out;
+    transition: border .5s ease-in-out, box-shadow 1s ease-in-out;
     :hover{
     border: 1px solid ${({ theme }) => theme.colors.secondaryViolet};
     ${SecondaryBoxShadow};
-    z-index: 10;
-    transform: scale(1.1);
     }
 
 }

@@ -76,7 +76,7 @@ right: 0;
 width: 100%;
 height: 50%;
 object-fit: cover;
-opacity: 0.2;
+opacity: 0.6;
 z-index: -1;
 @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   right: -55%;
