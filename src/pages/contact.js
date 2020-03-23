@@ -27,7 +27,7 @@ position: relative;
         background-image: url(${firstLayoutImage});
         background-repeat: no-repeat;
         background-size: 70%;
-        opacity: 0.4;
+        /* opacity: 0.8; */
         z-index: -1;
     }
 `;
@@ -43,20 +43,25 @@ ${FlexColumn}
 ${BoxProperty}
 border-width: 2px;
 position: relative;
-overflow: hidden;
-    ::before{
+background-color: ${({ theme }) => theme.colors.secondaryWhite};
+    ::after{
         content: "";
         position: absolute;
-        top: 70%;
-        right: -20%;
-        height: 100%;
+        top: 80%;
+        right: -40%;
+        height: 200px;
         width: 100%;
         background-image: url(${secondLayoutImage});
         background-repeat: no-repeat;
         background-size: 70%;
-        opacity: 0.4;
         z-index: -1;
     }
+p:first-child{
+    margin: 1rem auto;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+}
 `;
 
 const StyledParagraph = styled.p`
@@ -65,7 +70,7 @@ padding: 0 1rem 0;
 ${FlexColumn};
 color: ${({ theme }) => theme.colors.thirdaryViolet};
 :nth-child(3){
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 `;
 
@@ -73,8 +78,9 @@ const StyledInput = styled.input`
     display: block;
     padding: 0.2rem 0.4rem;
     border: 2px solid ${({ theme }) => theme.colors.primaryViolet};
-    border-radius: 20px;
+    border-radius: 25px;
     background: none;
+    /* ${SecondaryBoxShadow}; */
     font-size: 1rem;
     height: ${({ as }) => as ? '150px' : 'auto'};
     transition: all .3s ease-in-out;
@@ -93,8 +99,15 @@ const StyledLabel = styled.label`
 `;
 
 const StyledButton = styled.button`
-${Button}
-margin: 0 auto 1rem;
+    ${Button}
+    margin: 0 auto 1rem;
+`;
+
+const StyledSuccess = styled.div`
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+    height: 20px;
+    color: ${({ theme }) => theme.colors.primaryGreen};
 `;
 
 const StyledError = styled.span`
@@ -151,6 +164,7 @@ const ContactPage = () => {
                     status
                 }) => (
                         <StyledForm onSubmit={handleSubmit}>
+                            <p>Say Hello!</p>
                             <StyledParagraph>
                                 <StyledLabel htmlFor="name">Name</StyledLabel>
                                 <StyledInput
@@ -196,13 +210,13 @@ const ContactPage = () => {
                                     <ErrorMessage name="message" render={msg => msg} />
                                 </StyledError>
                             </StyledParagraph>
-                            <div>{isSubmitting ? 'message sent' : ''}</div>
+                            <StyledSuccess>{isSubmitting ? 'Message sent' : ''}</StyledSuccess>
                             <StyledButton
                                 type="submit"
                                 disabled={isSubmitting}
                             >
                                 Send message
-                        </StyledButton>
+                            </StyledButton>
                         </StyledForm>
                     )}
             </Formik>

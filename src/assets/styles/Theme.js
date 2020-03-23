@@ -9,7 +9,8 @@ export const theme = {
         secondaryViolet: `#945bab`,
         thirdaryViolet: `#5B388B`,
         primaryPink: `#EF689F`,
-        primaryRed: `#DC143C`
+        primaryRed: `#DC143C`,
+        primaryGreen: `#4BB543`
     },
     responsive: {
         mobile: '576px',

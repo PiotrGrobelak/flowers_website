@@ -71,11 +71,11 @@ const GalleryLink = styled(Link)`
 
 const HeroImage = styled(Image)`
 position: absolute !important;
-top: 10%;
+top: 15%;
 right: 0;
 width: 100%;
-height: 50%;
-object-fit: cover;
+height: 40%;
+object-fit: contain;
 opacity: 0.6;
 z-index: -1;
 @media (min-width: ${({ theme }) => theme.responsive.lg}) {
@@ -129,6 +129,7 @@ li{
   padding: 0.4rem 0;
   border-radius: 25px;
   ${BoxShadow}
+  background-color: ${({ theme }) => theme.colors.secondaryWhite};
   :nth-child(2){
     margin-top: 2rem;
   }
