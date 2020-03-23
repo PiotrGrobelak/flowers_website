@@ -4,7 +4,8 @@ import PropTypes from 'prop-types'
 import SEO from "../components/seo";
 import styled from "styled-components"
 import { Link } from 'gatsby'
-import { Button, FlexColumn, BoxShadow, SecondaryFont } from '../assets/styles/Mixins';
+import { FlexColumn, BoxShadow, SecondaryFont } from '../assets/styles/Mixins';
+import { Button } from "../components/Button/Button";
 import backgroundImage from "../assets/images/layout_image_1.png"
 import Image from "gatsby-image";
 

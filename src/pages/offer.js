@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import { graphql, Link } from 'gatsby';
 import Image from 'gatsby-image'
 import slugify from 'slugify';
-import { FlexColumn, BoxShadow, SecondaryBoxShadow, SecondaryFont, Button, Price } from "../assets/styles/Mixins"
+import { FlexColumn, BoxShadow, SecondaryBoxShadow, SecondaryFont, Price } from "../assets/styles/Mixins"
+import { Button } from "../components/Button/Button";
 import firstLayoutImage from "../assets/images/layout_image_4.png";
 import secondLayoutImage from "../assets/images/layout_image_3.png";
 

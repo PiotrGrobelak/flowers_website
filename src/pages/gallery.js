@@ -1,7 +1,8 @@
 import React, { useState, useCallback } from "react"
 import { Link } from "gatsby";
 import styled from 'styled-components';
-import { FlexColumn, Button, BoxProperty, SecondaryFont } from "../assets/styles/Mixins";
+import { FlexColumn, BoxProperty, SecondaryFont } from "../assets/styles/Mixins";
+import { Button } from "../components/Button/Button";
 import Image from 'gatsby-image'
 import Carousel, { Modal, ModalGateway } from 'react-images';
 import { graphql } from 'gatsby';
