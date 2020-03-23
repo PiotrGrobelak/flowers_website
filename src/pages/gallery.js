@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from "react"
 import { Link } from "gatsby";
 import styled from 'styled-components';
-import { FlexColumn, Button, BoxProperty } from "../assets/styles/Mixins";
+import { FlexColumn, Button, BoxProperty, SecondaryFont } from "../assets/styles/Mixins";
 import Image from 'gatsby-image'
 import Carousel, { Modal, ModalGateway } from 'react-images';
 import { graphql } from 'gatsby';
@@ -14,7 +14,7 @@ import secondLayoutImage from "../assets/images/layout_image_3.png"
 const Main = styled.main`
 margin: 0 auto;
 margin-bottom: 8rem;
-max-width: 1400px;
+max-width: 1200px;
 ${FlexColumn};
 justify-content: center;
 align-items: center;
@@ -41,7 +41,9 @@ color: ${({ theme }) => theme.colors.thirdaryViolet};
 const GalleryHeader = styled.header`
 margin: 2rem;
 h1{
-    font-size: 2rem;
+    font-size: 2.6rem;
+    ${SecondaryFont};
+    color: ${({ theme }) => theme.colors.secondaryViolet};
 }
 p {
     font-size: 1.2rem;

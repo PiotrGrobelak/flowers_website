@@ -6,6 +6,7 @@ export const MainWrapper = styled.main`
 margin: 1rem;
 margin-bottom: 0;
 margin-top: 4rem;
+height: 100%;
 `;
 
 export const BodyImage = styled.div`
@@ -14,14 +15,15 @@ top: 0;
 left: -20%;
 background-image: url(${backgroundImage});
 background-repeat: no-repeat;
-background-size: 35%;
+background-size: 40%;
 z-index: -1;
-height: 500px;
+height: 300px;
 width: 100%;
 transform: rotate(9deg);
 @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+    height: 500px;
     top: 2%;
-    left: -2%;
+    left: -5%;
     background-position: top left ;
     background-size: 18%;
 }

@@ -71,7 +71,7 @@ const GalleryLink = styled(Link)`
 
 const HeroImage = styled(Image)`
 position: absolute !important;
-top: 0;
+top: 10%;
 right: 0;
 width: 100%;
 height: 50%;
@@ -79,6 +79,7 @@ object-fit: cover;
 opacity: 0.6;
 z-index: -1;
 @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+  top: 0;
   right: -55%;
   width: 100%;
   opacity: 0.7;
@@ -177,7 +178,7 @@ margin-top: 1rem;
 margin-bottom: -2rem;
 @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   position: absolute;
-  left: 15%;
+  left: 12%;
   bottom: 15%;
 }
 `;

@@ -10,9 +10,7 @@ import secondLayoutImage from "../assets/images/layout_image_3.png";
 const Main = styled.main`
 	margin: 0 auto ;
 	max-width: 1200px;
-    height: 100%;
     @media (min-width: ${({ theme }) => theme.responsive.lg}) {
-    /* position: relative; */
         ::before{
             content: "";
             position: absolute;
@@ -25,7 +23,6 @@ const Main = styled.main`
             background-size: 60%;
             background-position: bottom center;
             transform: rotate(-90deg);
-            /* opacity: 0.7; */
             z-index: -1;
             }
         ::after{
@@ -64,6 +61,9 @@ p{
     letter-spacing: 1px;
     @media (min-width: ${({ theme }) => theme.responsive.lg}) {
     margin-left: 20rem;
+    padding: 1rem;
+    border-radius: 25px;
+    background-color: ${({ theme }) => theme.colors.secondaryWhite};
     }
     @media (min-width: ${({ theme }) => theme.responsive.xl}) {
     font-size:1.4rem;
@@ -79,17 +79,20 @@ background-color: ${({ theme }) => theme.colors.secondaryWhite};
     display: grid;
     grid-template-columns: repeat(3, 250px);
     grid-gap: 0.2rem;
-    margin: 3rem 0 0;
-    padding: 1rem 0 0;
+    margin: 3rem 0 8rem;
+    padding: 1rem 0;
     padding-left: 1rem;
     width: 90%;
     border-top: 3px solid ${({ theme }) => theme.colors.secondaryViolet};
+    border-bottom: 3px solid ${({ theme }) => theme.colors.secondaryViolet};
     border-left: 3px solid ${({ theme }) => theme.colors.secondaryViolet};
     border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
     box-shadow: -12px -8px 18px -6px rgba(0,0,0,0.35);
 }
 @media (min-width: ${({ theme }) => theme.responsive.xl}) {
     padding-top: 4rem;
+    padding-bottom: 4rem;
 }
 `;
 
