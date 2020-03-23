@@ -37,8 +37,10 @@ overflow-y: scroll;
     grid-template-rows: repeat(2, 1fr);
 }
 @media (min-width: ${({ theme }) => theme.responsive.xl}) {
+    top: 15%;
     left: 30%;
     right: 30%;
+    bottom: 10%;
     padding: 2rem;
 }
 `;

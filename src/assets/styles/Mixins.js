@@ -39,8 +39,8 @@ color: ${({ theme }) => theme.colors.secondaryViolet};
 
 export const Price = css`
 padding: 0.5rem;
-width: 64px;
-font-size: 1.4rem;
+width: 54px;
+font-size: 1rem;
 color: ${({ theme }) => theme.colors.primaryWhite};
 text-align: center;
 border-radius: 25px;

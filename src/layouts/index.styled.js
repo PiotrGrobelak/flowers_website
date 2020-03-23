@@ -4,6 +4,7 @@ import backgroundImage from '../assets/images/layout_image_1.png';
 
 export const MainWrapper = styled.main`
 margin: 1rem;
+margin-bottom: 0;
 margin-top: 4rem;
 `;
 

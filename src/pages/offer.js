@@ -4,39 +4,96 @@ import { graphql, Link } from 'gatsby';
 import Image from 'gatsby-image'
 import slugify from 'slugify';
 import { FlexColumn, BoxShadow, SecondaryBoxShadow, SecondaryFont, Button, Price } from "../assets/styles/Mixins"
-
+import firstLayoutImage from "../assets/images/layout_image_4.png";
+import secondLayoutImage from "../assets/images/layout_image_3.png";
 
 const Main = styled.main`
 	margin: 0 auto ;
 	max-width: 1200px;
-    /* height: 100%; */
+    height: 100%;
+    @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+    /* position: relative; */
+        ::before{
+            content: "";
+            position: absolute;
+            top: 40%;
+            left: -25%;
+            height: 30%;
+            width: 60%;
+            background-image: url(${secondLayoutImage});
+            background-repeat: no-repeat;
+            background-size: 60%;
+            background-position: bottom center;
+            transform: rotate(-90deg);
+            /* opacity: 0.7; */
+            z-index: -1;
+            }
+        ::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -55%;
+        height: 100%;
+        width: 100%;
+        background-image: url(${firstLayoutImage});
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center bottom;
+        opacity: 0.8;
+        z-index: -1;
+        }
+    }
 `;
 
 const StyledHeader = styled.header`
     margin-top: 5rem;
     padding: 1rem;
     text-align: right;
-    color: ${({ theme }) => theme.colors.secondaryViolet};
+    @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+    width: 80%;
+    }
 h1{
-    font-size: 2.6rem;
     margin-bottom: 3rem;
+    font-size: 2.6rem;
+    ${SecondaryFont};
+    color: ${({ theme }) => theme.colors.secondaryViolet};
 }
 p{
     font-size: 1.2rem;
+    color: ${({ theme }) => theme.colors.thirdaryViolet};
+    letter-spacing: 1px;
+    @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+    margin-left: 20rem;
+    }
+    @media (min-width: ${({ theme }) => theme.responsive.xl}) {
+    font-size:1.4rem;
+    }
 }
 `;
 
 const ProductList = styled.div`
 ${FlexColumn};
 justify-content: center;
+background-color: ${({ theme }) => theme.colors.secondaryWhite};
 @media (min-width: ${({ theme }) => theme.responsive.lg}) {
-display: grid;
-grid-template-columns: repeat(4, 250px);
-grid-gap: 0.2rem;
-margin: 3rem 0;
-padding: 4rem 0;
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    grid-gap: 0.2rem;
+    margin: 3rem 0 0;
+    padding: 1rem 0 0;
+    padding-left: 1rem;
+    width: 90%;
+    border-top: 3px solid ${({ theme }) => theme.colors.secondaryViolet};
+    border-left: 3px solid ${({ theme }) => theme.colors.secondaryViolet};
+    border-top-left-radius: 25px;
+    box-shadow: -12px -8px 18px -6px rgba(0,0,0,0.35);
+}
+@media (min-width: ${({ theme }) => theme.responsive.xl}) {
+    padding-top: 4rem;
 }
 `;
+
+
 
 const Product = styled.li`
 position: relative;
@@ -46,11 +103,10 @@ margin: 1rem;
 padding:  1rem;
 border-radius: 25px;
 ${BoxShadow};
-
 background-color: ${({ theme }) => theme.colors.primaryWhite};
 @media (min-width: ${({ theme }) => theme.responsive.lg}) {
-    margin: 0;
-    /* ${BoxShadow}; */
+    position: relative;
+    margin-bottom: 1rem;
     box-shadow: none;
     width: 100%;
     border: 1px solid transparent;
@@ -59,7 +115,17 @@ background-color: ${({ theme }) => theme.colors.primaryWhite};
     border: 1px solid ${({ theme }) => theme.colors.secondaryViolet};
     ${SecondaryBoxShadow};
     }
-
+    ::before{
+        content: "";
+        position: absolute;
+        top: -1px;
+        left: 50%;
+        margin: 0 auto;
+        width: 80%;
+        height: 100%;
+        transform: translateX(-50%);
+        border-top: 1px solid ${({ theme }) => theme.colors.secondaryViolet};
+    }
 }
 h3{
     position:absolute;
@@ -93,6 +159,8 @@ bottom: 5%;
 left: calc(100 / 25);
 ${Button};
 `;
+
+
 
 
 const OfferPage = ({ data }) => {
