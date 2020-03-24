@@ -179,7 +179,9 @@ const ContactPage = () => {
                         return errors;
                     }}
                     onSubmit={(values, { setSubmitting, resetForm, setStatus, }) => {
-                        axios.post('https://us-central1-gatsby-introduction.cloudfunctions.net/sendEmail', values)
+                        axios.post(
+                            'https://us-central1-flowers-website-contact.cloudfunctions.net/sendEmail',
+                            values)
                             .then((res) => {
                                 console.log(res)
                                 setSubmitting(false);
@@ -255,7 +257,7 @@ const ContactPage = () => {
                             </StyledForm>
                         )}
                 </Formik>
-                <StyledWrapper>Google Map API</StyledWrapper>
+                <StyledWrapper>Google Map API<br />Work in progress</StyledWrapper>
             </StyledContainer>
         </Main>
     )
