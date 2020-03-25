@@ -8,7 +8,7 @@ import Carousel, { Modal, ModalGateway } from 'react-images';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import backgroundImage from "../assets/images/layout_image_2.png";
-import secondLayoutImage from "../assets/images/layout_image_3.png"
+import secondLayoutImage from "../assets/images/layout_image_3.png";
 
 
 

@@ -6,6 +6,7 @@ import { FlexColumn, BoxProperty, SecondaryBoxShadow } from "../assets/styles/Mi
 import { Button } from "../components/Button/Button";
 import firstLayoutImage from "../assets/images/layout_image_2.png";
 import secondLayoutImage from "../assets/images/layout_image_3.png";
+import MapConatiner from "../components/Location/Map";
 
 const Main = styled.main`
 position: relative;
@@ -53,6 +54,7 @@ p{
 `;
 
 const StyledContainer = styled.div`
+    height: 100%;
     @media (min-width: ${({ theme }) => theme.responsive.lg}) {
         display: grid;
         grid-template-columns: 400px 800px;
@@ -257,7 +259,9 @@ const ContactPage = () => {
                             </StyledForm>
                         )}
                 </Formik>
-                <StyledWrapper>Google Map API<br />Work in progress</StyledWrapper>
+                <StyledWrapper>
+                    <MapConatiner />
+                </StyledWrapper>
             </StyledContainer>
         </Main>
     )
