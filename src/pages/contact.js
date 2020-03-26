@@ -6,6 +6,7 @@ import { FlexColumn, BoxProperty, SecondaryBoxShadow, BoxShadow } from "../asset
 import { Button } from "../components/Button/Button";
 import firstLayoutImage from "../assets/images/layout_image_2.png";
 import secondLayoutImage from "../assets/images/layout_image_3.png";
+import thirdLayoutImage from "../assets/images/layout_image_6.png";
 import MapConatiner from "../components/Location/Map";
 import ContactInformation from "../components/ContactInformation/ContactInformation"
 
@@ -59,9 +60,8 @@ p{
 
 const StyledContainer = styled.div`
     @media (min-width: ${({ theme }) => theme.responsive.lg}) {
-        align-self: center;
         display: grid;
-        grid-template-columns: 350px 650px;
+        grid-template-columns: 350px 1fr;
         grid-gap: 4rem;
     }
 `;
@@ -74,8 +74,21 @@ width: 100%;
 ${FlexColumn}
 ${BoxProperty}
 border-width: 2px;
+border-bottom: none;
 background-color: ${({ theme }) => theme.colors.secondaryWhite};
 overflow:hidden;
+    ::before{
+        content: "";
+        position: absolute;
+        top: -2%;
+        left: -5%;
+        height: 100px;
+        width: 100px;
+        background-image: url(${thirdLayoutImage});
+        background-repeat: no-repeat;
+        background-size: 75%;
+        transform: rotate(80deg)
+    }
     ::after{
         content: "";
         position: absolute;
@@ -155,7 +168,7 @@ const StyledError = styled.span`
 
 const StyledWrapper = styled.div`
     display: grid;
-    grid-template-rows: 200px 350px;
+    grid-template-rows: 1fr 350px;
     margin-top: 6rem;
     padding-bottom: 3rem;
     border-top-left-radius: 25px;
@@ -165,9 +178,11 @@ const StyledWrapper = styled.div`
     ${BoxShadow}
     background: ${({ theme }) => theme.colors.secondaryWhite};
     @media (min-width: ${({ theme }) => theme.responsive.lg}) {
-        grid-template-rows: 200px 450px;
+        grid-template-columns: 300px 1fr;
+        grid-template-rows: 1fr;
         margin-top: 0;
         margin-left: 2rem;
+    padding-bottom: 0;
     }
 `;
 

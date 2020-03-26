@@ -12,8 +12,9 @@ const StyledContainer = styled.div`
     margin: 0 auto;
     height: 100%;
     width: 99%;
-    /* ${BoxShadow}; */
-
+    @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+    width: 100%;
+    }
 `;
 
 const StyledInformationWrapper = styled.div`
