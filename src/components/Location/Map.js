@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from 'react-google-maps';
-import { BoxShadow } from "../../assets/styles/Mixins";
 
 const informationData = {
     name: `Piotr Grobelak`,
