@@ -5,6 +5,7 @@ import Image from 'gatsby-image'
 import slugify from 'slugify';
 import { FlexColumn, BoxShadow, SecondaryBoxShadow, SecondaryFont, Price } from "../assets/styles/Mixins"
 import { Button } from "../components/Button/Button";
+import PropTypes from 'prop-types';
 import firstLayoutImage from "../assets/images/layout_image_4.png";
 import secondLayoutImage from "../assets/images/layout_image_3.png";
 
@@ -204,6 +205,21 @@ const OfferPage = ({ data }) => {
         </Main>
     )
 };
+
+OfferPage.propTypes = {
+    data: PropTypes.shape({
+        allDatoCmsProduct: PropTypes.shape({
+            nodes: PropTypes.arrayOf(PropTypes.shape({
+                id: PropTypes.string.isRequired,
+                productname: PropTypes.string.isRequired,
+                productprice: PropTypes.string.isRequired,
+                productimage: PropTypes.shape({
+                    fluid: PropTypes.object.isRequired,
+                }),
+            }))
+        })
+    })
+}
 
 
 export const query = graphql`

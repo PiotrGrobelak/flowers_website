@@ -15,10 +15,6 @@ margin: 0 auto;
 margin-bottom: 8rem;
 max-width: 1200px;
 ${FlexColumn}
-/* display: flex; */
-/* align-items: center; */
-/* justify-content: center; */
-/* justify-items: center; */
 color: ${({ theme }) => theme.colors.thirdaryViolet};
     ::before{
         content: "";
@@ -32,9 +28,12 @@ color: ${({ theme }) => theme.colors.thirdaryViolet};
         background-size: 350px;
         z-index: -1;
         @media (min-width: ${({ theme }) => theme.responsive.lg}) {
-        top: 0;
-        right: -75%;
-        background-size: 40%;
+            top: 0;
+            right: -80%;
+            background-size: 30%;
+        }
+        @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+            right: -105%;
         }
     }
 `;
@@ -43,6 +42,7 @@ const StyledHeader = styled.header`
 margin: 2rem 0;
 padding-left: 1rem;
     @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+    margin-bottom: 4rem;
     padding-left: 4rem;
     align-self: flex-start;
     width: 60%;
@@ -58,29 +58,28 @@ p{
 `;
 
 const StyledContainer = styled.div`
-    /* height: 100%; */
-    /* margin: 0 auto; */
-    /* width: 100%; */
-    /* align-self: center; */
     @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+        align-self: center;
         display: grid;
-        grid-template-columns: 350px 600px;
+        grid-template-columns: 350px 650px;
+        grid-gap: 4rem;
     }
 `;
 
 const StyledForm = styled.form`
+position: relative;
 padding: 1rem 0;
 height: 100%;
 width: 100%;
 ${FlexColumn}
 ${BoxProperty}
 border-width: 2px;
-position: relative;
 background-color: ${({ theme }) => theme.colors.secondaryWhite};
+overflow:hidden;
     ::after{
         content: "";
         position: absolute;
-        top: 85%;
+        top: 75%;
         right: -40%;
         height: 200px;
         width: 100%;
@@ -88,6 +87,13 @@ background-color: ${({ theme }) => theme.colors.secondaryWhite};
         background-repeat: no-repeat;
         background-size: 70%;
         z-index: -1;
+        @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+        top: 65%;
+        right: -45%;
+        }
+    }
+    @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+        height: 500px;
     }
 
 h3 {
@@ -109,9 +115,8 @@ const StyledInput = styled.input`
     display: block;
     padding: 0.2rem 0.4rem;
     border: 1px solid ${({ theme }) => theme.colors.primaryViolet};
-    border-radius: 25px;
+    border-radius: 10px;
     background: none;
-    /* ${SecondaryBoxShadow}; */
     font-size: 1rem;
     height: ${({ as }) => as ? '150px' : 'auto'};
     transition: all .3s ease-in-out;
@@ -153,11 +158,6 @@ const StyledWrapper = styled.div`
     grid-template-rows: 200px 350px;
     margin-top: 6rem;
     padding-bottom: 3rem;
-    /* padding: 1rem; */
-    /* height:1000px; */
-    /* width: 100%; */
-    /* ${BoxProperty} */
-    /* border-width: 2px; */
     border-top-left-radius: 25px;
     border-top: 2px solid ${({ theme }) => theme.colors.secondaryViolet};
     border-bottom-left-radius: 25px;
@@ -165,6 +165,7 @@ const StyledWrapper = styled.div`
     ${BoxShadow}
     background: ${({ theme }) => theme.colors.secondaryWhite};
     @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+        grid-template-rows: 200px 450px;
         margin-top: 0;
         margin-left: 2rem;
     }

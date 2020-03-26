@@ -42,9 +42,9 @@ const ContactInformation = () => {
         <StyledContainer>
             <h3>{datoCmsContact.title}</h3>
             {
-                datoCmsContact.information.map(({ name, adress, city, transfername, transfernumber }) => {
+                datoCmsContact.information.map(({ name, adress, city, transfername, transfernumber }, index) => {
                     return (
-                        <StyledWrapper>
+                        <StyledWrapper key={index}>
                             <span>{name}</span>
                             <span>{adress}</span>
                             <span>{city}</span>

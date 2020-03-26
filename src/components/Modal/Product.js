@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 import Image from 'gatsby-image';
 import { FlexColumn, FlexRow, Button, BoxShadow, SecondaryFont } from '../../assets/styles/Mixins';
 import { graphql, navigate } from 'gatsby';
+import PropTypes from 'prop-types';
 import slugify from "slugify";
 import { MdClose } from "react-icons/md"
 import "./modal.css";
@@ -242,6 +243,25 @@ const Product = ({ data }) => {
 
 export default Product;
 
+
+Product.propTypes = {
+    data: PropTypes.shape({
+        datoCmsProduct: PropTypes.shape({
+            productname: PropTypes.string.isRequired,
+            productimage: PropTypes.shape({
+                fluid: PropTypes.object.isRequired,
+            }),
+            productprice: PropTypes.string.isRequired,
+            productdescription: PropTypes.string.isRequired,
+        }),
+        allDatoCmsProduct: PropTypes.shape({
+            nodes: PropTypes.arrayOf(PropTypes.shape({
+                originalId: PropTypes.string.isRequired,
+                productname: PropTypes.string.isRequired,
+            }))
+        })
+    })
+}
 
 export const query = graphql`
 query querySingleProduct($id: String!)  {
