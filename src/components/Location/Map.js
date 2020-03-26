@@ -62,7 +62,7 @@ const MapContainer = () => {
             <Location
                 googleMapURL={`
                 https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${
-                    process.env.API_GOOGLE_MAPS
+                    process.env.GATSBY_API_GOOGLE_MAPS
                     }`}
                 loadingElement={<div style={{ height: `100%` }} />}
                 containerElement={<div style={{ height: `100%` }} />}
