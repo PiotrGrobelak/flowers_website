@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
 import { MdLocationOn, MdPhone, MdAccessTime, MdPayment } from "react-icons/md";
 
+
 const StyledContainer = styled.section`
     padding: 1rem;
     h2{

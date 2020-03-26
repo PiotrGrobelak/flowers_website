@@ -1,6 +1,7 @@
-import styled from 'styled-components'
-import { Link } from 'gatsby'
-import { MdPhoneInTalk } from 'react-icons/md'
+import styled from 'styled-components';
+import { Link } from 'gatsby';
+import { MdPhoneInTalk } from 'react-icons/md';
+import { Button } from "../Button/Button";
 
 export const NavigationContainer = styled.nav`
 position: relative;
@@ -83,12 +84,7 @@ export const ContactLink = styled.a`
 align-self: flex-end;
 display: flex;
 margin: 0.5rem;
-padding: 0.3rem 0.8rem;
-background-color:  #9875B4;
-border-radius: 25px;
-box-shadow: 0px 2px 15px -1px rgba(0, 0, 0, 0.25);
-font-weight: 600;
-color: ${({ theme }) => theme.colors.primaryWhite};
+${Button};
 `;
 
 export const ContactNumber = styled.span`
@@ -98,6 +94,7 @@ font-size: 0.8rem;
 export const ContactIcon = styled(MdPhoneInTalk)`
 margin-right: 1rem;
 font-size: 1rem;
+align-self: center;
 `;
 
 
