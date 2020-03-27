@@ -85,15 +85,15 @@ const ContactInformation = () => {
                 <StyledItem>
                     <MdAccessTime size={`2.4rem`} />
                     <StyledWrapper>
-                        <h3>Open days</h3>
-                        <p>{workingdays}</p>
-                        <p>{weekends}</p>
+                        <h3>Opening hours</h3>
+                        <p>Monday-Friday {workingdays}</p>
+                        <p>Saturday-Sunday {weekends}</p>
                     </StyledWrapper>
                 </StyledItem>
                 <StyledItem>
                     <MdPayment size={`2.4rem`} />
                     <StyledWrapper>
-                        <h3>Owner</h3>
+                        <h3>Account</h3>
                         <p>{owner}</p>
                         <p>{accountname}</p>
                         <p>{accountnumber}</p>

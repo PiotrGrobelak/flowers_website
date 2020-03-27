@@ -5,6 +5,7 @@ import firstLayoutImage from "../assets/images/layout_image_2.png";
 import MapConatiner from "../components/Location/Map";
 import ContactInformation from "../components/ContactInformation/ContactInformation";
 import ContactForm from "../components/ContactForm/ContactForm";
+import Payment from "../components/Payment/Payment";
 
 const Main = styled.main`
 position: relative;
@@ -62,8 +63,6 @@ const StyledContainer = styled.div`
     }
 `;
 
-
-
 const StyledWrapper = styled.div`
     display: grid;
     grid-template-rows: 1fr 350px;
@@ -98,6 +97,7 @@ const ContactPage = () => {
                     <MapConatiner />
                 </StyledWrapper>
             </StyledContainer>
+            <Payment />
         </Main>
     )
 }

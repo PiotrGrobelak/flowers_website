@@ -37,6 +37,24 @@ letter-spacing: 2px;
 color: ${({ theme }) => theme.colors.secondaryViolet};
 `;
 
+export const ThirdaryFont = css`
+font-family: ${({ theme }) => theme.fonts.thirdaryFont};
+font-size: 2rem;
+color: ${({ theme }) => theme.colors.thirdaryViolet};
+letter-spacing: 0.1rem;
+display: block;
+text-shadow: 0.1rem 0.1rem 0 rgba(0, 0, 0, 0.1);
+position: relative;
+::before, ::after {
+    content: "§";
+    display: inline-block;
+    margin: 0 0.8rem;
+    font-size: 0.9rem;
+    transform: rotate(75deg);
+    opacity: 0.4;
+}
+`;
+
 export const Price = css`
 padding: 0.5rem;
 width: 54px;

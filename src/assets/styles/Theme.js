@@ -1,6 +1,7 @@
 export const theme = {
     fonts: {
-        secondaryFont: 'Princess Sofia'
+        secondaryFont: 'Princess Sofia',
+        thirdaryFont: `Courgette`
     },
     colors: {
         primaryWhite: '#FFF',

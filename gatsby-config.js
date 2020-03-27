@@ -69,8 +69,13 @@ module.exports = {
           {
             family: `Princess Sofia`,
             variants: [`400`]
+          },
+          {
+            family: `Courgette`,
+            variants: [`400`]
           }
         ],
+        display: 'swap'
       },
     },
     // {
