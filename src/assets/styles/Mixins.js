@@ -33,8 +33,9 @@ flex-direction: row;
 export const SecondaryFont = css`
 font-family: ${({ theme }) => theme.fonts.secondaryFont};
 font-style: italic;
-letter-spacing: 2px;
+letter-spacing: 4px;
 color: ${({ theme }) => theme.colors.secondaryViolet};
+text-shadow: 0.2rem 0.1rem 0 rgba(0, 0, 0, 0.1);
 `;
 
 export const ThirdaryFont = css`
@@ -44,7 +45,6 @@ color: ${({ theme }) => theme.colors.thirdaryViolet};
 letter-spacing: 0.1rem;
 display: block;
 text-shadow: 0.1rem 0.1rem 0 rgba(0, 0, 0, 0.1);
-position: relative;
 ::before, ::after {
     content: "§";
     display: inline-block;
@@ -71,7 +71,7 @@ box-shadow: 0px 3px 10px 3px rgba(0, 0, 0, 0.30);
 `;
 
 export const SecondaryBoxShadow = css`
-box-shadow: 2px 1px 15px -2px ${({ theme }) => theme.colors.secondaryViolet};
+box-shadow: 2px 1px 15px -3px ${({ theme }) => theme.colors.secondaryViolet};
 `;
 
 export const BoxProperty = css`

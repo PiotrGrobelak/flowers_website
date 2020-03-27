@@ -1,6 +1,6 @@
 import React from "react"
 import styled from 'styled-components';
-import { FlexColumn, BoxShadow } from "../assets/styles/Mixins";
+import { FlexColumn, BoxShadow, ThirdaryFont, SecondaryFont } from "../assets/styles/Mixins";
 import firstLayoutImage from "../assets/images/layout_image_2.png";
 import MapConatiner from "../components/Location/Map";
 import ContactInformation from "../components/ContactInformation/ContactInformation";
@@ -46,12 +46,25 @@ padding-left: 1rem;
     width: 60%;
     }
 h1{
-    font-size: 2.2rem;
+    font-size: 2.6rem;
+    ${SecondaryFont};
+    color: ${({ theme }) => theme.colors.secondaryViolet};
+    text-align: center;
 }
 p{
     padding: 0.2rem;
     font-size: 1.2rem;
+    font-weight: 600;
     letter-spacing: 1px;
+}
+p:nth-of-type(1){
+    margin-top: 4rem;
+    font-size: 2.2rem;
+    ${ThirdaryFont};
+    ::before, ::after{
+        content: "";
+        display: none;
+    }
 }
 `;
 
@@ -87,8 +100,11 @@ const ContactPage = () => {
     return (
         <Main>
             <StyledHeader>
-                <h1>Hello Guest</h1>
-                <p>If you looking Junior Front-end Developer to your work you can contact me with contact form.</p>
+                <h1>Contact</h1>
+                <p>Hello Guest!</p>
+                <p>
+                    If you looking Junior Front-end Developer to your work you can contact me with contact form.
+                </p>
             </StyledHeader>
             <StyledContainer>
                 <ContactForm />

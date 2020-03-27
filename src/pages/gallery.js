@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from "react"
 import { Link } from "gatsby";
 import styled from 'styled-components';
-import { FlexColumn, BoxProperty, SecondaryFont } from "../assets/styles/Mixins";
+import { FlexColumn, BoxProperty, SecondaryFont, ThirdaryFont } from "../assets/styles/Mixins";
 import { Button } from "../components/Button/Button";
 import Image from 'gatsby-image'
 import Carousel, { Modal, ModalGateway } from 'react-images';
@@ -49,6 +49,7 @@ h1{
 p {
     font-size: 1.2rem;
     font-weight: 600;
+    letter-spacing: 1px;
     @media (min-width: ${({ theme }) => theme.responsive.lg}) {
     max-width: 60%;
 }
@@ -60,6 +61,7 @@ border-top: 2px solid ${({ theme }) => theme.colors.primaryViolet};
 h3{
         margin-bottom: 2rem;
         font-size: 1.6rem;
+        ${ThirdaryFont};
         text-align: center;
     }
 `;

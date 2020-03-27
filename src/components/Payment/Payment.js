@@ -3,33 +3,46 @@ import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 import Image from "gatsby-image";
 import { MdLocalShipping, MdAttachMoney, MdLocalFlorist, MdTextsms } from "react-icons/md";
-import { FlexRow, FlexColumn, ThirdaryFont, SecondaryBoxShadow } from "../../assets/styles/Mixins";
+import { FlexRow, FlexColumn, ThirdaryFont, BoxShadow } from "../../assets/styles/Mixins";
 
 
 const StyledPayment = styled.section`
 position: relative;
 margin: 6rem auto 0;
 width: 100%;
+${FlexColumn};
+justify-content: center;
+align-items: center;
+overflow: hidden;
 h3{
     margin-bottom: 2rem;
     ${ThirdaryFont};
-    text-align: center;
 }
 `;
 
 const StyledList = styled.ul`
 ${FlexColumn};
+@media (min-width: ${({ theme }) => theme.responsive.lg}) {
+    display: grid;
+    grid-template-columns: repeat(2, 380px);
+    grid-gap: 2rem;
+}
 `;
 
 const StyledItem = styled.li`
 ${FlexRow}
 align-items: center;
+justify-content: center;
 p{
-padding: 0.2rem;
+padding: 0.4rem;
+min-height: 100px;
 width: 100%;
 line-height: 1.4rem;
 letter-spacing: 1px;
+border-radius: 0 0 25px 0;
+border-bottom: 2px solid ${({ theme }) => theme.colors.secondaryViolet};
 background-color: ${({ theme }) => theme.colors.secondaryWhite};
+box-shadow: 10px 10px 20px -15px ${({ theme }) => theme.colors.secondaryViolet};
 }
 `;
 
@@ -37,24 +50,29 @@ const StyledIcon = styled.div`
 ${FlexRow};
 align-items: center;
 justify-content: center;
-margin-right: 0.6rem;
+margin-right: 0.8rem;
 padding: 0.6rem;
 border-radius: 5px 20px 5px;
 color: ${({ theme }) => theme.colors.primaryWhite};
 background-color: ${({ theme }) => theme.colors.primaryViolet};
-${SecondaryBoxShadow};
+${BoxShadow};
 `;
 
 const StyledBackgroundImage = styled(Image)`
 position: absolute !important;
-top: 40%;
+top: 50%;
 left: 0;
-height:auto;
 width: 100%;
 object-fit: cover;
 z-index: -1;
 opacity: 0.7;
 transform: rotate(-55deg) scale(1.3);
+@media (min-width: ${({ theme }) => theme.responsive.lg}) {
+    top: 5%;
+    left: 10%;
+    width: 70%;
+    transform: rotate(200deg) scale(1);
+}
 `;
 
 const Payment = () => {
@@ -67,8 +85,6 @@ const Payment = () => {
             }
         }
     }`)
-    console.log(file);
-
     return (
         <StyledPayment>
             <h3>Payment</h3>

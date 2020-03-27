@@ -61,14 +61,12 @@ p{
     font-size: 1.2rem;
     color: ${({ theme }) => theme.colors.thirdaryViolet};
     letter-spacing: 1px;
+    font-weight: 600;
     @media (min-width: ${({ theme }) => theme.responsive.lg}) {
     margin-left: 20rem;
     padding: 1rem;
     border-radius: 25px;
     background-color: ${({ theme }) => theme.colors.secondaryWhite};
-    }
-    @media (min-width: ${({ theme }) => theme.responsive.xl}) {
-    font-size:1.4rem;
     }
 }
 `;
