@@ -1,4 +1,6 @@
-require('dotenv').config()
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 module.exports = {
   siteMetadata: {
@@ -10,6 +12,37 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-layout`,
     `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-modal-routing`,
+      options: {
+        modalProps: {
+          closeTimeoutMS: 500,
+          style: {
+            overlay: {
+              position: `fixed`,
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: `rgba(255, 255, 255, 0.65)`,
+            },
+            content: {
+              position: `absolute`,
+              border: `none`,
+              background: `none`,
+              padding: 0,
+              top: 0,
+              bottom: 0,
+              right: 0,
+              left: 0,
+              overflow: `hidden`,
+              WebkitOverflowScrolling: `touch`,
+            },
+          },
+          contentLabel: `Modal`
+        }
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -36,8 +69,13 @@ module.exports = {
           {
             family: `Princess Sofia`,
             variants: [`400`]
+          },
+          {
+            family: `Courgette`,
+            variants: [`400`]
           }
         ],
+        display: 'swap'
       },
     },
     // {

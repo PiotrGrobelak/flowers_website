@@ -16,7 +16,7 @@ const Navigation = () => {
     const navContainer = useRef();
     const toggleNavigation = () => {
         setOpen(!open)
-        if (!open && (windowSize.width < +theme.responsive.desktop.slice(0, 4))) {
+        if (!open && (windowSize.width < +theme.responsive.lg.slice(0, 4))) {
             disableBodyScroll(navList);
         } else {
             enableBodyScroll(navList);

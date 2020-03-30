@@ -1,20 +1,21 @@
-import styled from "styled-components";
+import { css } from "styled-components";
 
-const Button = styled.button`
-  padding: 0.5rem 1.2rem;
-  border-radius: 15px;
-  background-color: ${({ theme }) => theme.colors.secondaryViolet};
-  box-shadow: 0px 2px 15px -1px rgba(0, 0, 0, 0.25);
-  font-size: 1rem;
-  color: ${({ theme }) => theme.colors.primaryWhite};
-  font-weight: 600;
-  letter-spacing: 1px;
-  @media (min-width: ${({ theme }) => theme.responsive.desktop}) {
-    font-size: 1.2rem;
-    transition: background-color .3s ease-in-out;
+export const Button = css`
+padding: 0.3rem 0.8rem;
+min-width: 100px;
+border-radius: 15px;
+background: ${({ theme }) => theme.colors.secondaryViolet};
+color: ${({ theme }) => theme.colors.primaryWhite};
+letter-spacing: 1px;
+text-align: center;
+font-weight: 600;
+line-height: 25px;
+background-image: -webkit-gradient(linear, left top, left bottom, from(${({ theme }) => theme.colors.secondaryViolet}), to(${({ theme }) => theme.colors.thirdaryViolet}));
+box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+@media (min-width: ${({ theme }) => theme.responsive.lg}) {
+    transition: background .3s ease-in-out;
     :hover{
-      background-color: ${({ theme }) => theme.colors.primaryPink};
+    background: ${({ theme }) => theme.colors.primaryPink};
     }
 }
 `;
-export default Button;
