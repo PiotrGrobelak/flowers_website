@@ -1,11 +1,14 @@
-## Hello! :sun_with_face:
+## Hello Guest! :sun_with_face:
 
-<a href="https://nifty-borg-93e478.netlify.com/">
   <h1 align="center">
   Flowers with Gatsby
   </h1>
+
+<a href="https://nifty-borg-93e478.netlify.com/">
+  <img alt="Flowers" src="src/assets/images/cover.png" />
 </a>
-<img alt="Flowers" src="../images/cover.png" />
+
+
 
 ## :school: The project with gatsby default starter and DatoCms(Work in progress)
 
