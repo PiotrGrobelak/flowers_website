@@ -1,6 +1,6 @@
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 module.exports = {
   siteMetadata: {
@@ -12,6 +12,9 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-layout`,
     `gatsby-plugin-styled-components`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    'gatsby-plugin-root-import',
     {
       resolve: `gatsby-plugin-modal-routing`,
       options: {
@@ -39,9 +42,9 @@ module.exports = {
               WebkitOverflowScrolling: `touch`,
             },
           },
-          contentLabel: `Modal`
-        }
-      }
+          contentLabel: `Modal`,
+        },
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -56,26 +59,24 @@ module.exports = {
         apiToken: process.env.API_DATO_CMS,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [
           {
             family: `Montserrat`,
-            variants: [`400`, `600`, `700`]
+            variants: [`400`, `600`, `700`],
           },
           {
             family: `Princess Sofia`,
-            variants: [`400`]
+            variants: [`400`],
           },
           {
             family: `Courgette`,
-            variants: [`400`]
-          }
+            variants: [`400`],
+          },
         ],
-        display: 'swap'
+        display: 'swap',
       },
     },
     // {
@@ -94,4 +95,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

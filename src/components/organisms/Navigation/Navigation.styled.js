@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { MdPhoneInTalk } from 'react-icons/md';
-import { Button } from '../Button/Button';
+import { Button } from 'src/components/atoms/Button/Button';
 
 export const NavigationContainer = styled.nav`
   position: relative;

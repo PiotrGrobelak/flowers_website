@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
 import Image from 'gatsby-image';
 import slugify from 'slugify';
@@ -9,11 +10,10 @@ import {
   SecondaryBoxShadow,
   SecondaryFont,
   Price,
-} from '../theme/Mixins';
-import { Button } from '../components/Button/Button';
-import PropTypes from 'prop-types';
-import firstLayoutImage from '../assets/images/layout_image_4.png';
-import secondLayoutImage from '../assets/images/layout_image_3.png';
+} from 'src/theme/Mixins';
+import { Button } from 'src/components/atoms/Button/Button';
+import firstLayoutImage from 'src/assets/images/layout_image_4.png';
+import secondLayoutImage from 'src/assets/images/layout_image_3.png';
 
 const Main = styled.main`
   margin: 0 auto;

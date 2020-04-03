@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import GlobalStyle from '../theme/GlobalStyle';
-import Navigation from '../components/Navigation/Navigation';
-import Footer from '../components/Footer/Footer';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../theme/Theme';
+import { theme } from 'src/theme/Theme';
+import GlobalStyle from 'src/theme/GlobalStyle';
+import Navigation from 'src/components/organisms/Navigation/Navigation';
+import Footer from 'src/components/organisms/Footer/Footer';
 import { MainWrapper, BodyImage } from './index.styled';
 
 const MainLayout = ({ children }) => (

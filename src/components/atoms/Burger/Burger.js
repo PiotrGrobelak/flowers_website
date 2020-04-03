@@ -1,6 +1,6 @@
 import React from 'react';
-import { NavigationBurgerWrapper, NavigationBurger } from './Burger.styled';
 import { bool, func } from 'prop-types';
+import { NavigationBurgerWrapper, NavigationBurger } from './Burger.styled';
 
 const Burger = ({ open, toggleNavigation }) => {
   return (

@@ -5,12 +5,12 @@ import {
   BoxShadow,
   ThirdaryFont,
   SecondaryFont,
-} from '../theme/Mixins';
-import firstLayoutImage from '../assets/images/layout_image_2.png';
-import MapConatiner from '../components/Location/Map';
-import ContactInformation from '../components/ContactInformation/ContactInformation';
-import ContactForm from '../components/ContactForm/ContactForm';
-import Payment from '../components/Payment/Payment';
+} from 'src/theme/Mixins';
+import firstLayoutImage from 'src/assets/images/layout_image_2.png';
+import MapConatiner from 'src/components/molecules/Location/Map';
+import ContactInformation from 'src/components/molecules/ContactInformation/ContactInformation';
+import ContactForm from 'src/components/molecules/ContactForm/ContactForm';
+import Payment from 'src/components/molecules/Payment/Payment';
 
 const Main = styled.main`
 position: relative;

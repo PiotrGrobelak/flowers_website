@@ -1,15 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Formik, ErrorMessage } from 'formik';
 import axios from 'axios';
-import {
-  FlexColumn,
-  BoxProperty,
-  SecondaryBoxShadow,
-} from '../../theme/Mixins';
-import { Button } from '../Button/Button';
-import firstFormImage from '../../assets/images/layout_image_6.png';
-import secondFormImage from '../../assets/images/layout_image_3.png';
+import { Formik, ErrorMessage } from 'formik';
+import { FlexColumn, BoxProperty, SecondaryBoxShadow } from 'src/theme/Mixins';
+import { Button } from 'src/components/atoms/Button/Button';
+import firstFormImage from 'src/assets/images/layout_image_6.png';
+import secondFormImage from 'src/assets/images/layout_image_3.png';
 
 const StyledForm = styled.form`
   position: relative;

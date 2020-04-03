@@ -3,11 +3,11 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import SEO from '../components/seo';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
-import { FlexColumn, BoxShadow, SecondaryFont } from '../theme/Mixins';
-import { Button } from '../components/Button/Button';
-import backgroundImage from '../assets/images/layout_image_1.png';
 import Image from 'gatsby-image';
+import { Link } from 'gatsby';
+import { FlexColumn, BoxShadow, SecondaryFont } from 'src/theme/Mixins';
+import { Button } from 'src/components/atoms/Button/Button';
+import backgroundImage from 'src/assets/images/layout_image_1.png';
 
 const Main = styled.main`
   margin: 0 auto;

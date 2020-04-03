@@ -1,8 +1,8 @@
 import React from 'react';
-import { SecondaryFont, FlexRow } from '../../theme/Mixins';
 import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
 import { MdLocationOn, MdPhone, MdAccessTime, MdPayment } from 'react-icons/md';
+import { SecondaryFont, FlexRow } from 'src/theme/Mixins';
 
 const StyledContainer = styled.section`
   padding: 1rem;

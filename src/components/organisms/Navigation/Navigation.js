@@ -1,10 +1,11 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'gatsby';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
-import { useHandleOutside } from '../../helpers/useHandleOutside';
-import { useWindowSize } from '../../helpers/useWindowSize';
-import LogoImage from '../../assets/images/logo.png';
-import Burger from '../Burger/Burger';
+import { useHandleOutside } from 'src/helpers/useHandleOutside';
+import { useWindowSize } from 'src/helpers/useWindowSize';
+import LogoImage from 'src/assets/images/logo.png';
+import Burger from 'src/components/atoms/Burger/Burger';
+import { theme } from 'src/theme/Theme';
 import {
   NavigationContainer,
   ContactLink,
@@ -17,7 +18,6 @@ import {
   ContactIcon,
   ContactNumber,
 } from './Navigation.styled';
-import { theme } from '../../theme/Theme';
 
 const Navigation = () => {
   const [open, setOpen] = useState(false);

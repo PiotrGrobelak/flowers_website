@@ -1,7 +1,7 @@
 export const theme = {
   fonts: {
     secondaryFont: 'Princess Sofia',
-    thirdaryFont: `Courgette`,
+    thirdaryFont: 'Courgette',
   },
   fontSizes: {
     xxs: '1rem',
@@ -13,13 +13,14 @@ export const theme = {
   },
   colors: {
     primaryWhite: '#FFF',
-    secondaryWhite: `rgba(255,255,255, 0.7)`,
+    secondaryWhite: 'rgba(255,255,255, 0.7)',
     primaryViolet: '#9875B4',
-    secondaryViolet: `#945bab`,
-    thirdaryViolet: `#5B388B`,
-    primaryPink: `#EF689F`,
-    primaryRed: `#DC143C`,
-    primaryGreen: `#4BB543`,
+    secondaryViolet: '#945bab',
+    thirdaryViolet: '#5B388B',
+    primaryPink: '#EF689F',
+    primaryRed: '#DC143C',
+    primaryGreen: '#4BB543',
+    primaryHover: '#343078',
   },
   responsive: {
     mobile: '576px',
@@ -29,5 +30,4 @@ export const theme = {
     lg: '1200px',
     xl: `1400px`,
   },
-  primaryHover: '#343078',
 };

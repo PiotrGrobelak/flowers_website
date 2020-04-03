@@ -2,18 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import Image from 'gatsby-image';
+import { graphql, navigate } from 'gatsby';
+import PropTypes from 'prop-types';
+import slugify from 'slugify';
+import { MdClose } from 'react-icons/md';
+import './modal.css';
 import {
   FlexColumn,
   FlexRow,
   Button,
   BoxShadow,
   SecondaryFont,
-} from '../../theme/Mixins';
-import { graphql, navigate } from 'gatsby';
-import PropTypes from 'prop-types';
-import slugify from 'slugify';
-import { MdClose } from 'react-icons/md';
-import './modal.css';
+} from 'src/theme/Mixins';
 
 const StyledModal = styled.div`
   position: relative;

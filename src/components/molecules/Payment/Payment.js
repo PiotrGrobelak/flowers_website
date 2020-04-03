@@ -8,12 +8,7 @@ import {
   MdLocalFlorist,
   MdTextsms,
 } from 'react-icons/md';
-import {
-  FlexRow,
-  FlexColumn,
-  ThirdaryFont,
-  BoxShadow,
-} from '../../theme/Mixins';
+import { FlexRow, FlexColumn, ThirdaryFont, BoxShadow } from 'src/theme/Mixins';
 
 const StyledPayment = styled.section`
   position: relative;
