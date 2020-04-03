@@ -1,11 +1,16 @@
-import React from "react"
+import React from 'react';
 import styled from 'styled-components';
-import { FlexColumn, BoxShadow, ThirdaryFont, SecondaryFont } from "../assets/styles/Mixins";
-import firstLayoutImage from "../assets/images/layout_image_2.png";
-import MapConatiner from "../components/Location/Map";
-import ContactInformation from "../components/ContactInformation/ContactInformation";
-import ContactForm from "../components/ContactForm/ContactForm";
-import Payment from "../components/Payment/Payment";
+import {
+  FlexColumn,
+  BoxShadow,
+  ThirdaryFont,
+  SecondaryFont,
+} from '../theme/Mixins';
+import firstLayoutImage from '../assets/images/layout_image_2.png';
+import MapConatiner from '../components/Location/Map';
+import ContactInformation from '../components/ContactInformation/ContactInformation';
+import ContactForm from '../components/ContactForm/ContactForm';
+import Payment from '../components/Payment/Payment';
 
 const Main = styled.main`
 position: relative;
@@ -37,43 +42,44 @@ color: ${({ theme }) => theme.colors.thirdaryViolet};
 `;
 
 const StyledHeader = styled.header`
-margin: 2rem 0;
-padding-left: 1rem;
-    @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+  margin: 2rem 0;
+  padding-left: 1rem;
+  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
     margin-bottom: 4rem;
     padding-left: 4rem;
     align-self: flex-start;
     width: 60%;
-    }
-h1{
+  }
+  h1 {
     font-size: 2.6rem;
     ${SecondaryFont};
     color: ${({ theme }) => theme.colors.secondaryViolet};
     text-align: center;
-}
-p{
+  }
+  p {
     padding: 0.2rem;
     font-size: 1.2rem;
     font-weight: 600;
     letter-spacing: 1px;
-}
-p:nth-of-type(1){
+  }
+  p:nth-of-type(1) {
     margin-top: 4rem;
     font-size: 2.2rem;
     ${ThirdaryFont};
-    ::before, ::after{
-        content: "";
-        display: none;
+    ::before,
+    ::after {
+      content: '';
+      display: none;
     }
-}
+  }
 `;
 
 const StyledContainer = styled.div`
-    @media (min-width: ${({ theme }) => theme.responsive.lg}) {
-        display: grid;
-        grid-template-columns: 350px 1fr;
-        grid-gap: 4rem;
-    }
+  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    grid-gap: 4rem;
+  }
 `;
 
 const StyledWrapper = styled.div`
@@ -97,25 +103,26 @@ const StyledWrapper = styled.div`
 `;
 
 const ContactPage = () => {
-    return (
-        <Main>
-            <StyledHeader>
-                <h1>Contact</h1>
-                <p>Hello Guest!</p>
-                <p>
-                    If you looking Junior Front-end Developer to your work you can contact me with contact form.
-                </p>
-            </StyledHeader>
-            <StyledContainer>
-                <ContactForm />
-                <StyledWrapper>
-                    <ContactInformation />
-                    <MapConatiner />
-                </StyledWrapper>
-            </StyledContainer>
-            <Payment />
-        </Main>
-    )
-}
+  return (
+    <Main>
+      <StyledHeader>
+        <h1>Contact</h1>
+        <p>Hello Guest!</p>
+        <p>
+          If you looking Junior Front-end Developer to your work you can contact
+          me with contact form.
+        </p>
+      </StyledHeader>
+      <StyledContainer>
+        <ContactForm />
+        <StyledWrapper>
+          <ContactInformation />
+          <MapConatiner />
+        </StyledWrapper>
+      </StyledContainer>
+      <Payment />
+    </Main>
+  );
+};
 
 export default ContactPage;

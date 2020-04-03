@@ -1,20 +1,20 @@
 import styled from 'styled-components';
 
 export const NavigationBurgerWrapper = styled.div`
-position: fixed;
-top: 10%;
-right: 0;
-height: 45px;
-width: 45px;
-border-left: 2px solid  ${({ theme }) => theme.colors.primaryViolet};
-border-bottom: 2px solid  ${({ theme }) => theme.colors.primaryViolet};
-border-top: 2px solid  ${({ theme }) => theme.colors.primaryViolet};
-border-top-left-radius: 15px;
-border-bottom-left-radius: 15px;
-box-shadow: 0px 3px 10px -1px rgba(0, 0, 0, 0.25);
-background: ${({ theme }) => theme.colors.secondaryWhite};
-z-index: 10;
-@media (min-width: ${({ theme }) => theme.responsive.lg}) {
+  position: fixed;
+  top: 10%;
+  right: 0;
+  height: 45px;
+  width: 45px;
+  border-left: 2px solid ${({ theme }) => theme.colors.primaryViolet};
+  border-bottom: 2px solid ${({ theme }) => theme.colors.primaryViolet};
+  border-top: 2px solid ${({ theme }) => theme.colors.primaryViolet};
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  box-shadow: 0px 3px 10px -1px rgba(0, 0, 0, 0.25);
+  background: ${({ theme }) => theme.colors.secondaryWhite};
+  z-index: 10;
+  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
     display: none;
   }
 `;
@@ -22,7 +22,7 @@ z-index: 10;
 export const NavigationBurger = styled.button`
   position: relative;
   top: 50%;
-  left:50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
@@ -47,18 +47,16 @@ export const NavigationBurger = styled.button`
     transform-origin: 1px;
 
     :first-child {
-      transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
+      transform: ${({ open }) => (open ? 'rotate(45deg)' : 'rotate(0)')};
     }
 
     :nth-child(2) {
-      opacity: ${({ open }) => open ? '0' : '1'};
-      transform: ${({ open }) => open ? 'translateX(20px)' : 'translateX(0)'};
+      opacity: ${({ open }) => (open ? '0' : '1')};
+      transform: ${({ open }) => (open ? 'translateX(20px)' : 'translateX(0)')};
     }
 
     :nth-child(3) {
-      transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
+      transform: ${({ open }) => (open ? 'rotate(-45deg)' : 'rotate(0)')};
     }
   }
 `;
-
-
