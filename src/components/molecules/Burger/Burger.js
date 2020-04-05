@@ -1,6 +1,8 @@
+import React from 'react';
+import { bool, func } from 'prop-types';
 import styled from 'styled-components';
 
-export const NavigationBurgerWrapper = styled.div`
+const NavigationBurgerWrapper = styled.div`
   position: fixed;
   top: 10%;
   right: 0;
@@ -19,7 +21,7 @@ export const NavigationBurgerWrapper = styled.div`
   }
 `;
 
-export const NavigationBurger = styled.button`
+const NavigationBurger = styled.button`
   position: relative;
   top: 50%;
   left: 50%;
@@ -60,3 +62,22 @@ export const NavigationBurger = styled.button`
     }
   }
 `;
+
+const Burger = ({ open, toggleNavigation }) => {
+  return (
+    <NavigationBurgerWrapper>
+      <NavigationBurger open={open} onClick={() => toggleNavigation()}>
+        <div />
+        <div />
+        <div />
+      </NavigationBurger>
+    </NavigationBurgerWrapper>
+  );
+};
+
+Burger.propTypes = {
+  open: bool.isRequired,
+  toggleNavigation: func.isRequired,
+};
+
+export default Burger;

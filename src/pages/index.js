@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import Image from 'gatsby-image';
 import { Link } from 'gatsby';
 import { FlexColumn, BoxShadow, SecondaryFont } from 'src/theme/Mixins';
-import { Button } from 'src/components/atoms/Button/Button';
+import Button from 'src/components/atoms/Button/Button';
 import backgroundImage from 'src/assets/images/layout_image_1.png';
 
 const Main = styled.main`
@@ -58,8 +58,7 @@ const Paragraph = styled.p`
   }
 `;
 
-const GalleryLink = styled(Link)`
-  ${Button}
+const GalleryLink = styled(Button)`
   align-self: flex-end;
   margin-top: 2rem;
   @media (min-width: ${({ theme }) => theme.responsive.lg}) {
@@ -170,8 +169,7 @@ const ProposeImage = styled(Image)`
   }
 `;
 
-const ContactLink = styled(Link)`
-  ${Button}
+const ContactLink = styled(Button)`
   align-self: center;
   margin-top: 1rem;
   margin-bottom: -2rem;
@@ -208,7 +206,9 @@ const IndexPage = ({ data }) => {
                   <Title>{maintitle}</Title>
                   <Heading>{mainheading}</Heading>
                   <Paragraph>{mainparagraph}</Paragraph>
-                  <GalleryLink to="/gallery">Check our Gallery</GalleryLink>
+                  <GalleryLink as={Link} to="/gallery">
+                    Check our Gallery
+                  </GalleryLink>
                 </Header>
                 <ProposeWrapper>
                   {mainpropose.map(
@@ -225,7 +225,9 @@ const IndexPage = ({ data }) => {
                       );
                     },
                   )}
-                  <ContactLink to="/contact">Cantact Us</ContactLink>
+                  <ContactLink as={Link} to="/contact">
+                    Cantact Us
+                  </ContactLink>
                 </ProposeWrapper>
                 <HeroImage fluid={mainimage.fluid} alt={mainimage.alt} />
               </div>

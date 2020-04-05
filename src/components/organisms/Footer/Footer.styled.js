@@ -21,24 +21,11 @@ export const FooterItem = styled.li`
   font-size: 1.4rem;
 `;
 
-export const FooterSocialLink = styled.a`
-  margin: 0.2rem;
-`;
-
 export const FooterWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   span {
     margin: 0.2rem;
-  }
-
-  a {
-    font-size: 0.8rem;
-    padding: 0.4rem;
-    transition: color 0.3s ease-in-out;
-    :hover {
-      color: ${({ theme }) => theme.colors.thirdaryViolet};
-    }
   }
 `;

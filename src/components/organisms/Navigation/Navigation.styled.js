@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { MdPhoneInTalk } from 'react-icons/md';
-import { Button } from 'src/components/atoms/Button/Button';
+import Button from 'src/components/atoms/Button/Button';
 
 export const NavigationContainer = styled.nav`
   position: relative;
@@ -77,11 +77,10 @@ export const NavigationLink = styled(Link)`
   }
 `;
 
-export const ContactLink = styled.a`
+export const ContactLink = styled(Button)`
   align-self: flex-end;
   display: flex;
   margin: 0.5rem;
-  ${Button};
 `;
 
 export const ContactNumber = styled.span`

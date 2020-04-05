@@ -11,7 +11,7 @@ import {
   SecondaryFont,
   ThirdaryFont,
 } from 'src/theme/Mixins';
-import { Button } from 'src/components/atoms/Button/Button';
+import Button from 'src/components/atoms/Button/Button';
 import backgroundImage from 'src/assets/images/layout_image_2.png';
 import secondLayoutImage from 'src/assets/images/layout_image_3.png';
 
@@ -112,8 +112,8 @@ const GalleryImage = styled(Image)`
   }
 `;
 
-const ContactLink = styled(Link)`
-${Button}
+const ContactLink = styled(Button)`
+/* ${Button} */
 @media (min-width: ${({ theme }) => theme.responsive.lg}) {
 }
 `;
@@ -204,7 +204,9 @@ const GalleryPage = ({ data }) => {
             ) : null}
           </ModalGateway>
         </GalleryWrapper>
-        <ContactLink to="/contact">Contact Us</ContactLink>
+        <ContactLink as={Link} to="/contact">
+          Contact Us
+        </ContactLink>
       </Main>
       <AdditionalImage />
     </>

@@ -4,7 +4,7 @@ import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import { useHandleOutside } from 'src/helpers/useHandleOutside';
 import { useWindowSize } from 'src/helpers/useWindowSize';
 import LogoImage from 'src/assets/images/logo.png';
-import Burger from 'src/components/atoms/Burger/Burger';
+import Burger from 'src/components/molecules/Burger/Burger';
 import { theme } from 'src/theme/Theme';
 import {
   NavigationContainer,
@@ -39,7 +39,7 @@ const Navigation = () => {
       <Link to="/">
         <LogoMobile src={LogoImage} />
       </Link>
-      <ContactLink href="tel:093-393-920">
+      <ContactLink as="a" href="tel:093-393-920">
         <ContactIcon />
         <ContactNumber>093-393-920</ContactNumber>
       </ContactLink>

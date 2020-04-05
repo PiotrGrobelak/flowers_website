@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
+import { normalize } from 'styled-normalize';
 
 const GlobalStyle = createGlobalStyle`
+  ${normalize};
   *,
   *::before,
   *::after {
@@ -18,26 +20,12 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Montserrat';
     overflow-x: hidden;
   }
-  button {
-    padding: 0;
-    cursor: pointer;
-    font-family: 'Montserrat';
-    border: none;
-  }
-  p {
-    font-size: 16px;
-  }
-  h1{
-    margin: 0;
-  }
-  ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
   a{
     text-decoration: none;
-    color: inherit;
+  }
+  ul{
+    padding: 0;
+    list-style: none;
   }
 `;
 

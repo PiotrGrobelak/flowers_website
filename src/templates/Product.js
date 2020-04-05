@@ -7,13 +7,8 @@ import PropTypes from 'prop-types';
 import slugify from 'slugify';
 import { MdClose } from 'react-icons/md';
 import './modal.css';
-import {
-  FlexColumn,
-  FlexRow,
-  Button,
-  BoxShadow,
-  SecondaryFont,
-} from 'src/theme/Mixins';
+import { FlexColumn, FlexRow, Button, BoxShadow, SecondaryFont } from 'src/theme/Mixins';
+import Cost from 'src/components/atoms/Cost/Cost';
 
 const StyledModal = styled.div`
   position: relative;
@@ -89,18 +84,10 @@ const StyledName = styled.h3`
     font-size: 2rem;
   }
 `;
-const StyledPrice = styled.span`
+const StyledCost = styled(Cost)`
   position: absolute;
   bottom: 30%;
   left: 10%;
-  padding: 0.5rem;
-  width: 64px;
-  font-size: 1.4rem;
-  color: ${({ theme }) => theme.colors.primaryWhite};
-  text-align: center;
-  border-radius: 25px;
-  background-color: ${({ theme }) => theme.colors.secondaryViolet};
-  box-shadow: 0px 2px 15px -1px rgba(0, 0, 0, 0.25);
 `;
 
 const StyledClose = styled(MdClose)`
@@ -202,21 +189,14 @@ const Product = ({ data }) => {
       navigate(`/offer/${slugifiedPath}/`, { state: { modal: true } });
     }
   };
-  const {
-    productname,
-    productimage,
-    productprice,
-    productdescription,
-  } = data.datoCmsProduct;
+  const { productname, productimage, productprice, productdescription } = data.datoCmsProduct;
   return (
-    <StyledModal
-      onClick={() => navigate(`/offer`, { state: { noScroll: true } })}
-    >
+    <StyledModal onClick={() => navigate(`/offer`, { state: { noScroll: true } })}>
       <StyledContainer onClick={e => e.stopPropagation()}>
         <StyledWrapeer>
           <StyledImage fluid={productimage.fluid} />
           <StyledName>{productname}</StyledName>
-          <StyledPrice>{productprice}</StyledPrice>
+          <StyledCost>{productprice}</StyledCost>
           <StyledBuy>Buy</StyledBuy>
           <Link
             to="/offer"
@@ -229,9 +209,7 @@ const Product = ({ data }) => {
         </StyledWrapeer>
         <StyledParagraph>{productdescription}</StyledParagraph>
         <StyledButtonsWrapper>
-          <StyledButton onClick={e => previousProduct(e)}>
-            Previous
-          </StyledButton>
+          <StyledButton onClick={e => previousProduct(e)}>Previous</StyledButton>
           <StyledButton onClick={e => nextProduct(e)}>Next</StyledButton>
         </StyledButtonsWrapper>
       </StyledContainer>

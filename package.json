@@ -35,7 +35,8 @@
     "react-images": "^1.1.0-beta.3",
     "react-slick": "^0.25.2",
     "slugify": "^1.4.0",
-    "styled-components": "^5.0.1"
+    "styled-components": "^5.0.1",
+    "styled-normalize": "^8.0.7"
   },
   "devDependencies": {
     "gatsby-plugin-root-import": "^2.0.5",

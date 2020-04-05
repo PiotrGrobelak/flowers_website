@@ -2,13 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
 import Image from 'gatsby-image';
-import {
-  MdLocalShipping,
-  MdAttachMoney,
-  MdLocalFlorist,
-  MdTextsms,
-} from 'react-icons/md';
+import { MdLocalShipping, MdAttachMoney, MdLocalFlorist, MdTextsms } from 'react-icons/md';
 import { FlexRow, FlexColumn, ThirdaryFont, BoxShadow } from 'src/theme/Mixins';
+import IconWrapper from 'src/components/molecules/IconWrapper/IconWrapper';
 
 const StyledPayment = styled.section`
   position: relative;
@@ -55,7 +51,7 @@ const StyledIcon = styled.div`
   align-items: center;
   justify-content: center;
   margin-right: 0.8rem;
-  padding: 0.6rem;
+  padding: 10px;
   border-radius: 5px 20px 5px;
   color: ${({ theme }) => theme.colors.primaryWhite};
   background-color: ${({ theme }) => theme.colors.primaryViolet};
@@ -96,12 +92,11 @@ const Payment = () => {
       <h3>Payment</h3>
       <StyledList>
         <StyledItem>
-          <StyledIcon>
+          <IconWrapper>
             <MdLocalShipping size={`2.2rem`} />
-          </StyledIcon>
+          </IconWrapper>
           <p>
-            The minimum delivery time is 1 hour or at your appointed time. We
-            deliver personally!
+            The minimum delivery time is 1 hour or at your appointed time. We deliver personally!
           </p>
         </StyledItem>
         <StyledItem>
@@ -109,8 +104,8 @@ const Payment = () => {
             <MdLocalFlorist size={`2.2rem`} />
           </StyledIcon>
           <p>
-            Guarantee quality of the bouquet! Our bouquets are always fresh, all
-            flowers are beautiful and without damage.
+            Guarantee quality of the bouquet! Our bouquets are always fresh, all flowers are
+            beautiful and without damage.
           </p>
         </StyledItem>
         <StyledItem>
@@ -118,8 +113,7 @@ const Payment = () => {
             <MdAttachMoney size={`2.2rem`} />
           </StyledIcon>
           <p>
-            Payment by cash or card! You have the opportunity to pay in any way
-            convenient for you.
+            Payment by cash or card! You have the opportunity to pay in any way convenient for you.
           </p>
         </StyledItem>
         <StyledItem>
@@ -127,8 +121,8 @@ const Payment = () => {
             <MdTextsms size={`2.2rem`} />
           </StyledIcon>
           <p>
-            After completing the order, we send an SMS notification about the
-            delivery of the bouquet to the recipient.
+            After completing the order, we send an SMS notification about the delivery of the
+            bouquet to the recipient.
           </p>
         </StyledItem>
       </StyledList>

@@ -1,6 +1,6 @@
-import { css } from 'styled-components';
+import styled from 'styled-components';
 
-export const Button = css`
+const Button = styled.button`
   padding: 0.3rem 0.8rem;
   min-width: 100px;
   border-radius: 15px;
@@ -10,6 +10,7 @@ export const Button = css`
   text-align: center;
   font-weight: 600;
   line-height: 25px;
+  border: none;
   background-image: -webkit-gradient(
     linear,
     left top,
@@ -25,3 +26,5 @@ export const Button = css`
     }
   }
 `;
+
+export default Button;

@@ -11,7 +11,7 @@ import {
   SecondaryFont,
   Price,
 } from 'src/theme/Mixins';
-import { Button } from 'src/components/atoms/Button/Button';
+import Button from 'src/components/atoms/Button/Button';
 import firstLayoutImage from 'src/assets/images/layout_image_4.png';
 import secondLayoutImage from 'src/assets/images/layout_image_3.png';
 
@@ -160,11 +160,10 @@ const StyledImage = styled(Image)`
   }
 `;
 
-const StyledButton = styled(Link)`
+const StyledButton = styled(Button)`
   position: absolute;
   bottom: 5%;
   left: calc(100 / 25);
-  ${Button};
 `;
 
 const OfferPage = ({ data }) => {
@@ -190,6 +189,7 @@ const OfferPage = ({ data }) => {
               <h3>{productname}</h3>
               <span>{productprice}</span>
               <StyledButton
+                as={Link}
                 to={`/offer/${slugifiedTitle}`}
                 state={{
                   modal: true,

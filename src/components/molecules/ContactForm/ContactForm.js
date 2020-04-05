@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import axios from 'axios';
 import { Formik, ErrorMessage } from 'formik';
 import { FlexColumn, BoxProperty, SecondaryBoxShadow } from 'src/theme/Mixins';
-import { Button } from 'src/components/atoms/Button/Button';
+import Button from 'src/components/atoms/Button/Button';
 import firstFormImage from 'src/assets/images/layout_image_6.png';
 import secondFormImage from 'src/assets/images/layout_image_3.png';
 
@@ -73,9 +73,9 @@ const StyledInput = styled.input`
   background: none;
   font-size: 1rem;
   height: ${({ as }) => (as ? '150px' : 'auto')};
-  transition: all 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
   :focus {
-    background: ${({ theme }) => theme.colors.secondaryWhite};
+    background-color: ${({ theme }) => theme.colors.secondaryWhite};
     ${SecondaryBoxShadow};
   }
 `;
@@ -87,8 +87,7 @@ const StyledLabel = styled.label`
   font-weight: bold;
 `;
 
-const StyledButton = styled.button`
-  ${Button}
+const StyledButton = styled(Button)`
   margin: 0 auto 1rem;
 `;
 
@@ -117,9 +116,7 @@ const ContactForm = () => {
         }
         if (!values.email) {
           errors.email = 'Required';
-        } else if (
-          !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
-        ) {
+        } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
           errors.email = 'Invalid email address';
         }
         if (!values.message) {
@@ -129,10 +126,7 @@ const ContactForm = () => {
       }}
       onSubmit={(values, { setSubmitting, resetForm, setStatus }) => {
         axios
-          .post(
-            'https://us-central1-flowers-website-contact.cloudfunctions.net/sendEmail',
-            values,
-          )
+          .post('https://us-central1-flowers-website-contact.cloudfunctions.net/sendEmail', values)
           .then(res => {
             console.log(res);
             setSubmitting(false);
@@ -144,14 +138,7 @@ const ContactForm = () => {
           });
       }}
     >
-      {({
-        values,
-        handleChange,
-        handleBlur,
-        handleSubmit,
-        isSubmitting,
-        status,
-      }) => (
+      {({ values, handleChange, handleBlur, handleSubmit, isSubmitting, status }) => (
         <StyledForm onSubmit={handleSubmit}>
           <h3>Say Hello!</h3>
           <StyledParagraph>
