@@ -38,7 +38,9 @@ const Footer = () => (
       </ButtonIcon>
     </StyledWrapper>
     <StyledWrapper>
-      <Paragraph bold>2020 © Flowers. Gatsby + DatoCms</Paragraph>
+      <Paragraph white bold>
+        2020 © Flowers. Gatsby + DatoCms
+      </Paragraph>
       <OutputLink
         hover
         href="https://github.com/PiotrGrobelak?tab=repositories"

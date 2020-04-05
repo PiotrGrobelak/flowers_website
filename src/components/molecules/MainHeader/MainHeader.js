@@ -10,7 +10,6 @@ const StyledHeader = styled.header`
   ${FlexColumn}
   margin-top: 7rem;
   max-width: 90%;
-  color: ${({ theme }) => theme.colors.thirdaryViolet};
   text-align: right;
   @media (min-width: ${({ theme }) => theme.responsive.lg}) {
     width: 70%;

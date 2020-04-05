@@ -1,15 +1,16 @@
 import styled from 'styled-components';
 
 const Button = styled.button`
-  padding: 0.3rem 0.8rem;
+  padding: 0.4rem 0.8rem;
   min-width: 100px;
   border-radius: 15px;
   background: ${({ theme }) => theme.colors.secondaryViolet};
   color: ${({ theme }) => theme.colors.primaryWhite};
   letter-spacing: 1px;
   text-align: center;
-  font-weight: 600;
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
   line-height: 25px;
+  white-space: nowrap;
   border: none;
   background-image: -webkit-gradient(
     linear,
@@ -22,7 +23,7 @@ const Button = styled.button`
   @media (min-width: ${({ theme }) => theme.responsive.lg}) {
     transition: background 0.3s ease-in-out;
     :hover {
-      background: ${({ theme }) => theme.colors.primaryPink};
+      background: ${({ theme }) => theme.colors.pink};
     }
   }
 `;

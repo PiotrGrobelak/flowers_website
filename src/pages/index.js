@@ -4,52 +4,14 @@ import PropTypes from 'prop-types';
 import SEO from '../components/seo';
 import styled from 'styled-components';
 import Image from 'gatsby-image';
-import { Link } from 'gatsby';
-import { FlexColumn, BoxShadow } from 'src/theme/Mixins';
 import MainHeader from 'src/components/molecules/MainHeader/MainHeader';
-
-import Heading from 'src/components/atoms/Heading/Heading';
-import Paragraph from 'src/components/atoms/Paragraph/Paragraph';
-import Button from 'src/components/atoms/Button/Button';
+import Propositions from 'src/components/molecules/Propositions/Propositions';
 import backgroundImage from 'src/assets/images/layout_image_1.png';
 
 const Main = styled.main`
   margin: 0 auto;
   margin-bottom: 8rem;
   max-width: 1200px;
-`;
-
-const Header = styled.header`
-  ${FlexColumn}
-  margin-top: 7rem;
-  max-width: 90%;
-  color: ${({ theme }) => theme.colors.thirdaryViolet};
-  text-align: right;
-  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
-    width: 70%;
-  }
-`;
-
-const StyledSubHeading = styled(Paragraph)`
-  margin-left: 2rem;
-`;
-
-const StyledParagraph = styled(Paragraph)`
-  margin: 2rem -1rem 2rem 1rem;
-  letter-spacing: 1px;
-  text-align: center;
-  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
-    width: 90%;
-    text-align: right;
-  }
-`;
-
-const GalleryLink = styled(Button)`
-  align-self: flex-end;
-  margin-top: 2rem;
-  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
-    margin-right: 2rem;
-  }
 `;
 
 const HeroImage = styled(Image)`
@@ -94,78 +56,6 @@ const AdditionalImage = styled.div`
   }
 `;
 
-const ProposeWrapper = styled.ul`
-${FlexColumn}
-color: ${({ theme }) => theme.colors.secondaryViolet};
-letter-spacing: 1px;
-@media (min-width: ${({ theme }) => theme.responsive.lg}) {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(2, 400px);
-  grid-template-rows:  1fr;
-  grid-gap: 4rem;
-  margin-top: 6rem;
-}
-li{
-  margin-top: 4rem;
-  margin-bottom: 2rem;
-  padding: 0.4rem 0;
-  border-radius: 25px;
-  ${BoxShadow}
-  background-color: ${({ theme }) => theme.colors.secondaryWhite};
-  :nth-child(2){
-    margin-top: 2rem;
-  }
-  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
-  margin: 1rem;
-  :nth-child(1){
-    margin-bottom: 10rem;
-  }
-  :nth-child(2){
-      margin-top: 12rem;
-    }
-  }
-}
-h2{
-  padding-left: 1rem;
-  font-size: 1.6rem;
-  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
-  font-size: 1.4rem;
-  }
-}
-p{
-  margin: 0;
-  padding: 0.8rem;
-  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
-  padding: 1rem;
-  font-size: 1rem;
-  }
-  @media (min-width: ${({ theme }) => theme.responsive.xl}) {
-  font-size: 1.3rem;
-  }
-}
-`;
-
-const ProposeImage = styled(Image)`
-  margin: 0.4rem auto;
-  border-top: 1px solid ${({ theme }) => theme.colors.primaryPink};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.primaryPink};
-  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
-    max-height: 60%;
-  }
-`;
-
-const ContactLink = styled(Button)`
-  align-self: center;
-  margin-top: 1rem;
-  margin-bottom: -2rem;
-  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
-    position: absolute;
-    left: 12%;
-    bottom: 15%;
-  }
-`;
-
 const IndexPage = ({ data }) => {
   const {
     allDatoCmsMainpage: { nodes },
@@ -183,20 +73,7 @@ const IndexPage = ({ data }) => {
                   mainheading={mainheading}
                   mainparagraph={mainparagraph}
                 />
-                <ProposeWrapper>
-                  {mainpropose.map(({ heading, description, proposeimage }, index) => {
-                    return (
-                      <li key={index}>
-                        <h2>{heading}</h2>
-                        <ProposeImage fluid={proposeimage.fluid} alt={proposeimage.alt} />
-                        <p>{description}</p>
-                      </li>
-                    );
-                  })}
-                  <ContactLink as={Link} to="/contact">
-                    Cantact Us
-                  </ContactLink>
-                </ProposeWrapper>
+                <Propositions mainpropose={mainpropose} />
                 <HeroImage fluid={mainimage.fluid} alt={mainimage.alt} />
               </div>
             );
