@@ -5,7 +5,11 @@ import SEO from '../components/seo';
 import styled from 'styled-components';
 import Image from 'gatsby-image';
 import { Link } from 'gatsby';
-import { FlexColumn, BoxShadow, SecondaryFont } from 'src/theme/Mixins';
+import { FlexColumn, BoxShadow } from 'src/theme/Mixins';
+import MainHeader from 'src/components/molecules/MainHeader/MainHeader';
+
+import Heading from 'src/components/atoms/Heading/Heading';
+import Paragraph from 'src/components/atoms/Paragraph/Paragraph';
 import Button from 'src/components/atoms/Button/Button';
 import backgroundImage from 'src/assets/images/layout_image_1.png';
 
@@ -26,35 +30,17 @@ const Header = styled.header`
   }
 `;
 
-const Title = styled.h1`
-  font-size: 2.6rem;
-  ${SecondaryFont};
-  letter-spacing: 10px;
-  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
-    font-size: 4rem;
-  }
-`;
-
-const Heading = styled.p`
+const StyledSubHeading = styled(Paragraph)`
   margin-left: 2rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
-    font-size: 1.4rem;
-  }
 `;
 
-const Paragraph = styled.p`
+const StyledParagraph = styled(Paragraph)`
   margin: 2rem -1rem 2rem 1rem;
   letter-spacing: 1px;
   text-align: center;
   @media (min-width: ${({ theme }) => theme.responsive.lg}) {
     width: 90%;
-    font-size: 1rem;
     text-align: right;
-  }
-  @media (min-width: ${({ theme }) => theme.responsive.xl}) {
-    font-size: 1.4rem;
   }
 `;
 
@@ -189,42 +175,24 @@ const IndexPage = ({ data }) => {
       <Main>
         <SEO title="Home" />
         {nodes.map(
-          (
-            {
-              id,
-              maintitle,
-              mainheading,
-              mainparagraph,
-              mainimage,
-              mainpropose,
-            },
-            index,
-          ) => {
+          ({ id, maintitle, mainheading, mainparagraph, mainimage, mainpropose }, index) => {
             return (
               <div key={index}>
-                <Header>
-                  <Title>{maintitle}</Title>
-                  <Heading>{mainheading}</Heading>
-                  <Paragraph>{mainparagraph}</Paragraph>
-                  <GalleryLink as={Link} to="/gallery">
-                    Check our Gallery
-                  </GalleryLink>
-                </Header>
+                <MainHeader
+                  maintitle={maintitle}
+                  mainheading={mainheading}
+                  mainparagraph={mainparagraph}
+                />
                 <ProposeWrapper>
-                  {mainpropose.map(
-                    ({ heading, description, proposeimage }, index) => {
-                      return (
-                        <li key={index}>
-                          <h2>{heading}</h2>
-                          <ProposeImage
-                            fluid={proposeimage.fluid}
-                            alt={proposeimage.alt}
-                          />
-                          <p>{description}</p>
-                        </li>
-                      );
-                    },
-                  )}
+                  {mainpropose.map(({ heading, description, proposeimage }, index) => {
+                    return (
+                      <li key={index}>
+                        <h2>{heading}</h2>
+                        <ProposeImage fluid={proposeimage.fluid} alt={proposeimage.alt} />
+                        <p>{description}</p>
+                      </li>
+                    );
+                  })}
                   <ContactLink as={Link} to="/contact">
                     Cantact Us
                   </ContactLink>
