@@ -4,7 +4,7 @@ import { FlexColumn, BoxShadow } from 'src/theme/Mixins';
 import firstLayoutImage from 'src/assets/images/layout_image_2.png';
 import Heading from 'src/components/atoms/Heading/Heading';
 import Paragraph from 'src/components/atoms/Paragraph/Paragraph';
-import MapConatiner from 'src/components/molecules/Location/Map';
+import MapConatiner from 'src/components/molecules/MapConatiner/MapConatiner';
 import ContactInformation from 'src/components/molecules/ContactInformation/ContactInformation';
 import Payment from 'src/components/molecules/Payment/Payment';
 import FormContent from 'src/components/organisms/FormContent/FormContent';
