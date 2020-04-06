@@ -1,31 +1,29 @@
-import { useState, useEffect, useCallback } from 'react'
-
+import { useState, useEffect, useCallback } from 'react';
 
 export const useWindowSize = () => {
-    const isClient = typeof window === 'object';
+  const isClient = typeof window === 'object';
 
-    const getSize = useCallback(() => {
-        return {
-            width: isClient ? window.innerWidth : undefined,
-            height: isClient ? window.innerHeight : undefined
-        };
-    }, [isClient]);
+  const getSize = useCallback(() => {
+    return {
+      width: isClient ? window.innerWidth : undefined,
+      height: isClient ? window.innerHeight : undefined,
+    };
+  }, [isClient]);
 
-    const [windowSize, setWindowSize] = useState(getSize);
+  const [windowSize, setWindowSize] = useState(getSize);
 
-    useEffect(() => {
-        if (!isClient) {
-            return false;
-        }
+  useEffect(() => {
+    if (!isClient) {
+      return false;
+    }
 
-        const handleResize = () => {
-            setWindowSize(getSize());
-        }
+    const handleResize = () => {
+      setWindowSize(getSize());
+    };
 
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, [windowSize, getSize, isClient]);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [windowSize, getSize, isClient]);
 
-    return windowSize;
-
-}
+  return windowSize;
+};
