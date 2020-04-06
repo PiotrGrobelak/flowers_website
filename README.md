@@ -27,6 +27,12 @@ Florist's website built based on Gatsby and DatoCms. The project uses GraphQL qu
 - formik
 - dotenv
 
+## :star: Tools
+
+- Firebase functions
+- SendGrid
+- Google Maps API
+
 ## :rocket: Quick start
 
 1.  **Create local.**
