@@ -76,7 +76,9 @@ const GalleryPage = ({ data }) => {
    <Main>
     <StyledHeader>
      <Heading>{content.title}</Heading>
-     <StyledParagraph>{content.description}</StyledParagraph>
+     <StyledParagraph medium bold>
+      {content.description}
+     </StyledParagraph>
     </StyledHeader>
     <GalleryContent nodes={nodes} />
     <Button as={Link} to="/contact">

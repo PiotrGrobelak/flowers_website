@@ -70,7 +70,7 @@ const OfferPage = ({ data }) => {
   <Main>
    <StyledHeader>
     <Heading>Our Offer</Heading>
-    <StyledParagraph bold>
+    <StyledParagraph medium bold>
      Perfect bouquets for every occasion created by best florists in Your city.
     </StyledParagraph>
    </StyledHeader>
