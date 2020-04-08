@@ -1,14 +1,22 @@
 import React from 'react';
-import styled from 'styled-components';
 import Heading from 'src/components/atoms/Heading/Heading';
+import AboutItem from 'src/components/molecules/AboutItem/AboutItem';
 
 const AboutContent = ({ datoCmsAbout }) => {
  const { aboutcontent, title } = datoCmsAbout;
- //  console.log(aboutcontent, title);
-
  return (
   <>
-   <Heading></Heading>
+   <Heading center>{title}</Heading>
+   {aboutcontent.map(({ image: { originalId, fluid, alt }, paragraph }) => {
+    return (
+     <AboutItem
+      key={originalId}
+      fluid={fluid}
+      alt={alt}
+      paragraph={paragraph}
+     />
+    );
+   })}
   </>
  );
 };

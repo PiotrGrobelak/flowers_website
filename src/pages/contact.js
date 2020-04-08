@@ -70,7 +70,7 @@ const StyledInnerWrapper = styled.div`
     ${BoxShadow}
     background: ${({ theme }) => theme.colors.secondaryWhite};
     @media (min-width: ${({ theme }) => theme.responsive.lg}) {
-        grid-template-columns: 300px 1fr;
+        grid-template-columns: 320px 1fr;
         grid-template-rows: 1fr;
         margin-top: 0;
         margin-left: 2rem;
@@ -85,7 +85,8 @@ const ContactPage = () => {
     <Heading>Contact</Heading>
     <Heading secondary>Hello Guest!</Heading>
     <Paragraph medium>
-     If you looking Junior Front-end Developer to your work you can contact me with contact form.
+     If you looking Junior Front-end Developer to your work you can contact me
+     with contact form.
     </Paragraph>
    </StyledHeader>
    <StyledWrapper>
