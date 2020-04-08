@@ -60,7 +60,7 @@ Florist's website built based on Gatsby and DatoCms. The project uses GraphQL qu
 
 ## Updates
 
-# The next features will be implemented soon.
+### The next features will be implemented soon.
 
 
 
