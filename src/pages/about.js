@@ -4,12 +4,13 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import AboutContent from 'src/components/organisms/AboutContent/AboutContent/';
 import BackgroundImage from 'src/assets/images/layout_image_3.png';
+import BackgroundImage2 from 'src/assets/images/layout_image_7.png';
+import BackgroundImage3 from 'src/assets/images/layout_image_8.png';
 
 const Main = styled.main`
  position: relative;
  margin: 0 auto;
  margin-top: 10rem;
- /* max-width: 1200px; */
  min-height: 100%;
  background-image: url(${BackgroundImage});
  background-repeat: no-repeat;
@@ -17,6 +18,10 @@ const Main = styled.main`
  background-size: 400px;
  z-index: -2;
  overflow: hidden;
+ @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+  background-size: 600px;
+  background-position: left 40%;
+ }
  ::before {
   content: '';
   position: absolute;
@@ -24,12 +29,16 @@ const Main = styled.main`
   right: 0;
   height: 100%;
   width: 100%;
-  background-image: url(${BackgroundImage});
+  background-image: url(${BackgroundImage2});
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 400px;
   z-index: -1;
   transform: scaleX(-1);
+  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+   background-size: 600px;
+   background-position: left 40%;
+  }
  }
  ::after {
   content: '';
@@ -38,12 +47,16 @@ const Main = styled.main`
   left: 0;
   height: 100%;
   width: 100%;
-  background-image: url(${BackgroundImage});
+  background-image: url(${BackgroundImage3});
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 400px;
   z-index: -2;
   transform: scaleX(-1);
+  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+   background-size: 600px;
+   background-position: left 40%;
+  }
  }
 `;
 

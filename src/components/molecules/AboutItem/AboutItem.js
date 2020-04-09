@@ -1,9 +1,26 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import Image from 'gatsby-image';
 import Paragraph from 'src/components/atoms/Paragraph/Paragraph';
 import { BoxShadow, BorderRight, BorderLeft } from 'src/theme/Mixins';
 import BackgroundImage from 'src/assets/images/layout_image_6.png';
+
+const slideFromLeft = keyframes`
+ from {transform: translateX(-50%)}
+ to {transform: translateX(0%)}
+`;
+
+const slideFromRight = keyframes`
+ from {transform: translateX(50%)}
+ to {transform: translateX(0%)}
+`;
+
+const paragraphAnimation = keyframes`
+0% {transform: scale(0); opacity: 0 }
+50% {transform: scale(0.7); opacity: 0}
+70% {transform: scale(1.1); opacity: 0.7}
+100% {transform: scale(1); opacity: 1}
+`;
 
 const StyledParagraph = styled(Paragraph)`
  position: absolute;
@@ -17,6 +34,8 @@ const StyledParagraph = styled(Paragraph)`
  initial-letter: 3;
  ${BoxShadow};
  ${BorderLeft};
+ opacity: 0;
+ animation: ${paragraphAnimation} 2s ease-in-out both;
  ::before {
   content: '';
   position: absolute;
@@ -30,6 +49,19 @@ const StyledParagraph = styled(Paragraph)`
   background-size: 70px;
   opacity: 0.6;
   transform: scaleX(-1);
+  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+   right: -85%;
+   background-size: 100px;
+  }
+ }
+ @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+  padding: 6rem 3rem 6rem 3rem;
+  top: 20%;
+  left: 35%;
+  ${BorderRight};
+ }
+ @media (min-width: ${({ theme }) => theme.responsive.xl}) {
+  left: 45%;
  }
 `;
 
@@ -43,6 +75,10 @@ const StyledImage = styled(Image)`
  ${BoxShadow};
  ${BorderRight};
  z-index: -1;
+ animation: ${slideFromLeft} 1.5s ease-in-out both;
+ @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+  left: -50%;
+ }
 `;
 
 const StyledWrapper = styled.div`
@@ -63,10 +99,29 @@ const StyledWrapper = styled.div`
    right: 0;
    transform: scaleX(1);
   }
+  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+   padding: 6rem 3rem 6rem 3rem;
+   left: 5%;
+   ${BorderLeft};
+  }
+  @media (min-width: ${({ theme }) => theme.responsive.xl}) {
+   left: -5%;
+  }
  }
  &:nth-of-type(even) ${StyledImage}:nth-child(1) {
   left: 30%;
   ${BorderLeft};
+  animation: ${slideFromRight} 1.5s ease-in-out both;
+  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+   left: 50%;
+  }
+ }
+ @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+  margin: 10rem auto;
+  max-width: 800px;
+ }
+ @media (min-width: ${({ theme }) => theme.responsive.xl}) {
+  max-width: 1000px;
  }
 `;
 
