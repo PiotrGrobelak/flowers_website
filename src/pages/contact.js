@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FlexColumn, BoxShadow } from 'src/theme/Mixins';
+import { FlexColumn, BoxShadow, BorderLeft } from 'src/theme/Mixins';
 import firstLayoutImage from 'src/assets/images/layout_image_2.png';
 import Heading from 'src/components/atoms/Heading/Heading';
 import Paragraph from 'src/components/atoms/Paragraph/Paragraph';
@@ -59,23 +59,20 @@ const StyledWrapper = styled.div`
 `;
 
 const StyledInnerWrapper = styled.div`
-    display: grid;
-    grid-template-rows: 1fr 350px;
-    margin-top: 6rem;
-    padding-bottom: 3rem;
-    border-top-left-radius: 25px;
-    border-top: 2px solid ${({ theme }) => theme.colors.secondaryViolet};
-    border-bottom-left-radius: 25px;
-    border-bottom: 2px solid ${({ theme }) => theme.colors.secondaryViolet};
-    ${BoxShadow}
-    background: ${({ theme }) => theme.colors.secondaryWhite};
-    @media (min-width: ${({ theme }) => theme.responsive.lg}) {
-        grid-template-columns: 320px 1fr;
-        grid-template-rows: 1fr;
-        margin-top: 0;
-        margin-left: 2rem;
-    padding-bottom: 0;
-    }
+ display: grid;
+ grid-template-rows: 1fr 350px;
+ margin-top: 6rem;
+ padding-bottom: 3rem;
+ ${BoxShadow}
+ ${BorderLeft};
+ background: ${({ theme }) => theme.colors.secondaryWhite};
+ @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+  grid-template-columns: 320px 1fr;
+  grid-template-rows: 1fr;
+  margin-top: 0;
+  margin-left: 2rem;
+  padding-bottom: 0;
+ }
 `;
 
 const ContactPage = () => {

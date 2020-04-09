@@ -9,7 +9,7 @@ const Paragraph = styled.p`
  color: ${({ theme, white }) =>
   white ? theme.colors.primaryWhite : theme.colors.thirdaryViolet};
  letter-spacing: 1px;
- line-height: 2rem;
+ line-height: 1.5;
 `;
 
 export default Paragraph;
