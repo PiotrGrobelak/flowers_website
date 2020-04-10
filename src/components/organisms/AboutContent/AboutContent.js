@@ -9,6 +9,7 @@ const StyledHeading = styled(Heading)`
 
 const AboutContent = ({ datoCmsAbout }) => {
  const { aboutcontent, title } = datoCmsAbout;
+
  return (
   <>
    <StyledHeading center>{title}</StyledHeading>

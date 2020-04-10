@@ -1,17 +1,12 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import React, { useRef, useEffect, useState } from 'react';
+import styled, { keyframes, css } from 'styled-components';
 import Image from 'gatsby-image';
-import Paragraph from 'src/components/atoms/Paragraph/Paragraph';
 import { BoxShadow, BorderRight, BorderLeft } from 'src/theme/Mixins';
+import Paragraph from 'src/components/atoms/Paragraph/Paragraph';
 import BackgroundImage from 'src/assets/images/layout_image_6.png';
 
-const slideFromLeft = keyframes`
- from {transform: translateX(-50%)}
- to {transform: translateX(0%)}
-`;
-
-const slideFromRight = keyframes`
- from {transform: translateX(50%)}
+const slideImage = keyframes`
+ from {transform: translateX(-200%)}
  to {transform: translateX(0%)}
 `;
 
@@ -35,7 +30,11 @@ const StyledParagraph = styled(Paragraph)`
  ${BoxShadow};
  ${BorderLeft};
  opacity: 0;
- animation: ${paragraphAnimation} 2s ease-in-out both;
+ animation: ${({ animate }) =>
+  animate &&
+  css`
+   ${paragraphAnimation} 1.8s ease-in-out both
+  `};
  ::before {
   content: '';
   position: absolute;
@@ -75,7 +74,12 @@ const StyledImage = styled(Image)`
  ${BoxShadow};
  ${BorderRight};
  z-index: -1;
- animation: ${slideFromLeft} 1.5s ease-in-out both;
+ transform: translateX(-200%);
+ animation: ${({ animate }) =>
+  animate &&
+  css`
+   ${slideImage} 1.2s ease-in-out both
+  `};
  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   left: -50%;
  }
@@ -111,7 +115,6 @@ const StyledWrapper = styled.div`
  &:nth-of-type(even) ${StyledImage}:nth-child(1) {
   left: 30%;
   ${BorderLeft};
-  animation: ${slideFromRight} 1.5s ease-in-out both;
   @media (min-width: ${({ theme }) => theme.responsive.lg}) {
    left: 50%;
   }
@@ -125,13 +128,34 @@ const StyledWrapper = styled.div`
  }
 `;
 
-const AboutSection = ({ fluid, alt, paragraph }) => {
+const AboutSection = React.memo(({ fluid, alt, paragraph }) => {
+ const [animate, setAnimate] = useState(false);
+ const refItem = useRef();
+
+ const isAnimate = (elementPosition, scrollPosition) => {
+  if (elementPosition < scrollPosition) {
+   setAnimate(true);
+  }
+ };
+ useEffect(() => {
+  let scrollPos = window.scrollY + window.innerHeight;
+  const elementPos = refItem.current.getBoundingClientRect().top;
+  isAnimate(elementPos, scrollPos);
+  const onScroll = () => {
+   scrollPos = window.scrollY + window.innerHeight;
+
+   isAnimate(elementPos, scrollPos);
+  };
+  window.addEventListener('scroll', onScroll);
+  return () => window.removeEventListener('scroll', onScroll);
+ }, [refItem, animate]);
+
  return (
-  <StyledWrapper>
-   <StyledImage fluid={fluid} alt={alt} />
-   <StyledParagraph>{paragraph}</StyledParagraph>
+  <StyledWrapper ref={refItem}>
+   <StyledImage fluid={fluid} alt={alt} animate={animate} />
+   <StyledParagraph animate={animate}>{paragraph}</StyledParagraph>
   </StyledWrapper>
  );
-};
+});
 
 export default AboutSection;
