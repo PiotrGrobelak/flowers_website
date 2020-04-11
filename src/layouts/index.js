@@ -9,8 +9,8 @@ import Footer from 'src/components/organisms/Footer/Footer';
 import ButtonScroll from 'src/components/molecules/ButtonScroll/ButtonScroll';
 import backgroundImage from 'src/assets/images/layout_image_1.png';
 
-const MainWrapper = styled.main`
- min-height: 100%;
+const MainWrapper = styled.div`
+ min-height: 100vh;
 `;
 
 const BodyImage = styled.div`
@@ -45,7 +45,6 @@ const MainLayout = ({ children }) => {
     <Navigation />
     <MainWrapper>{children}</MainWrapper>
     <ButtonScroll />
-
     <Footer />
    </ThemeProvider>
   </>

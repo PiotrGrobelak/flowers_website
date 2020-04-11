@@ -7,13 +7,13 @@ import { BoxShadow } from 'src/theme/Mixins';
 import ButtonIcon from 'src/components/atoms/ButtonIcon/ButtonIcon';
 
 const showButton = keyframes`
-from {opacity: 0; transform: translate(50%)}
-to {opacity: 1; transform: translate(0%)}
+from {opacity: 0; transform: translate(50%); }
+to {opacity: 1; transform: translate(0%); }
 `;
 
 const hideButton = keyframes`
-from {opacity: 1; transform: translate(0%)}
-to {opacity: 0; transform: translate(50%)}
+from {opacity: 1; transform: translate(0%); }
+to {opacity: 0; transform: translate(50%); }
 `;
 
 const StyledButtonIcon = styled(ButtonIcon)`
@@ -34,10 +34,10 @@ const StyledButtonIcon = styled(ButtonIcon)`
  animation: ${({ show }) =>
   show
    ? css`
-      ${showButton} .5s ease-in-out both
+      ${showButton} .5s ease-in-out forwards
      `
    : css`
-      ${hideButton} .5s ease both
+      ${hideButton} .3s ease forwards
      `};
  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   bottom: 120px;
@@ -47,8 +47,7 @@ const StyledButtonIcon = styled(ButtonIcon)`
   width: 60px;
   border: 2px solid ${({ theme }) => theme.colors.primaryViolet};
   transition: border-radius 0.5s ease-in-out;
-  :hover,
-  :focus {
+  :hover {
    border-radius: 50%;
   }
  }
