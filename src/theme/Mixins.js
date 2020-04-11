@@ -23,3 +23,15 @@ export const BoxProperty = css`
  border-radius: 25px;
  box-shadow: 0px 3px 10px 3px rgba(0, 0, 0, 0.25);
 `;
+
+export const BorderRight = css`
+ border-radius: 0 25px 25px 0;
+ border-top: 2px solid ${({ theme }) => theme.colors.secondaryViolet};
+ border-bottom: 2px solid ${({ theme }) => theme.colors.secondaryViolet};
+`;
+
+export const BorderLeft = css`
+ border-radius: 25px 0px 0px 25px;
+ border-top: 2px solid ${({ theme }) => theme.colors.secondaryViolet};
+ border-bottom: 2px solid ${({ theme }) => theme.colors.secondaryViolet};
+`;

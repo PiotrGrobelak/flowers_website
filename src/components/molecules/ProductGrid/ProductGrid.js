@@ -102,7 +102,7 @@ const ProductGrid = ({ nodes }) => (
    const slugifiedName = slugify(productname, { lower: true });
    return (
     <StyledItem key={id}>
-     <StyledImage fluid={productimage.fluid} />
+     <StyledImage fluid={productimage.fluid} alt={productname} />
      <StyledHeading secondary small normal>
       {productname}
      </StyledHeading>
