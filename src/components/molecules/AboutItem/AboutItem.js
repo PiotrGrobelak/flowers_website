@@ -130,7 +130,7 @@ const StyledWrapper = styled.div`
 
 const AboutSection = React.memo(({ fluid, alt, paragraph }) => {
  const [animate, setAnimate] = useState(false);
- const refItem = useRef();
+ const refElement = useRef();
 
  const isAnimate = (elementPosition, scrollPosition) => {
   if (elementPosition < scrollPosition) {
@@ -139,7 +139,7 @@ const AboutSection = React.memo(({ fluid, alt, paragraph }) => {
  };
  useEffect(() => {
   let scrollPos = window.scrollY + window.innerHeight;
-  const elementPos = refItem.current.getBoundingClientRect().top;
+  const elementPos = refElement.current.getBoundingClientRect().top;
   isAnimate(elementPos, scrollPos);
   const onScroll = () => {
    scrollPos = window.scrollY + window.innerHeight;
@@ -148,10 +148,10 @@ const AboutSection = React.memo(({ fluid, alt, paragraph }) => {
   };
   window.addEventListener('scroll', onScroll);
   return () => window.removeEventListener('scroll', onScroll);
- }, [refItem, animate]);
+ }, [refElement, animate]);
 
  return (
-  <StyledWrapper ref={refItem}>
+  <StyledWrapper ref={refElement}>
    <StyledImage fluid={fluid} alt={alt} animate={animate} />
    <StyledParagraph animate={animate}>{paragraph}</StyledParagraph>
   </StyledWrapper>

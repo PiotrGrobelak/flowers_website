@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+
 import Image from 'gatsby-image';
 import MainHeader from 'src/components/molecules/MainHeader/MainHeader';
 import MainPropositions from 'src/components/molecules/MainPropositions/MainPropositions';
@@ -62,15 +63,24 @@ const IndexPage = ({ data }) => {
  return (
   <>
    <Main>
-    {nodes.map(({ id, maintitle, mainheading, mainparagraph, mainimage, mainpropose }, index) => {
-     return (
-      <div key={index}>
-       <MainHeader maintitle={maintitle} mainheading={mainheading} mainparagraph={mainparagraph} />
-       <MainPropositions mainpropose={mainpropose} />
-       <HeroImage fluid={mainimage.fluid} alt={mainimage.alt} />
-      </div>
-     );
-    })}
+    {nodes.map(
+     (
+      { id, maintitle, mainheading, mainparagraph, mainimage, mainpropose },
+      index,
+     ) => {
+      return (
+       <div key={index}>
+        <MainHeader
+         maintitle={maintitle}
+         mainheading={mainheading}
+         mainparagraph={mainparagraph}
+        />
+        <MainPropositions mainpropose={mainpropose} />
+        <HeroImage fluid={mainimage.fluid} alt={mainimage.alt} />
+       </div>
+      );
+     },
+    )}
     <AdditionalImage />
    </Main>
   </>

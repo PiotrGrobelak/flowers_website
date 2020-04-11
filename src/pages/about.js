@@ -61,7 +61,7 @@ const Main = styled.main`
 `;
 
 const AboutPage = ({ data: { datoCmsAbout } }) => (
- <Main>
+ <Main id="top">
   <AboutContent datoCmsAbout={datoCmsAbout} />
  </Main>
 );
@@ -103,3 +103,8 @@ export const query = graphql`
   }
  }
 `;
+
+// if (typeof window !== 'undefined') {
+//  // eslint-disable-next-line global-require
+//  require('smooth-scroll')('a[href*="#"]');
+// }
