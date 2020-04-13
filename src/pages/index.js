@@ -16,7 +16,7 @@ const Main = styled.main`
 
 const HeroImage = styled(Image)`
  position: absolute !important;
- top: 15%;
+ top: 5%;
  right: 0;
  width: 100%;
  height: 40%;
@@ -39,19 +39,19 @@ const HeroImage = styled(Image)`
 
 const AdditionalImage = styled.div`
  position: absolute;
- bottom: 5%;
- right: -6%;
+ bottom: 2%;
+ left: -6%;
  height: 120px;
  width: 120px;
- transform: rotate(-120deg);
+ transform: rotate(40deg);
  background-image: url(${backgroundImage});
  background-repeat: no-repeat;
  background-size: 100%;
  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   left: -2%;
   bottom: 3%;
-  height: 240px;
-  width: 240px;
+  height: 230px;
+  width: 230px;
   transform: rotate(-20deg);
  }
 `;

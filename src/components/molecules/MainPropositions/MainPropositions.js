@@ -1,15 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'gatsby-image';
-import { Link } from 'gatsby';
 import { FlexColumn, BoxShadow } from 'src/theme/Mixins';
 import Heading from 'src/components/atoms/Heading/Heading';
 import Paragraph from 'src/components/atoms/Paragraph/Paragraph';
-import Button from 'src/components/atoms/Button/Button';
 
 const StyledContainer = styled.div`
-  position: relative;
-  ${FlexColumn};
+ position: relative;
+ ${FlexColumn};
 `;
 
 const StyledList = styled.ul`
@@ -18,7 +16,7 @@ ${FlexColumn}
   display: grid;
   grid-template-columns: repeat(2, 400px);
   grid-template-rows:  1fr;
-  grid-gap: 4rem;
+  grid-gap: 5rem;
   margin-top: 6rem;
 }
 `;
@@ -34,59 +32,50 @@ background-color: ${({ theme }) => theme.colors.secondaryWhite};
 }
 @media (min-width: ${({ theme }) => theme.responsive.lg}) {
 margin: 1rem;
+transition: transform .3s ease;
+:hover{
+  transform: translateY(-5%) scale(1.05);
+}
 :nth-child(odd){
-    margin-bottom: 10rem;
+    margin-bottom: 5rem;
 }
 :nth-child(even){
-    margin-top: 12rem;
+    margin-top: 5rem;
     }
 }
 `;
 
 const StyledParagraph = styled(Paragraph)`
-  padding: 1rem;
+ padding: 1rem;
 `;
 
 const StyledHeading = styled(Heading)`
-  padding: 1rem;
+ padding: 1rem;
 `;
 
 const StyledImage = styled(Image)`
-  margin: 0.4rem auto;
-  border-top: 1px solid ${({ theme }) => theme.colors.primaryPink};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.primaryPink};
-  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
-    max-height: 60%;
-  }
-`;
-
-const StyledButton = styled(Button)`
-  align-self: center;
-  margin-top: 3rem;
-  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
-    position: absolute;
-    left: 11%;
-    bottom: 0;
-  }
+ margin: 0.4rem auto;
+ border-top: 1px solid ${({ theme }) => theme.colors.primaryPink};
+ border-bottom: 1px solid ${({ theme }) => theme.colors.primaryPink};
+ @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+  height: 280px;
+ }
 `;
 
 const Propositions = ({ mainpropose }) => (
-  <StyledContainer>
-    <StyledList>
-      {mainpropose.map(({ heading, description, proposeimage }, index) => {
-        return (
-          <StyledItem key={index}>
-            <StyledHeading secondary>{heading}</StyledHeading>
-            <StyledImage fluid={proposeimage.fluid} alt={proposeimage.alt} />
-            <StyledParagraph>{description}</StyledParagraph>
-          </StyledItem>
-        );
-      })}
-    </StyledList>
-    <StyledButton as={Link} to="/contact">
-      Cantact Us
-    </StyledButton>
-  </StyledContainer>
+ <StyledContainer>
+  <StyledList>
+   {mainpropose.map(({ heading, description, proposeimage }, index) => {
+    return (
+     <StyledItem key={index}>
+      <StyledHeading secondary>{heading}</StyledHeading>
+      <StyledImage fluid={proposeimage.fluid} alt={proposeimage.alt} />
+      <StyledParagraph>{description}</StyledParagraph>
+     </StyledItem>
+    );
+   })}
+  </StyledList>
+ </StyledContainer>
 );
 
 export default Propositions;

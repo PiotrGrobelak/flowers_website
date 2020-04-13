@@ -82,7 +82,6 @@ const ButtonScroll = () => {
      </StyledButtonIcon>
     )}
    </ScrollTo>
-   ;
   </>
  );
 };
