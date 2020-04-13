@@ -16,8 +16,8 @@ const Main = styled.main`
  background-repeat: no-repeat;
  background-position: center center;
  background-size: 400px;
- z-index: -2;
  overflow: hidden;
+ z-index: 1;
  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   background-size: 600px;
   background-position: left 40%;
@@ -70,6 +70,7 @@ AboutPage.propTypes = {
  data: PropTypes.shape({
   datoCmsAbout: PropTypes.shape({
    title: PropTypes.string.isRequired,
+   paragraph: PropTypes.string.isRequired,
    aboutcontent: PropTypes.arrayOf(
     PropTypes.shape({
      paragraph: PropTypes.string.isRequired,
@@ -90,6 +91,7 @@ export const query = graphql`
  {
   datoCmsAbout {
    title
+   paragraph
    aboutcontent {
     paragraph
     image {

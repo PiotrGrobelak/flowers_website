@@ -10,6 +10,7 @@ const Paragraph = styled.p`
   white ? theme.colors.primaryWhite : theme.colors.thirdaryViolet};
  letter-spacing: 1px;
  line-height: 1.5;
+ text-align: ${({ center }) => (center ? 'center' : 'left')};
 `;
 
 export default Paragraph;

@@ -28,7 +28,7 @@ const StyledSection = styled.section`
 const StyledFrom = styled.form`
  ${FlexColumn};
  justify-content: space-around;
- align-self: center;
+ align-items: center;
  height: 160px;
  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   ${FlexRow};
@@ -39,7 +39,9 @@ const StyledFrom = styled.form`
 `;
 
 const StyledFieldForm = styled.div`
- width: 40%;
+ @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+  width: 40%;
+ }
 `;
 
 const StyledParagraph = styled(Paragraph)`

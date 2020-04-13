@@ -22,7 +22,7 @@ const StyledParagraph = styled(Paragraph)`
  top: 45px;
  right: 0;
  margin: 0;
- padding: 2rem 1rem 2rem 1rem;
+ padding: 4rem 1rem 4rem 1rem;
  width: 60%;
  overflow: hidden;
  background-color: ${({ theme }) => theme.colors.primaryWhite};
@@ -30,6 +30,7 @@ const StyledParagraph = styled(Paragraph)`
  ${BoxShadow};
  ${BorderLeft};
  opacity: 0;
+ z-index: 10;
  animation: ${({ animate }) =>
   animate &&
   css`
@@ -97,7 +98,7 @@ const StyledWrapper = styled.div`
  }
  &:nth-of-type(even) ${StyledParagraph}:nth-child(2) {
   left: 0;
-  padding: 2rem 1rem 2rem 1rem;
+  padding: 4rem 1rem 4rem 1rem;
   ${BorderRight};
   ::before {
    right: 0;
