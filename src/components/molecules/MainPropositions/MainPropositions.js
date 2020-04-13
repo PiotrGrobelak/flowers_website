@@ -32,9 +32,9 @@ background-color: ${({ theme }) => theme.colors.secondaryWhite};
 }
 @media (min-width: ${({ theme }) => theme.responsive.lg}) {
 margin: 1rem;
-transition: transform .3s ease;
+transition: transform .4s ease;
 :hover{
-  transform: translateY(-5%) scale(1.05);
+  transform: scale(1.05);
 }
 :nth-child(odd){
     margin-bottom: 5rem;

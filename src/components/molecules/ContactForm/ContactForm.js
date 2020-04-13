@@ -57,17 +57,23 @@ const StyledForm = styled.form`
  }
 `;
 
-const StyledWrapper = styled.div`
+const StyledFieldWrapper = styled.div`
  ${FlexColumn};
 `;
 
-const ContactForm = ({ values, handleChange, handleBlur, handleSubmit, isSubmitting }) => {
+const ContactForm = ({
+ values,
+ handleChange,
+ handleBlur,
+ handleSubmit,
+ isSubmitting,
+}) => {
  return (
   <StyledForm onSubmit={handleSubmit}>
    <Heading as="h2" secondary>
     Say Hello!
    </Heading>
-   <StyledWrapper>
+   <StyledFieldWrapper>
     <Label htmlFor="name">Name</Label>
     <Input
      id="name"
@@ -80,8 +86,8 @@ const ContactForm = ({ values, handleChange, handleBlur, handleSubmit, isSubmitt
     <ErrorMsg>
      <ErrorMessage name="name" render={msg => msg} />
     </ErrorMsg>
-   </StyledWrapper>
-   <StyledWrapper>
+   </StyledFieldWrapper>
+   <StyledFieldWrapper>
     <Label htmlFor="e-mail">E-mail</Label>
     <Input
      id="email"
@@ -94,8 +100,8 @@ const ContactForm = ({ values, handleChange, handleBlur, handleSubmit, isSubmitt
     <ErrorMsg>
      <ErrorMessage name="email" render={msg => msg} />
     </ErrorMsg>
-   </StyledWrapper>
-   <StyledWrapper>
+   </StyledFieldWrapper>
+   <StyledFieldWrapper>
     <Label>Message</Label>
     <Input
      as="textarea"
@@ -109,7 +115,7 @@ const ContactForm = ({ values, handleChange, handleBlur, handleSubmit, isSubmitt
     <ErrorMsg>
      <ErrorMessage name="message" render={msg => msg} />
     </ErrorMsg>
-   </StyledWrapper>
+   </StyledFieldWrapper>
    <SuccessMsg>{isSubmitting ? 'Message sent' : ''}</SuccessMsg>
    <Button type="submit" disabled={isSubmitting}>
     Send message

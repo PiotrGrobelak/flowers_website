@@ -5,6 +5,7 @@ import { graphql } from 'gatsby';
 import Heading from 'src/components/atoms/Heading/Heading';
 import Paragraph from 'src/components/atoms/Paragraph/Paragraph';
 import ProductGrid from 'src/components/molecules/ProductGrid/ProductGrid';
+import Newsletter from 'src/components/molecules/Newsletter/Newsletter';
 import firstLayoutImage from 'src/assets/images/layout_image_4.png';
 import secondLayoutImage from 'src/assets/images/layout_image_3.png';
 
@@ -75,6 +76,7 @@ const OfferPage = ({ data }) => {
     </StyledParagraph>
    </StyledHeader>
    <ProductGrid nodes={nodes} />
+   <Newsletter />
   </Main>
  );
 };
