@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import Image from 'gatsby-image';
+import PropTypes from 'prop-types';
 import { BoxShadow, BorderRight, BorderLeft } from 'src/theme/Mixins';
 import Paragraph from 'src/components/atoms/Paragraph/Paragraph';
 import BackgroundImage from 'src/assets/images/layout_image_6.png';
@@ -130,7 +131,7 @@ const StyledWrapper = styled.div`
  }
 `;
 
-const AboutSection = React.memo(({ fluid, alt, paragraph }) => {
+const AboutItem = React.memo(({ fluid, alt, paragraph }) => {
  const [animate, setAnimate] = useState(false);
  const refElement = useRef();
 
@@ -160,4 +161,10 @@ const AboutSection = React.memo(({ fluid, alt, paragraph }) => {
  );
 });
 
-export default AboutSection;
+AboutItem.propTypes = {
+ paragraph: PropTypes.string.isRequired,
+ alt: PropTypes.string.isRequired,
+ fluid: PropTypes.object.isRequired,
+};
+
+export default AboutItem;

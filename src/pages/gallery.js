@@ -39,7 +39,7 @@ const Main = styled.main`
 `;
 
 const StyledHeader = styled.header`
- margin: 2rem;
+ margin: 4rem 2rem;
 `;
 
 const StyledParagraph = styled(Paragraph)`

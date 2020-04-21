@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ErrorMessage } from 'formik';
+import PropTypes from 'prop-types';
 import { FlexColumn, BoxProperty } from 'src/theme/Mixins';
 import Heading from 'src/components/atoms/Heading/Heading';
 import Label from 'src/components/atoms/Label/Label';
@@ -122,6 +123,18 @@ const ContactForm = ({
    </Button>
   </StyledForm>
  );
+};
+
+ContactForm.propTypes = {
+ handleChange: PropTypes.func.isRequired,
+ handleBlur: PropTypes.func.isRequired,
+ handleSubmit: PropTypes.func.isRequired,
+ isSubmitting: PropTypes.bool.isRequired,
+ value: PropTypes.string,
+};
+
+ContactForm.defaultProps = {
+ values: '',
 };
 
 export default ContactForm;

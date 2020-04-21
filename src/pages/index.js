@@ -65,7 +65,7 @@ const IndexPage = ({ data }) => {
    <Main>
     {nodes.map(
      (
-      { id, maintitle, mainheading, mainparagraph, mainimage, mainpropose },
+      { maintitle, mainheading, mainparagraph, mainimage, mainpropose },
       index,
      ) => {
       return (
@@ -96,7 +96,6 @@ IndexPage.propTypes = {
      mainheading: PropTypes.string.isRequired,
      mainparagraph: PropTypes.string.isRequired,
      mainimage: PropTypes.shape({
-      title: PropTypes.string.isRequired,
       alt: PropTypes.string.isRequired,
       fluid: PropTypes.object.isRequired,
      }).isRequired,
@@ -105,7 +104,6 @@ IndexPage.propTypes = {
        heading: PropTypes.string.isRequired,
        description: PropTypes.string.isRequired,
        proposeimage: PropTypes.shape({
-        title: PropTypes.string.isRequired,
         alt: PropTypes.string.isRequired,
         fluid: PropTypes.object.isRequired,
        }).isRequired,

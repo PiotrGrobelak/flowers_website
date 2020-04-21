@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'gatsby-image';
+import PropTypes from 'prop-types';
 import { FlexColumn, BoxShadow } from 'src/theme/Mixins';
 import Heading from 'src/components/atoms/Heading/Heading';
 import Paragraph from 'src/components/atoms/Paragraph/Paragraph';
@@ -77,5 +78,18 @@ const Propositions = ({ mainpropose }) => (
   </StyledList>
  </StyledContainer>
 );
+
+Propositions.propTypes = {
+ mainpropose: PropTypes.arrayOf(
+  PropTypes.shape({
+   heading: PropTypes.string.isRequired,
+   description: PropTypes.string.isRequired,
+   proposeimage: PropTypes.shape({
+    alt: PropTypes.string.isRequired,
+    fluid: PropTypes.object.isRequired,
+   }),
+  }),
+ ),
+};
 
 export default Propositions;

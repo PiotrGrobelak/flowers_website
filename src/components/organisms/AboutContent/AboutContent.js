@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import Heading from 'src/components/atoms/Heading/Heading';
 import Paragraph from 'src/components/atoms/Paragraph/Paragraph';
 import AboutItem from 'src/components/molecules/AboutItem/AboutItem';
@@ -42,6 +43,23 @@ const AboutContent = ({ datoCmsAbout }) => {
    />
   </>
  );
+};
+
+AboutContent.propTypes = {
+ datoCmsAbout: PropTypes.shape({
+  title: PropTypes.string.isRequired,
+  paragraph: PropTypes.string.isRequired,
+  aboutcontent: PropTypes.arrayOf(
+   PropTypes.shape({
+    paragraph: PropTypes.string.isRequired,
+    image: PropTypes.shape({
+     originalId: PropTypes.string.isRequired,
+     alt: PropTypes.string.isRequired,
+     fluid: PropTypes.object.isRequired,
+    }),
+   }),
+  ),
+ }),
 };
 
 export default AboutContent;

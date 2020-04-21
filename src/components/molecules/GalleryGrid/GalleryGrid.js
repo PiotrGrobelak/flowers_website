@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'gatsby-image';
+import PropTypes from 'prop-types';
 import { BoxProperty } from 'src/theme/Mixins';
 import secondLayoutImage from 'src/assets/images/layout_image_3.png';
 import Heading from 'src/components/atoms/Heading/Heading';
@@ -83,6 +84,23 @@ const GalleryGrid = ({ nodes, handleToggleModal }) => {
    })}
   </>
  );
+};
+
+GalleryGrid.propTypes = {
+ handleToggleModal: PropTypes.func.isRequired,
+ nodes: PropTypes.arrayOf(
+  PropTypes.shape({
+   title: PropTypes.string.isRequired,
+   galleryassets: PropTypes.arrayOf(
+    PropTypes.shape({
+     alt: PropTypes.string.isRequired,
+     url: PropTypes.string.isRequired,
+     basename: PropTypes.string.isRequired,
+     fluid: PropTypes.object.isRequired,
+    }),
+   ),
+  }),
+ ),
 };
 
 export default GalleryGrid;
