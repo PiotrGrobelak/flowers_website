@@ -50,7 +50,7 @@ const StyledParagraph = styled(Paragraph)`
 
 const AdditionalImage = styled.div`
  position: absolute;
- bottom: 1%;
+ bottom: 2%;
  left: -5%;
  height: 120px;
  width: 120px;
