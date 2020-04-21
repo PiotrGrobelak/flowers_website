@@ -6,8 +6,9 @@ import Paragraph from 'src/components/atoms/Paragraph/Paragraph';
 import BackgroundImage from 'src/assets/images/layout_image_6.png';
 
 const slideImage = keyframes`
- from {transform: translateX(-200%)}
- to {transform: translateX(0%)}
+ 0% {transform: translateY(100%); opacity: 0}
+ 75% {transform: translateY(-1%); opacity: 0.7}
+ 100% {transform: translateY(0%);  opacity: 1}
 `;
 
 const paragraphAnimation = keyframes`
@@ -79,7 +80,7 @@ const StyledImage = styled(Image)`
  animation: ${({ animate }) =>
   animate &&
   css`
-   ${slideImage} 1.2s ease-in-out both
+   ${slideImage} 2s ease-in-out both
   `};
  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   left: -50%;
