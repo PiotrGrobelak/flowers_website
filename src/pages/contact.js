@@ -8,6 +8,7 @@ import MapConatiner from 'src/components/molecules/MapConatiner/MapConatiner';
 import ContactInformation from 'src/components/molecules/ContactInformation/ContactInformation';
 import Payment from 'src/components/molecules/Payment/Payment';
 import FormContent from 'src/components/organisms/FormContent/FormContent';
+import Opinions from 'src/components/molecules/Opinions/Opinions';
 
 const Main = styled.main`
 position: relative;
@@ -94,6 +95,7 @@ const ContactPage = () => {
     </StyledInnerWrapper>
    </StyledWrapper>
    <Payment />
+   <Opinions />
   </Main>
  );
 };

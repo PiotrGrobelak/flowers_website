@@ -6,8 +6,7 @@ import Heading from 'src/components/atoms/Heading/Heading';
 import Paragraph from 'src/components/atoms/Paragraph/Paragraph';
 import ProductGrid from 'src/components/molecules/ProductGrid/ProductGrid';
 import Newsletter from 'src/components/molecules/Newsletter/Newsletter';
-import firstLayoutImage from 'src/assets/images/layout_image_4.png';
-import secondLayoutImage from 'src/assets/images/layout_image_3.png';
+import firstLayoutImage from 'src/assets/images/layout_image_3.png';
 
 const Main = styled.main`
  margin: 0 auto;
@@ -20,7 +19,7 @@ const Main = styled.main`
    left: -25%;
    height: 30%;
    width: 60%;
-   background-image: url(${secondLayoutImage});
+   background-image: url(${firstLayoutImage});
    background-repeat: no-repeat;
    background-size: 60%;
    background-position: bottom center;
@@ -34,7 +33,7 @@ const Main = styled.main`
    right: -55%;
    height: 100%;
    width: 100%;
-   background-image: url(${firstLayoutImage});
+   background-image: url(${({ image }) => image});
    background-repeat: no-repeat;
    background-size: cover;
    background-position: center bottom;
@@ -65,10 +64,10 @@ const StyledParagraph = styled(Paragraph)`
 const OfferPage = ({ data }) => {
  const {
   allDatoCmsProduct: { nodes },
+  file,
  } = data;
-
  return (
-  <Main>
+  <Main image={file.childImageSharp.fluid.src}>
    <StyledHeader>
     <Heading>Our Offer</Heading>
     <StyledParagraph medium bold>
@@ -100,6 +99,13 @@ OfferPage.propTypes = {
 
 export const query = graphql`
  {
+  file(name: { eq: "layout_image_4" }) {
+   childImageSharp {
+    fluid(maxWidth: 2000, maxHeight: 1200, quality: 100) {
+     src
+    }
+   }
+  }
   allDatoCmsProduct {
    nodes {
     id
