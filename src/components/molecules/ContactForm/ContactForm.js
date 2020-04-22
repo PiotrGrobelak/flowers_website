@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ErrorMessage } from 'formik';
+import PropTypes from 'prop-types';
 import { FlexColumn, BoxProperty } from 'src/theme/Mixins';
 import Heading from 'src/components/atoms/Heading/Heading';
 import Label from 'src/components/atoms/Label/Label';
@@ -52,22 +53,37 @@ const StyledForm = styled.form`
    right: -45%;
   }
  }
+ @media (min-width: ${({ theme }) => theme.responsive.xs}) {
+  margin: 0 auto;
+  width: 55%;
+ }
+ @media (min-width: ${({ theme }) => theme.responsive.sm}) {
+  margin: 0;
+  width: 60%;
+ }
  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   height: 500px;
+  width: 100%;
  }
 `;
 
-const StyledWrapper = styled.div`
+const StyledFieldWrapper = styled.div`
  ${FlexColumn};
 `;
 
-const ContactForm = ({ values, handleChange, handleBlur, handleSubmit, isSubmitting }) => {
+const ContactForm = ({
+ values,
+ handleChange,
+ handleBlur,
+ handleSubmit,
+ isSubmitting,
+}) => {
  return (
   <StyledForm onSubmit={handleSubmit}>
    <Heading as="h2" secondary>
     Say Hello!
    </Heading>
-   <StyledWrapper>
+   <StyledFieldWrapper>
     <Label htmlFor="name">Name</Label>
     <Input
      id="name"
@@ -80,8 +96,8 @@ const ContactForm = ({ values, handleChange, handleBlur, handleSubmit, isSubmitt
     <ErrorMsg>
      <ErrorMessage name="name" render={msg => msg} />
     </ErrorMsg>
-   </StyledWrapper>
-   <StyledWrapper>
+   </StyledFieldWrapper>
+   <StyledFieldWrapper>
     <Label htmlFor="e-mail">E-mail</Label>
     <Input
      id="email"
@@ -94,8 +110,8 @@ const ContactForm = ({ values, handleChange, handleBlur, handleSubmit, isSubmitt
     <ErrorMsg>
      <ErrorMessage name="email" render={msg => msg} />
     </ErrorMsg>
-   </StyledWrapper>
-   <StyledWrapper>
+   </StyledFieldWrapper>
+   <StyledFieldWrapper>
     <Label>Message</Label>
     <Input
      as="textarea"
@@ -109,13 +125,29 @@ const ContactForm = ({ values, handleChange, handleBlur, handleSubmit, isSubmitt
     <ErrorMsg>
      <ErrorMessage name="message" render={msg => msg} />
     </ErrorMsg>
-   </StyledWrapper>
+   </StyledFieldWrapper>
    <SuccessMsg>{isSubmitting ? 'Message sent' : ''}</SuccessMsg>
    <Button type="submit" disabled={isSubmitting}>
     Send message
    </Button>
   </StyledForm>
  );
+};
+
+ContactForm.propTypes = {
+ handleChange: PropTypes.func.isRequired,
+ handleBlur: PropTypes.func.isRequired,
+ handleSubmit: PropTypes.func.isRequired,
+ isSubmitting: PropTypes.bool.isRequired,
+ values: PropTypes.shape({
+  name: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  message: PropTypes.string.isRequired,
+ }),
+};
+
+ContactForm.defaultProps = {
+ values: '',
 };
 
 export default ContactForm;

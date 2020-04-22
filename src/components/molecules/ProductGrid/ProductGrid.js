@@ -3,20 +3,24 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import Image from 'gatsby-image';
 import slugify from 'slugify';
+import PropTypes from 'prop-types';
 import { FlexColumn, BoxShadow, SecondaryBoxShadow } from 'src/theme/Mixins';
 import Heading from 'src/components/atoms/Heading/Heading';
 import Cost from 'src/components/atoms/Cost/Cost';
 import Button from 'src/components/atoms/Button/Button';
 
-const StyledList = styled.div`
+const StyledList = styled.ul`
  ${FlexColumn};
  justify-content: center;
  background-color: ${({ theme }) => theme.colors.secondaryWhite};
- @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+ @media (min-width: ${({ theme }) => theme.responsive.xs}) {
   display: grid;
+  grid-template-columns: repeat(2, 300px);
+ }
+ @media (min-width: ${({ theme }) => theme.responsive.md}) {
   grid-template-columns: repeat(3, 280px);
   grid-gap: 0.2rem;
-  margin: 3rem 0 8rem;
+  margin: 3rem 0 8rem 2rem;
   padding: 1rem 0;
   padding-left: 1rem;
   width: 90%;
@@ -102,7 +106,7 @@ const ProductGrid = ({ nodes }) => (
    const slugifiedName = slugify(productname, { lower: true });
    return (
     <StyledItem key={id}>
-     <StyledImage fluid={productimage.fluid} />
+     <StyledImage fluid={productimage.fluid} alt={productname} />
      <StyledHeading secondary small normal>
       {productname}
      </StyledHeading>
@@ -121,5 +125,15 @@ const ProductGrid = ({ nodes }) => (
   })}
  </StyledList>
 );
+
+ProductGrid.propTypes = {
+ nodes: PropTypes.arrayOf(
+  PropTypes.shape({
+   id: PropTypes.string.isRequired,
+   productname: PropTypes.string.isRequired,
+   productprice: PropTypes.string.isRequired,
+  }),
+ ),
+};
 
 export default ProductGrid;

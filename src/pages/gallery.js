@@ -9,7 +9,7 @@ import Paragraph from 'src/components/atoms/Paragraph/Paragraph';
 import Button from 'src/components/atoms/Button/Button';
 import GalleryContent from 'src/components/organisms/GalleryContent/GalleryContent';
 import backgroundImage from 'src/assets/images/layout_image_2.png';
-import secondLayoutImage from 'src/assets/images/layout_image_3.png';
+import secondBackgroundImage from 'src/assets/images/layout_image_3.png';
 
 const Main = styled.main`
  margin: 0 auto;
@@ -29,7 +29,7 @@ const Main = styled.main`
    right: -50%;
    height: 100%;
    width: 100%;
-   background-image: url(${secondLayoutImage});
+   background-image: url(${secondBackgroundImage});
    background-repeat: no-repeat;
    background-size: 50%;
    opacity: 0.4;
@@ -39,18 +39,25 @@ const Main = styled.main`
 `;
 
 const StyledHeader = styled.header`
- margin: 2rem;
+ margin: 4rem 2rem;
+ @media (min-width: ${({ theme }) => theme.responsive.sm}) {
+  margin-top: 14rem;
+  margin-left: 10rem;
+ }
+ @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+  margin: 4rem 2rem;
+ }
 `;
 
 const StyledParagraph = styled(Paragraph)`
- @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+ @media (min-width: ${({ theme }) => theme.responsive.md}) {
   max-width: 60%;
  }
 `;
 
 const AdditionalImage = styled.div`
  position: absolute;
- bottom: 1%;
+ bottom: 2%;
  left: -5%;
  height: 120px;
  width: 120px;
@@ -58,6 +65,9 @@ const AdditionalImage = styled.div`
  background-image: url(${backgroundImage});
  background-repeat: no-repeat;
  background-size: 100%;
+ @media (min-width: ${({ theme }) => theme.responsive.sm}) {
+  left: -3%;
+ }
  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   left: -2%;
   bottom: 2%;

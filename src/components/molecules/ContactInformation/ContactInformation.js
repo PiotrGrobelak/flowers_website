@@ -51,7 +51,6 @@ const ContactInformation = () => {
     owner
     accountname
     accountnumber
-    id
    }
   }
  `);

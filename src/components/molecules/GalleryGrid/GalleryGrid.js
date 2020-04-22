@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'gatsby-image';
+import PropTypes from 'prop-types';
 import { BoxProperty } from 'src/theme/Mixins';
 import secondLayoutImage from 'src/assets/images/layout_image_3.png';
 import Heading from 'src/components/atoms/Heading/Heading';
@@ -15,6 +16,12 @@ const StyledList = styled.ul`
  grid-template-columns: repeat(1, 300px);
  grid-gap: 2rem;
  margin-bottom: 4rem;
+ @media (min-width: ${({ theme }) => theme.responsive.xs}) {
+  grid-template-columns: repeat(2, 250px);
+ }
+ @media (min-width: ${({ theme }) => theme.responsive.sm}) {
+  grid-template-columns: repeat(2, 300px);
+ }
  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   grid-template-columns: repeat(3, 300px);
   position: relative;
@@ -38,6 +45,17 @@ const StyledItem = styled.li`
  height: 250px;
  ${BoxProperty}
  overflow: hidden;
+ width: 100%;
+ @media (min-width: ${({ theme }) => theme.responsive.sm}) {
+  :nth-last-child(1):nth-child(odd) {
+   grid-column: 1 / span 2;
+  }
+ }
+ @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+  :nth-last-child(1):nth-child(odd) {
+   grid-column: auto;
+  }
+ }
 `;
 
 const StyledImage = styled(Image)`
@@ -83,6 +101,23 @@ const GalleryGrid = ({ nodes, handleToggleModal }) => {
    })}
   </>
  );
+};
+
+GalleryGrid.propTypes = {
+ handleToggleModal: PropTypes.func.isRequired,
+ nodes: PropTypes.arrayOf(
+  PropTypes.shape({
+   title: PropTypes.string.isRequired,
+   galleryassets: PropTypes.arrayOf(
+    PropTypes.shape({
+     alt: PropTypes.string.isRequired,
+     url: PropTypes.string.isRequired,
+     basename: PropTypes.string.isRequired,
+     fluid: PropTypes.object.isRequired,
+    }),
+   ),
+  }),
+ ),
 };
 
 export default GalleryGrid;

@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+
 import Image from 'gatsby-image';
 import MainHeader from 'src/components/molecules/MainHeader/MainHeader';
 import MainPropositions from 'src/components/molecules/MainPropositions/MainPropositions';
@@ -15,13 +16,25 @@ const Main = styled.main`
 
 const HeroImage = styled(Image)`
  position: absolute !important;
- top: 15%;
+ top: 5%;
  right: 0;
  width: 100%;
  height: 40%;
  object-fit: contain;
  opacity: 0.6;
  z-index: -1;
+ @media (min-width: ${({ theme }) => theme.responsive.sm}) {
+  top: 10%;
+  height: 90%;
+ }
+ @media (min-width: ${({ theme }) => theme.responsive.md}) {
+  top: 10%;
+  right: -35%;
+  width: 100%;
+  opacity: 0.7;
+  height: 90%;
+  object-fit: cover;
+ }
  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   top: 0;
   right: -55%;
@@ -38,19 +51,22 @@ const HeroImage = styled(Image)`
 
 const AdditionalImage = styled.div`
  position: absolute;
- bottom: 5%;
- right: -6%;
+ bottom: 2%;
+ left: -6%;
  height: 120px;
  width: 120px;
- transform: rotate(-120deg);
+ transform: rotate(40deg);
  background-image: url(${backgroundImage});
  background-repeat: no-repeat;
  background-size: 100%;
+ @media (min-width: ${({ theme }) => theme.responsive.md}) {
+  left: -1%;
+  bottom: 3%;
+ }
  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   left: -2%;
-  bottom: 3%;
-  height: 240px;
-  width: 240px;
+  height: 230px;
+  width: 230px;
   transform: rotate(-20deg);
  }
 `;
@@ -62,15 +78,24 @@ const IndexPage = ({ data }) => {
  return (
   <>
    <Main>
-    {nodes.map(({ id, maintitle, mainheading, mainparagraph, mainimage, mainpropose }, index) => {
-     return (
-      <div key={index}>
-       <MainHeader maintitle={maintitle} mainheading={mainheading} mainparagraph={mainparagraph} />
-       <MainPropositions mainpropose={mainpropose} />
-       <HeroImage fluid={mainimage.fluid} alt={mainimage.alt} />
-      </div>
-     );
-    })}
+    {nodes.map(
+     (
+      { maintitle, mainheading, mainparagraph, mainimage, mainpropose },
+      index,
+     ) => {
+      return (
+       <div key={index}>
+        <MainHeader
+         maintitle={maintitle}
+         mainheading={mainheading}
+         mainparagraph={mainparagraph}
+        />
+        <MainPropositions mainpropose={mainpropose} />
+        <HeroImage fluid={mainimage.fluid} alt={mainimage.alt} />
+       </div>
+      );
+     },
+    )}
     <AdditionalImage />
    </Main>
   </>
@@ -86,7 +111,6 @@ IndexPage.propTypes = {
      mainheading: PropTypes.string.isRequired,
      mainparagraph: PropTypes.string.isRequired,
      mainimage: PropTypes.shape({
-      title: PropTypes.string.isRequired,
       alt: PropTypes.string.isRequired,
       fluid: PropTypes.object.isRequired,
      }).isRequired,
@@ -95,7 +119,6 @@ IndexPage.propTypes = {
        heading: PropTypes.string.isRequired,
        description: PropTypes.string.isRequired,
        proposeimage: PropTypes.shape({
-        title: PropTypes.string.isRequired,
         alt: PropTypes.string.isRequired,
         fluid: PropTypes.object.isRequired,
        }).isRequired,
