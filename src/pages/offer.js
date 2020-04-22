@@ -11,7 +11,7 @@ import firstLayoutImage from 'src/assets/images/layout_image_3.png';
 const Main = styled.main`
  margin: 0 auto;
  max-width: 1200px;
- @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+ @media (min-width: ${({ theme }) => theme.responsive.sm}) {
   ::before {
    content: '';
    position: absolute;
@@ -47,6 +47,9 @@ const StyledHeader = styled.header`
  margin-top: 5rem;
  padding: 1rem;
  text-align: right;
+ @media (min-width: ${({ theme }) => theme.responsive.sm}) {
+  width: 70%;
+ }
  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   width: 80%;
  }

@@ -15,6 +15,15 @@ const StyledSection = styled.section`
  position: relative;
  ${FlexColumn};
  align-items: center;
+ @media (min-height: ${({ theme }) => theme.responsive.sm}) and (max-width: ${({
+   theme,
+  }) => theme.responsive.s}) and (orientation: portrait) {
+  margin-top: 1rem;
+ }
+ @media (min-width: ${({ theme }) =>
+   theme.responsive.sm}) and (orientation: portrait) {
+  margin-top: 2rem;
+ }
  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   grid-column: 1/ 5;
   grid-row: 1/ 1;
