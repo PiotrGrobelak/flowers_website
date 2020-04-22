@@ -21,15 +21,18 @@ Florist's website built based on Gatsby and DatoCms. The project uses GraphQL qu
 - react-icons
 - react-images
 - slugify
+- RWD
 - styled-components
 - body-scroll-lock
 - axios
 - formik
-- dotenv
+- PWA
+- react-slick
 
 ## :school_satchel: Tools
 
 - Firebase functions(contact form)
+- ESlint
 - SendGrid
 - Google Maps API
 - DatoCms
@@ -57,10 +60,6 @@ Florist's website built based on Gatsby and DatoCms. The project uses GraphQL qu
 
     gatsby develop
     ```
-
-## Updates
-
-### The next features will be implemented soon.
 
 
 

@@ -28,12 +28,12 @@ color: ${({ theme }) => theme.colors.thirdaryViolet};
         background-repeat: no-repeat;
         background-size: 350px;
         z-index: -1;
-        @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+        @media (min-width: ${({ theme }) => theme.responsive.md}) {
             top: 0;
             right: -80%;
             background-size: 30%;
         }
-        @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+        @media (min-width: ${({ theme }) => theme.responsive.xl}) {
             right: -105%;
         }
     }
