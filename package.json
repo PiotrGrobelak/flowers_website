@@ -42,7 +42,8 @@
   },
   "devDependencies": {
     "gatsby-plugin-root-import": "^2.0.5",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "@babel/compat-data": "7.9.0"
   },
   "keywords": [
     "gatsby"

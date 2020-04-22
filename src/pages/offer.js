@@ -66,6 +66,7 @@ const OfferPage = ({ data }) => {
   allDatoCmsProduct: { nodes },
   file,
  } = data;
+ //  console.log(data);
  return (
   <Main image={file.childImageSharp.fluid.src}>
    <StyledHeader>

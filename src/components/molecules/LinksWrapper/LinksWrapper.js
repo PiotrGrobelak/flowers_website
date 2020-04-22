@@ -21,7 +21,7 @@ const LinksWrapper = ({ title, firstLink, secondLink }) => (
   <Heading secondary center>
    {title}
   </Heading>
-  <Button as={Link} to="/offer">
+  <Button as={Link} to="/gallery">
    {firstLink}
   </Button>
   <Button as={Link} to="/contact">
