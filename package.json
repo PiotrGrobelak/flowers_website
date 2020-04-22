@@ -35,11 +35,19 @@
     "react-images": "^1.1.0-beta.3",
     "react-scroll-to": "^3.0.0-beta.6",
     "react-slick": "^0.25.2",
+    "slick-carousel": "^1.8.1",
     "slugify": "^1.4.0",
     "styled-components": "^5.0.1",
     "styled-normalize": "^8.0.7"
   },
   "devDependencies": {
+    "@babel/compat-data": "7.9.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-loader": "^4.0.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-react": "^7.19.0",
+    "gatsby-plugin-eslint": "^2.0.8",
     "gatsby-plugin-root-import": "^2.0.5",
     "prettier": "^1.19.1"
   },

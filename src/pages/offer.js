@@ -5,13 +5,13 @@ import { graphql } from 'gatsby';
 import Heading from 'src/components/atoms/Heading/Heading';
 import Paragraph from 'src/components/atoms/Paragraph/Paragraph';
 import ProductGrid from 'src/components/molecules/ProductGrid/ProductGrid';
-import firstLayoutImage from 'src/assets/images/layout_image_4.png';
-import secondLayoutImage from 'src/assets/images/layout_image_3.png';
+import Newsletter from 'src/components/molecules/Newsletter/Newsletter';
+import firstLayoutImage from 'src/assets/images/layout_image_3.png';
 
 const Main = styled.main`
  margin: 0 auto;
  max-width: 1200px;
- @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+ @media (min-width: ${({ theme }) => theme.responsive.sm}) {
   ::before {
    content: '';
    position: absolute;
@@ -19,7 +19,7 @@ const Main = styled.main`
    left: -25%;
    height: 30%;
    width: 60%;
-   background-image: url(${secondLayoutImage});
+   background-image: url(${firstLayoutImage});
    background-repeat: no-repeat;
    background-size: 60%;
    background-position: bottom center;
@@ -33,7 +33,7 @@ const Main = styled.main`
    right: -55%;
    height: 100%;
    width: 100%;
-   background-image: url(${firstLayoutImage});
+   background-image: url(${({ image }) => image});
    background-repeat: no-repeat;
    background-size: cover;
    background-position: center bottom;
@@ -47,6 +47,9 @@ const StyledHeader = styled.header`
  margin-top: 5rem;
  padding: 1rem;
  text-align: right;
+ @media (min-width: ${({ theme }) => theme.responsive.sm}) {
+  width: 70%;
+ }
  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   width: 80%;
  }
@@ -64,10 +67,10 @@ const StyledParagraph = styled(Paragraph)`
 const OfferPage = ({ data }) => {
  const {
   allDatoCmsProduct: { nodes },
+  file,
  } = data;
-
  return (
-  <Main>
+  <Main image={file.childImageSharp.fluid.src}>
    <StyledHeader>
     <Heading>Our Offer</Heading>
     <StyledParagraph medium bold>
@@ -75,12 +78,14 @@ const OfferPage = ({ data }) => {
     </StyledParagraph>
    </StyledHeader>
    <ProductGrid nodes={nodes} />
+   <Newsletter />
   </Main>
  );
 };
 
 OfferPage.propTypes = {
  data: PropTypes.shape({
+  file: PropTypes.object.isRequired,
   allDatoCmsProduct: PropTypes.shape({
    nodes: PropTypes.arrayOf(
     PropTypes.shape({
@@ -98,6 +103,13 @@ OfferPage.propTypes = {
 
 export const query = graphql`
  {
+  file(name: { eq: "layout_image_4" }) {
+   childImageSharp {
+    fluid(maxWidth: 2000, maxHeight: 1200, quality: 100) {
+     src
+    }
+   }
+  }
   allDatoCmsProduct {
    nodes {
     id

@@ -11,6 +11,22 @@ const StyledModal = styled.div`
  position: relative;
  ${FlexColumn};
  height: 100vh;
+ @media (min-width: ${({ theme }) =>
+   theme.responsive.sm}) and (orientation: portrait) {
+  margin-top: 10rem;
+  height: 70vh;
+ }
+ @media (min-width: ${({ theme }) =>
+   theme.responsive.md}) and (orientation: portrait) {
+  margin-top: 10rem;
+  height: 60vh;
+ }
+ @media (min-height: ${({ theme }) => theme.responsive.sm}) and (max-width: ${({
+   theme,
+  }) => theme.responsive.s}) and (orientation: portrait) {
+  margin-top: 1rem;
+  height: 90vh;
+ }
 `;
 
 const StyledContainer = styled.div`
@@ -90,7 +106,9 @@ const Product = ({ data }) => {
   }
  };
  return (
-  <StyledModal onClick={() => navigate(`/offer`, { state: { noScroll: true } })}>
+  <StyledModal
+   onClick={() => navigate(`/offer`, { state: { noScroll: true } })}
+  >
    <StyledContainer onClick={e => e.stopPropagation()}>
     <ProductModal
      data={data.datoCmsProduct}
@@ -113,6 +131,7 @@ Product.propTypes = {
    }),
    productprice: PropTypes.string.isRequired,
    productdescription: PropTypes.string.isRequired,
+   originalId: PropTypes.string.isRequired,
   }),
   allDatoCmsProduct: PropTypes.shape({
    nodes: PropTypes.arrayOf(

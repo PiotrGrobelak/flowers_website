@@ -3,7 +3,6 @@ import styled, { keyframes, css } from 'styled-components';
 import { MdKeyboardArrowUp } from 'react-icons/md';
 import { ScrollTo } from 'react-scroll-to';
 import { BoxShadow } from 'src/theme/Mixins';
-
 import ButtonIcon from 'src/components/atoms/ButtonIcon/ButtonIcon';
 
 const showButton = keyframes`
@@ -30,6 +29,7 @@ const StyledButtonIcon = styled(ButtonIcon)`
  background-color: ${({ theme }) => theme.colors.secondaryWhite};
  ${BoxShadow};
  opacity: 0;
+ z-index: 999;
  transform: translate(50%);
  animation: ${({ show }) =>
   show
@@ -82,7 +82,6 @@ const ButtonScroll = () => {
      </StyledButtonIcon>
     )}
    </ScrollTo>
-   ;
   </>
  );
 };
