@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import Image from 'gatsby-image';
+import PropTypes from 'prop-types';
 import { MdClose } from 'react-icons/md';
 import { FlexColumn, FlexRow } from 'src/theme/Mixins';
 import Heading from 'src/components/atoms/Heading/Heading';
@@ -118,6 +119,17 @@ const ProductModal = ({ data, previousProduct, nextProduct }) => {
    </StyledInnerWrapper>
   </>
  );
+};
+
+ProductModal.propTypes = {
+ previousProduct: PropTypes.func.isRequired,
+ nextProduct: PropTypes.func.isRequired,
+ data: PropTypes.shape({
+  productname: PropTypes.string.isRequired,
+  productimage: PropTypes.object.isRequired,
+  productprice: PropTypes.string.isRequired,
+  productdescription: PropTypes.string.isRequired,
+ }),
 };
 
 export default ProductModal;

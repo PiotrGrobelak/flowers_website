@@ -66,7 +66,6 @@ const OfferPage = ({ data }) => {
   allDatoCmsProduct: { nodes },
   file,
  } = data;
- //  console.log(data);
  return (
   <Main image={file.childImageSharp.fluid.src}>
    <StyledHeader>
@@ -83,6 +82,7 @@ const OfferPage = ({ data }) => {
 
 OfferPage.propTypes = {
  data: PropTypes.shape({
+  file: PropTypes.object.isRequired,
   allDatoCmsProduct: PropTypes.shape({
    nodes: PropTypes.arrayOf(
     PropTypes.shape({

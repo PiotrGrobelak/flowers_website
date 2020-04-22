@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import Image from 'gatsby-image';
 import slugify from 'slugify';
+import PropTypes from 'prop-types';
 import { FlexColumn, BoxShadow, SecondaryBoxShadow } from 'src/theme/Mixins';
 import Heading from 'src/components/atoms/Heading/Heading';
 import Cost from 'src/components/atoms/Cost/Cost';
@@ -121,5 +122,15 @@ const ProductGrid = ({ nodes }) => (
   })}
  </StyledList>
 );
+
+ProductGrid.propTypes = {
+ nodes: PropTypes.arrayOf(
+  PropTypes.shape({
+   id: PropTypes.string.isRequired,
+   productname: PropTypes.string.isRequired,
+   productprice: PropTypes.string.isRequired,
+  }),
+ ),
+};
 
 export default ProductGrid;

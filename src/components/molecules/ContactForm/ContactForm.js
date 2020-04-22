@@ -130,7 +130,11 @@ ContactForm.propTypes = {
  handleBlur: PropTypes.func.isRequired,
  handleSubmit: PropTypes.func.isRequired,
  isSubmitting: PropTypes.bool.isRequired,
- value: PropTypes.string,
+ values: PropTypes.shape({
+  name: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  message: PropTypes.string.isRequired,
+ }),
 };
 
 ContactForm.defaultProps = {

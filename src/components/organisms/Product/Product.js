@@ -90,7 +90,9 @@ const Product = ({ data }) => {
   }
  };
  return (
-  <StyledModal onClick={() => navigate(`/offer`, { state: { noScroll: true } })}>
+  <StyledModal
+   onClick={() => navigate(`/offer`, { state: { noScroll: true } })}
+  >
    <StyledContainer onClick={e => e.stopPropagation()}>
     <ProductModal
      data={data.datoCmsProduct}
@@ -109,10 +111,11 @@ Product.propTypes = {
   datoCmsProduct: PropTypes.shape({
    productname: PropTypes.string.isRequired,
    productimage: PropTypes.shape({
-    fluid: PropTypes.object.isRequired,
+    fluid: PropTypes.string.isRequired,
    }),
    productprice: PropTypes.string.isRequired,
    productdescription: PropTypes.string.isRequired,
+   originalId: PropTypes.object.isRequired,
   }),
   allDatoCmsProduct: PropTypes.shape({
    nodes: PropTypes.arrayOf(

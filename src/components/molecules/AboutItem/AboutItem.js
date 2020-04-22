@@ -140,15 +140,17 @@ const AboutItem = React.memo(({ fluid, alt, paragraph }) => {
    setAnimate(true);
   }
  };
+
  useEffect(() => {
   let scrollPos = window.scrollY + window.innerHeight;
   const elementPos = refElement.current.getBoundingClientRect().top;
   isAnimate(elementPos, scrollPos);
+
   const onScroll = () => {
    scrollPos = window.scrollY + window.innerHeight;
-
    isAnimate(elementPos, scrollPos);
   };
+
   window.addEventListener('scroll', onScroll);
   return () => window.removeEventListener('scroll', onScroll);
  }, [refElement, animate]);

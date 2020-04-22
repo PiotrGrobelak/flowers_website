@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { FlexRow, BoxShadow } from 'src/theme/Mixins';
 
 const StyledWrapper = styled.span`
@@ -15,5 +16,9 @@ const StyledWrapper = styled.span`
 `;
 
 const IconWrapper = ({ children }) => <StyledWrapper>{children}</StyledWrapper>;
+
+IconWrapper.propTypes = {
+ children: PropTypes.node.isRequired,
+};
 
 export default IconWrapper;

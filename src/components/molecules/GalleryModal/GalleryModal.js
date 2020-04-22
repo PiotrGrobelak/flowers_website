@@ -26,4 +26,11 @@ const GalleryModal = ({
  );
 };
 
+GalleryModal.propTypes = {
+ modalIsOpen: PropTypes.bool.isRequired,
+ closeModal: PropTypes.func.isRequired,
+ selectedImageIndex: PropTypes.number.isRequired,
+ galleryassets: PropTypes.array.isRequired,
+};
+
 export default GalleryModal;

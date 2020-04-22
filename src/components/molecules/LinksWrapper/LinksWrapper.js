@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 import { FlexColumn, BoxShadow } from 'src/theme/Mixins';
 import Heading from 'src/components/atoms/Heading/Heading';
 import Button from 'src/components/atoms/Button/Button';
@@ -29,5 +30,16 @@ const LinksWrapper = ({ title, firstLink, secondLink }) => (
   </Button>
  </StyledSection>
 );
+
+LinksWrapper.propTypes = {
+ title: PropTypes.string.isRequired,
+ firstLink: PropTypes.string,
+ secondLink: PropTypes.string,
+};
+
+LinksWrapper.defaultProps = {
+ firstLink: '',
+ secondLink: '',
+};
 
 export default LinksWrapper;
