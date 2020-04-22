@@ -17,6 +17,9 @@ const StyledFigure = styled.figure`
  justify-content: flex-start;
  align-items: center;
  min-height: 350px;
+ @media (min-width: ${({ theme }) => theme.responsive.xs}) {
+  padding: 0 5rem;
+ }
  @media (min-width: ${({ theme }) => theme.responsive.sm}) {
   padding: 0 10rem;
  }

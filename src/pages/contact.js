@@ -42,20 +42,28 @@ color: ${({ theme }) => theme.colors.thirdaryViolet};
 const StyledHeader = styled.header`
  margin: 2rem 0;
  padding: 0 2rem;
+ @media (min-width: ${({ theme }) => theme.responsive.xs}) {
+  width: 60%;
+  align-self: center;
+ }
  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   margin-bottom: 4rem;
   padding-left: 4rem;
   align-self: flex-start;
-  width: 60%;
  }
 `;
 
 const StyledWrapper = styled.div`
  margin: 1rem;
+ @media (min-width: ${({ theme }) => theme.responsive.sm}) {
+  width: 80%;
+  align-self: center;
+ }
  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   display: grid;
   grid-template-columns: 350px 1fr;
   grid-gap: 4rem;
+  width: 100%;
  }
 `;
 
@@ -67,12 +75,19 @@ const StyledInnerWrapper = styled.div`
  ${BoxShadow}
  ${BorderLeft};
  background: ${({ theme }) => theme.colors.secondaryWhite};
- @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+ @media (min-width: ${({ theme }) => theme.responsive.xs}) {
   grid-template-columns: 320px 1fr;
   grid-template-rows: 1fr;
+  padding-bottom: 0;
+ }
+ @media (min-width: ${({ theme }) => theme.responsive.sm}) {
+  grid-template-columns: 320px 1fr;
+  grid-template-rows: 1fr;
+  padding-bottom: 0;
+ }
+ @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   margin-top: 0;
   margin-left: 2rem;
-  padding-bottom: 0;
  }
 `;
 

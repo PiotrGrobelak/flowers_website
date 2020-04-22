@@ -53,8 +53,17 @@ const StyledForm = styled.form`
    right: -45%;
   }
  }
+ @media (min-width: ${({ theme }) => theme.responsive.xs}) {
+  margin: 0 auto;
+  width: 55%;
+ }
+ @media (min-width: ${({ theme }) => theme.responsive.sm}) {
+  margin: 0;
+  width: 60%;
+ }
  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   height: 500px;
+  width: 100%;
  }
 `;
 
