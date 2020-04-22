@@ -12,7 +12,11 @@ const StyledHeader = styled.header`
  margin-top: 7rem;
  max-width: 90%;
  text-align: right;
+ @media (min-width: ${({ theme }) => theme.responsive.md}) {
+  margin-top: 12rem;
+ }
  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+  margin-top: 8rem;
   width: 70%;
  }
 `;

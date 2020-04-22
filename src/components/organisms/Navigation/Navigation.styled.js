@@ -31,7 +31,7 @@ export const NavigationWrapper = styled.div`
  box-shadow: 0px 3px 10px 3px rgba(0, 0, 0, 0.25);
  transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
  transition: transform 0.3s ease-in-out;
- @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+ @media (min-width: ${({ theme }) => theme.responsive.md}) {
   flex-direction: row;
   justify-content: space-around;
   position: relative;
@@ -48,7 +48,7 @@ export const NavigationList = styled.ul`
  flex-direction: column;
  list-style: none;
  align-items: center;
- @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+ @media (min-width: ${({ theme }) => theme.responsive.md}) {
   flex-direction: row;
  }
 `;
@@ -57,7 +57,7 @@ export const NavigationItem = styled.li`
  padding: 1rem;
  :nth-last-child(1) {
   margin-bottom: 1rem;
-  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+  @media (min-width: ${({ theme }) => theme.responsive.md}) {
    margin-bottom: 0;
   }
  }
@@ -93,7 +93,7 @@ export const ContactIcon = styled(MdPhoneInTalk)`
 export const Logo = styled.img`
  margin-top: 3rem;
  height: 60px;
- @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+ @media (min-width: ${({ theme }) => theme.responsive.md}) {
   margin-top: 0;
  }
  @media (min-width: ${({ theme }) => theme.responsive.xl}) {
@@ -106,7 +106,7 @@ export const LogoMobile = styled.img`
  top: 10%;
  left: 25%;
  height: 50px;
- @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+ @media (min-width: ${({ theme }) => theme.responsive.md}) {
   display: none;
  }
 `;

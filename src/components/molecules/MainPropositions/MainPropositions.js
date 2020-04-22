@@ -9,11 +9,19 @@ import Paragraph from 'src/components/atoms/Paragraph/Paragraph';
 const StyledContainer = styled.div`
  position: relative;
  ${FlexColumn};
+ @media (min-width: ${({ theme }) => theme.responsive.md}) {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+ }
 `;
 
 const StyledList = styled.ul`
 ${FlexColumn}
-@media (min-width: ${({ theme }) => theme.responsive.lg}) {
+@media (min-width: ${({ theme }) => theme.responsive.sm}) {
+  align-items: center;
+}
+@media (min-width: ${({ theme }) => theme.responsive.md}) {
   display: grid;
   grid-template-columns: repeat(2, 400px);
   grid-template-rows:  1fr;
@@ -31,7 +39,11 @@ background-color: ${({ theme }) => theme.colors.secondaryWhite};
 :nth-child(2){
     margin-top: 2rem;
 }
-@media (min-width: ${({ theme }) => theme.responsive.lg}) {
+@media (min-width: ${({ theme }) => theme.responsive.sm}) {
+width: 400px;
+}
+@media (min-width: ${({ theme }) => theme.responsive.md}) {
+width: auto;
 margin: 1rem;
 transition: transform .4s ease;
 :hover{
@@ -58,6 +70,9 @@ const StyledImage = styled(Image)`
  margin: 0.4rem auto;
  border-top: 1px solid ${({ theme }) => theme.colors.primaryPink};
  border-bottom: 1px solid ${({ theme }) => theme.colors.primaryPink};
+ @media (min-width: ${({ theme }) => theme.responsive.sm}) {
+  height: 240px;
+ }
  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   height: 280px;
  }

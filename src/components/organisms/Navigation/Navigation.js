@@ -24,14 +24,16 @@ const Navigation = () => {
  const windowSize = useWindowSize();
  const navList = useRef();
  const navContainer = useRef();
+
  const toggleNavigation = () => {
   setOpen(!open);
-  if (!open && windowSize.width < +theme.responsive.lg.slice(0, 4)) {
+  if (!open && windowSize.width < +theme.responsive.md.slice(0, 4)) {
    disableBodyScroll(navList);
   } else {
    enableBodyScroll(navList);
   }
  };
+
  useHandleOutside(open, navContainer, () => toggleNavigation());
 
  return (

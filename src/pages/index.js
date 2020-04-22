@@ -23,6 +23,18 @@ const HeroImage = styled(Image)`
  object-fit: contain;
  opacity: 0.6;
  z-index: -1;
+ @media (min-width: ${({ theme }) => theme.responsive.sm}) {
+  top: 10%;
+  height: 90%;
+ }
+ @media (min-width: ${({ theme }) => theme.responsive.md}) {
+  top: 10%;
+  right: -35%;
+  width: 100%;
+  opacity: 0.7;
+  height: 90%;
+  object-fit: cover;
+ }
  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   top: 0;
   right: -55%;
@@ -47,9 +59,12 @@ const AdditionalImage = styled.div`
  background-image: url(${backgroundImage});
  background-repeat: no-repeat;
  background-size: 100%;
+ @media (min-width: ${({ theme }) => theme.responsive.md}) {
+  left: -1%;
+  bottom: 3%;
+ }
  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   left: -2%;
-  bottom: 3%;
   height: 230px;
   width: 230px;
   transform: rotate(-20deg);
