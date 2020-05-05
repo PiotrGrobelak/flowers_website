@@ -11,7 +11,7 @@ const StyledFooter = styled.footer`
  flex-direction: column;
  align-items: center;
  padding-bottom: 0.4rem;
- background-color: ${({ theme }) => theme.colors.primaryViolet};
+ background-color: ${({ theme }) => theme.colors.secondaryViolet};
  box-shadow: 0px 3px 10px 3px rgba(0, 0, 0, 0.25);
  color: ${({ theme }) => theme.colors.primaryWhite};
  font-weight: 600;
@@ -30,10 +30,22 @@ const StyledWrapper = styled.div`
 const Footer = () => (
  <StyledFooter>
   <StyledWrapper row>
-   <ButtonIcon as="a" href="#" target="" rel="noopener noreferrer">
+   <ButtonIcon
+    as="a"
+    href="/"
+    target=""
+    rel="noopener noreferrer"
+    aria-current="page"
+   >
     <AiFillFacebook size={'2.2rem'} />
    </ButtonIcon>
-   <ButtonIcon as="a" href="#" target="" rel="noopener noreferrer">
+   <ButtonIcon
+    as="a"
+    href="/"
+    target=""
+    rel="noopener noreferrer"
+    aria-current="page"
+   >
     <AiOutlineInstagram size={'2.2rem'} />
    </ButtonIcon>
   </StyledWrapper>

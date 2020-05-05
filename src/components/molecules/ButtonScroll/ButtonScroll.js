@@ -75,6 +75,7 @@ const ButtonScroll = () => {
    <ScrollTo>
     {({ scroll }) => (
      <StyledButtonIcon
+      aria-label="Scroll to Top"
       show={show}
       onClick={() => scroll({ x: 0, y: 0, smooth: true })}
      >

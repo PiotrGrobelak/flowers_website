@@ -65,11 +65,15 @@ const NavigationBurger = styled.button`
 
 const Burger = ({ open, toggleNavigation }) => {
  return (
-  <NavigationBurgerWrapper>
-   <NavigationBurger open={open} onClick={() => toggleNavigation()}>
-    <div />
-    <div />
-    <div />
+  <NavigationBurgerWrapper role="Button Container">
+   <NavigationBurger
+    aria-label="Navigation Button"
+    open={open}
+    onClick={() => toggleNavigation()}
+   >
+    <div role="part of button" />
+    <div role="part of button" />
+    <div role="part of button" />
    </NavigationBurger>
   </NavigationBurgerWrapper>
  );
