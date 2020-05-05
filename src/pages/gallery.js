@@ -150,7 +150,7 @@ export const query = graphql`
      alt
      url
      basename
-     fluid(maxWidth: 600, maxHeight: 500, imgixParams: { q: 100 }) {
+     fluid(maxWidth: 400, maxHeight: 300, imgixParams: { q: 100 }) {
       ...GatsbyDatoCmsFluid_tracedSVG
      }
     }

@@ -5,7 +5,7 @@
   </h1>
 
 <a href="https://flowers-website.netlify.app/">
-  <img alt="Flowers" src="src/assets/images/cover.png" />
+  <img alt="Flowers" src="src/assets/images/cover.jpg" />
 </a>
 
 
