@@ -61,7 +61,7 @@ const Newsletter = () => {
    <StyledParagraph bold>Sign up to receive our latest offers.</StyledParagraph>
    <StyledFrom onSubmit={e => handleSubmit(e)}>
     <StyledFieldForm>
-     <Label>Email</Label>
+     <Label for="email">Email</Label>
      <Input id="email" type="e-mail" name="email" required />
     </StyledFieldForm>
     <Button type="submit">Submit</Button>

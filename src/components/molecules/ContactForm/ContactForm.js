@@ -84,7 +84,9 @@ const ContactForm = ({
     Say Hello!
    </Heading>
    <StyledFieldWrapper>
-    <Label htmlFor="name">Name</Label>
+    <Label htmlFor="name" for="name">
+     Name
+    </Label>
     <Input
      id="name"
      type="text"
@@ -98,7 +100,9 @@ const ContactForm = ({
     </ErrorMsg>
    </StyledFieldWrapper>
    <StyledFieldWrapper>
-    <Label htmlFor="e-mail">E-mail</Label>
+    <Label htmlFor="e-mail" for="email">
+     E-mail
+    </Label>
     <Input
      id="email"
      type="e-mail"
@@ -112,7 +116,7 @@ const ContactForm = ({
     </ErrorMsg>
    </StyledFieldWrapper>
    <StyledFieldWrapper>
-    <Label>Message</Label>
+    <Label for="message">Message</Label>
     <Input
      as="textarea"
      type="text"
