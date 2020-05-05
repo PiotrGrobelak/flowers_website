@@ -127,7 +127,7 @@ const StyledWrapper = styled.div`
   max-width: 800px;
  }
  @media (min-width: ${({ theme }) => theme.responsive.xl}) {
-  max-width: 1000px;
+  max-width: 1400px;
  }
 `;
 
@@ -156,7 +156,7 @@ const AboutItem = React.memo(({ fluid, alt, paragraph }) => {
  }, [refElement, animate]);
 
  return (
-  <StyledWrapper ref={refElement}>
+  <StyledWrapper ref={refElement} role="about section">
    <StyledImage fluid={fluid} alt={alt} animate={animate} />
    <StyledParagraph animate={animate}>{paragraph}</StyledParagraph>
   </StyledWrapper>

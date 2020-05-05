@@ -7,6 +7,7 @@ module.exports = {
   title: `Flowers Website`,
   description: `The project with Gatsby and DatoCms`,
   author: `Piotr Grobelak`,
+  siteUrl: `https://flowers-website.netlify.app/`,
  },
  plugins: [
   `gatsby-plugin-react-helmet`,

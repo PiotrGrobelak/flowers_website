@@ -103,7 +103,7 @@ const Opinions = () => {
       return (
        <StyledFigure key={person.index}>
         <StyledQuote as="blockquote">{person.quote}</StyledQuote>
-        <StyledImage src={person.avatar.fluid.src} />
+        <StyledImage src={person.avatar.fluid.src} alt="Person opinion" />
         <Heading as="figcaption" secondary normal>
          {person.author}
         </Heading>

@@ -9,37 +9,36 @@ import Button from 'src/components/atoms/Button/Button';
 
 const StyledHeader = styled.header`
  ${FlexColumn}
+ padding: 1.6rem;
  margin-top: 7rem;
- max-width: 90%;
- text-align: right;
+ text-align: center;
  @media (min-width: ${({ theme }) => theme.responsive.md}) {
   margin-top: 12rem;
  }
  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+  text-align: left;
   margin-top: 8rem;
   width: 70%;
  }
 `;
 
 const StyledSubHeading = styled(Paragraph)`
- margin-left: 2rem;
+ margin-bottom: 2rem;
 `;
 
 const StyledParagraph = styled(Paragraph)`
- margin: 2rem -1rem 2rem 1rem;
- letter-spacing: 1px;
- text-align: center;
+ margin-bottom: 2rem;
  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   width: 90%;
-  text-align: right;
  }
 `;
 
 const StyledButton = styled(Button)`
- align-self: flex-end;
+ align-self: center;
  margin-top: 2rem;
  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   margin-right: 2rem;
+  align-self: flex-start;
  }
 `;
 
