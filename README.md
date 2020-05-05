@@ -4,7 +4,7 @@
   Flowers with Gatsby
   </h1>
 
-<a href="https://nifty-borg-93e478.netlify.com/">
+<a href="https://flowers-website.netlify.app/">
   <img alt="Flowers" src="src/assets/images/cover.png" />
 </a>
 

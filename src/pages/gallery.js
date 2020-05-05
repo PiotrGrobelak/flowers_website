@@ -40,18 +40,29 @@ const Main = styled.main`
 
 const StyledHeader = styled.header`
  margin: 4rem 2rem;
+ text-align: center;
  @media (min-width: ${({ theme }) => theme.responsive.sm}) {
   margin-top: 14rem;
-  margin-left: 10rem;
+ }
+ @media (min-width: ${({ theme }) => theme.responsive.md}) {
+  /* margin-left: 14rem; */
+
+  text-align: center;
  }
  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   margin: 4rem 2rem;
+  padding-left: 2rem;
+  text-align: left;
  }
 `;
 
 const StyledParagraph = styled(Paragraph)`
  @media (min-width: ${({ theme }) => theme.responsive.md}) {
-  max-width: 60%;
+  padding-left: 16rem;
+  max-width: 80%;
+ }
+ @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+  padding-left: 0;
  }
 `;
 

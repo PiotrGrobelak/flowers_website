@@ -46,7 +46,7 @@ const Main = styled.main`
 const StyledHeader = styled.header`
  margin-top: 5rem;
  padding: 1rem;
- text-align: right;
+ text-align: center;
  @media (min-width: ${({ theme }) => theme.responsive.sm}) {
   width: 70%;
  }
