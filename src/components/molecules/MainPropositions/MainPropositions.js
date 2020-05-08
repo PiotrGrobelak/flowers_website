@@ -10,8 +10,9 @@ const StyledContainer = styled.div`
  position: relative;
  ${FlexColumn};
  @media (min-width: ${({ theme }) => theme.responsive.md}) {
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  padding-left: 1.6rem;
   width: 100%;
  }
 `;

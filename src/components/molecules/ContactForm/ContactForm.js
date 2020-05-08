@@ -112,7 +112,7 @@ const ContactForm = ({
     </ErrorMsg>
    </StyledFieldWrapper>
    <StyledFieldWrapper>
-    <Label>Message</Label>
+    <Label htmlFor="message">Message</Label>
     <Input
      as="textarea"
      type="text"

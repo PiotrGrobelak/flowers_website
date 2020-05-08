@@ -39,7 +39,7 @@ const Navigation = () => {
  return (
   <NavigationContainer ref={navContainer}>
    <Link to="/">
-    <LogoMobile src={LogoImage} />
+    <LogoMobile src={LogoImage} alt="Flowers Logo" />
    </Link>
    <ContactLink as="a" href="tel:093-393-920">
     <ContactIcon />
@@ -48,7 +48,7 @@ const Navigation = () => {
    <Burger open={open} toggleNavigation={toggleNavigation} />
    <NavigationWrapper open={open} ref={navList}>
     <Link to="/" onClick={() => toggleNavigation()}>
-     <Logo src={LogoImage} />
+     <Logo src={LogoImage} alt="Flowers Logo" />
     </Link>
     <NavigationList>
      <NavigationItem>

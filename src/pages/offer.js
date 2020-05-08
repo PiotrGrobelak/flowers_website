@@ -46,21 +46,26 @@ const Main = styled.main`
 const StyledHeader = styled.header`
  margin-top: 5rem;
  padding: 1rem;
- text-align: right;
+ text-align: center;
  @media (min-width: ${({ theme }) => theme.responsive.sm}) {
+  margin-left: 10rem;
   width: 70%;
  }
  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
+  margin-left: 2rem;
+  padding-left: 0;
   width: 80%;
+  text-align: left;
  }
 `;
 
 const StyledParagraph = styled(Paragraph)`
  padding: 1rem;
  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
-  margin-left: 20rem;
+  padding: 0;
   border-radius: 25px;
   background-color: ${({ theme }) => theme.colors.secondaryWhite};
+  width: 70%;
  }
 `;
 

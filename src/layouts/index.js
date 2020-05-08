@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from 'src/theme/Theme';
 import styled from 'styled-components';
 import GlobalStyle from 'src/theme/GlobalStyle';
+import SEO from 'src/components/seo';
 import Navigation from 'src/components/organisms/Navigation/Navigation';
 import Footer from 'src/components/organisms/Footer/Footer';
 import ButtonScroll from 'src/components/molecules/ButtonScroll/ButtonScroll';
@@ -40,6 +41,7 @@ const MainLayout = ({ children }) => {
  return (
   <>
    <ThemeProvider theme={theme}>
+    <SEO />
     <GlobalStyle />
     <BodyImage />
     <Navigation />
