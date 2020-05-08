@@ -37,7 +37,7 @@ const Navigation = () => {
 
  return (
   <NavigationContainer ref={navContainer}>
-   <Link to="/">
+   <Link to="/" aria-label="Home page">
     <LogoMobile src={LogoImage} alt="Flowers Logo" />
    </Link>
    <ContactLink as="a" href="tel:093-393-920">
