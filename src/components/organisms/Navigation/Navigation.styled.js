@@ -56,10 +56,12 @@ export const NavigationList = styled.ul`
 export const NavigationItem = styled.li`
  margin-top: 2rem;
  padding: 1rem;
+ @media (min-width: ${({ theme }) => theme.responsive.md}) {
+  margin-top: 0;
+ }
  :nth-last-child(1) {
   margin-bottom: 1rem;
   @media (min-width: ${({ theme }) => theme.responsive.md}) {
-   margin-top: 0;
    margin-bottom: 0;
   }
  }
