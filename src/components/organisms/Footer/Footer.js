@@ -35,7 +35,7 @@ const Footer = () => (
     href="/"
     target=""
     rel="noopener noreferrer"
-    aria-current="page"
+    aria-label="Facebook"
    >
     <AiFillFacebook size={'2.2rem'} />
    </ButtonIcon>
@@ -44,7 +44,7 @@ const Footer = () => (
     href="/"
     target=""
     rel="noopener noreferrer"
-    aria-current="page"
+    aria-label="Instagram"
    >
     <AiOutlineInstagram size={'2.2rem'} />
    </ButtonIcon>

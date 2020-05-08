@@ -16,7 +16,6 @@ import {
  Logo,
  LogoMobile,
  ContactIcon,
- ContactNumber,
 } from './Navigation.styled';
 
 const Navigation = () => {
@@ -43,7 +42,7 @@ const Navigation = () => {
    </Link>
    <ContactLink as="a" href="tel:093-393-920">
     <ContactIcon />
-    <ContactNumber>093-393-920</ContactNumber>
+    093-393-920
    </ContactLink>
    <Burger open={open} toggleNavigation={toggleNavigation} />
    <NavigationWrapper open={open} ref={navList}>

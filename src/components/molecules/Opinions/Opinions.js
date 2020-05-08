@@ -82,6 +82,7 @@ const Opinions = () => {
      author
      quote
      avatar {
+      alt
       fluid {
        ...GatsbyDatoCmsFluid_tracedSVG
       }
@@ -103,7 +104,7 @@ const Opinions = () => {
       return (
        <StyledFigure key={person.index}>
         <StyledQuote as="blockquote">{person.quote}</StyledQuote>
-        <StyledImage src={person.avatar.fluid.src} alt="Person opinion" />
+        <StyledImage src={person.avatar.fluid.src} alt={person.avatar.alt} />
         <Heading as="figcaption" secondary normal>
          {person.author}
         </Heading>

@@ -156,7 +156,7 @@ const AboutItem = React.memo(({ fluid, alt, paragraph }) => {
  }, [refElement, animate]);
 
  return (
-  <StyledWrapper ref={refElement} role="about section">
+  <StyledWrapper ref={refElement} role="presentation">
    <StyledImage fluid={fluid} alt={alt} animate={animate} />
    <StyledParagraph animate={animate}>{paragraph}</StyledParagraph>
   </StyledWrapper>

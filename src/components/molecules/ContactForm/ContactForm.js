@@ -98,7 +98,7 @@ const ContactForm = ({
     </ErrorMsg>
    </StyledFieldWrapper>
    <StyledFieldWrapper>
-    <Label htmlFor="e-mail">E-mail</Label>
+    <Label htmlFor="email">E-mail</Label>
     <Input
      id="email"
      type="e-mail"
