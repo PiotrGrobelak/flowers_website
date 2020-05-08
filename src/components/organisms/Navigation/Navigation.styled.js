@@ -54,10 +54,12 @@ export const NavigationList = styled.ul`
 `;
 
 export const NavigationItem = styled.li`
+ margin-top: 2rem;
  padding: 1rem;
  :nth-last-child(1) {
   margin-bottom: 1rem;
   @media (min-width: ${({ theme }) => theme.responsive.md}) {
+   margin-top: 0;
    margin-bottom: 0;
   }
  }
@@ -83,15 +85,13 @@ export const ContactLink = styled(Button)`
  margin: 0.5rem;
 `;
 
-export const ContactNumber = styled.span``;
-
 export const ContactIcon = styled(MdPhoneInTalk)`
  margin-right: 1rem;
  align-self: center;
 `;
 
 export const Logo = styled.img`
- margin-top: 3rem;
+ margin-top: 8rem;
  height: 60px;
  @media (min-width: ${({ theme }) => theme.responsive.md}) {
   margin-top: 0;
