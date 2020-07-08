@@ -10,7 +10,7 @@
 
 
 
-## :school: The project with gatsby default starter and DatoCms(Work in progress)
+## :school: The project with gatsby default starter and DatoCms
 
 Florist's website built based on Gatsby and DatoCms. The project uses GraphQL queries for cms, from where data such as content or photos are dynamically fetched. There is also a contact form based on Firestore functions, SendGrid and 'formik' library, thanks to which you can send a message to my email.Styles are created using the 'styled components' library. Modal windows for product presentation and the 'react-images' library for the gallery are used.
 
