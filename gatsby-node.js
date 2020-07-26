@@ -3,7 +3,9 @@ const slugify = require('slugify');
 
 exports.createPages = async ({ graphql, actions }) => {
  const { createPage } = actions;
- const singleProduct = path.resolve(`src/components/organisms/Product/Product.js`);
+ const singleProduct = path.resolve(
+  `src/components/organisms/Product/Product.js`,
+ );
  const result = await graphql(`
   query MyQuery {
    allDatoCmsProduct {

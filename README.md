@@ -39,27 +39,12 @@ Florist's website built based on Gatsby and DatoCms. The project uses GraphQL qu
 - GraphQL
 - Netlify
 
-## :rocket: Quick start
+## :boy: Author
+[Piotr Grobelak](https://grobelakpiotr.pl/)
 
-1.  **Create local.**
+## :earth_americas: License
 
-    Copy and paste in your terminal.
-
-    ```shell
-    git clone https://github.com/PiotrGrobelak/flowers_website.git
-    ```
-
-2.  **Start project.**
-
-    Navigate into your directory and start it up.
-
-    ```shell
-    cd flowers_website/
-
-    npm install
-
-    gatsby develop
-    ```
+This project is open source and available under the [MIT License](LICENSE).
 
 
 

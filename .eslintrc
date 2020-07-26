@@ -11,7 +11,8 @@
         "require": true,
         "module": true,
         "__dirname": true,
-        "console": true
+        "console": true,
+        "exports": true
     },
   "rules": {
     "strict": 0,

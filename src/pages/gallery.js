@@ -45,8 +45,6 @@ const StyledHeader = styled.header`
   margin-top: 14rem;
  }
  @media (min-width: ${({ theme }) => theme.responsive.md}) {
-  /* margin-left: 14rem; */
-
   text-align: center;
  }
  @media (min-width: ${({ theme }) => theme.responsive.lg}) {

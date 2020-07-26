@@ -17,6 +17,7 @@ const StyledSection = styled.section`
  background-color: ${({ theme }) => theme.colors.secondaryWhite};
  @media (min-width: ${({ theme }) => theme.responsive.lg}) {
   display: grid;
+  margin-left: 20px;
   grid-template-columns: 0.5fr 1fr 2fr;
   grid-gap: 4rem;
   padding: 2rem;
